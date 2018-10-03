@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventory.View.Login"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
+
+    <AbsoluteLayout>
+        <!-- Place new controls here -->
+
+        <Image
+            x:Name="Background"
+              AbsoluteLayout.LayoutBounds="0,0,1,1"        
+           AbsoluteLayout.LayoutFlags="All"
+           Aspect="AspectFill"
+            />
+
+        <ic:CircleImage 
+           AbsoluteLayout.LayoutBounds="0.5,0.2,100,100"        
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           Aspect="AspectFill"
+           HorizontalOptions="Center"
+           Source="http://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg"
+          />
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5,0.5,1,150"        
+           AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+            BackgroundColor="White"
+            Opacity="0.5"
+            HasShadow="False">
+            <StackLayout BackgroundColor="Transparent">
+                <Entry Placeholder="Username"/>
+                <Entry IsPassword="True" Placeholder="Password"/>
+            </StackLayout>
+
+        </Frame>
+        <Button Text="Login" 
+                BackgroundColor="AliceBlue"
+           AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
+           AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+           BorderRadius="50"/>
+
+    </AbsoluteLayout>
+
+</ContentPage>

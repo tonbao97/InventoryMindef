@@ -2,13 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Inventory"
-             x:Class="Inventory.MainPage">
+             x:Class="Inventory.MainPage"
+             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Github!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+
 
 </ContentPage>
