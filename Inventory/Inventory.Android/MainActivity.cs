@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using ImageCircle.Forms.Plugin.Droid;
+using IconEntry.FormsPlugin.Android;
 
 namespace Inventory.Droid
 {

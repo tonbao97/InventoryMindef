@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inventory.View.Login"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             >
+             xmlns:local="clr-namespace:Inventory.Render">
 
     <AbsoluteLayout>
         <!-- Place new controls here -->
@@ -13,14 +13,15 @@
               AbsoluteLayout.LayoutBounds="0,0,1,1"        
            AbsoluteLayout.LayoutFlags="All"
            Aspect="AspectFill"
+     
             />
 
         <ic:CircleImage 
-           AbsoluteLayout.LayoutBounds="0.5,0.2,100,100"        
+           AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        
            AbsoluteLayout.LayoutFlags="PositionProportional"
            Aspect="AspectFill"
            HorizontalOptions="Center"
-           Source="http://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg"
+           Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"
           />
         <Frame
             AbsoluteLayout.LayoutBounds="0.5,0.5,1,150"        
@@ -29,13 +30,25 @@
             Opacity="0.5"
             HasShadow="False">
             <StackLayout BackgroundColor="Transparent">
-                <Entry Placeholder="Username"/>
-                <Entry IsPassword="True" Placeholder="Password"/>
+                <local:ImageEntry TextColor="Black" 
+                        Image="username" 
+                        Placeholder="Username"
+                        LineColor="Blue"
+                        />
+                <local:ImageEntry TextColor="Black" 
+                        Image="password" 
+                        Placeholder="Password"
+                        LineColor="Blue"
+                        IsPassword="True"
+                        />
+                <!--<Entry Placeholder="Username" TextColor="Black"/>
+                <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
             </StackLayout>
 
         </Frame>
         <Button Text="Login" 
-                BackgroundColor="AliceBlue"
+                BackgroundColor="#3193e1"
+                TextColor="White"    
            AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
            BorderRadius="50"/>
