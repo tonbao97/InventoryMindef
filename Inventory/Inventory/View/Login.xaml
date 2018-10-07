@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage 
+             Title="Login Page"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inventory.View.Login"
              xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
@@ -23,6 +25,9 @@
            HorizontalOptions="Center"
            Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"
           />
+        
+        
+        
         <Frame
             AbsoluteLayout.LayoutBounds="0.5,0.5,1,150"        
            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
@@ -30,17 +35,22 @@
             Opacity="0.5"
             HasShadow="False">
             <StackLayout BackgroundColor="Transparent">
+                <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
                 <local:ImageEntry TextColor="Black" 
                         Image="username" 
                         Placeholder="Username"
                         LineColor="Blue"
+                        x:Name="Username"
+                        Text=""
                         />
                 <local:ImageEntry TextColor="Black" 
                         Image="password" 
                         Placeholder="Password"
                         LineColor="Blue"
                         IsPassword="True"
-                        />
+                        x:Name="Password"
+                        Text=""
+                 />
                 <!--<Entry Placeholder="Username" TextColor="Black"/>
                 <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
             </StackLayout>
@@ -51,7 +61,9 @@
                 TextColor="White"    
            AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-           BorderRadius="50"/>
+           BorderRadius="50"
+           Clicked="Login_Clicked"     
+                />
 
     </AbsoluteLayout>
 

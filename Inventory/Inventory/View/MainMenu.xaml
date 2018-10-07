@@ -1,16 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage 
+    NavigationPage.HasBackButton="False"
+    Title="Main Menu"
+    xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inventory.View.MainMenu">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
-            <Label Text="Welcome to Main Menu"
-                   FontSize="Large"
-                   FontAttributes="Bold"
-                   />
-            <Button Text="Add Item"/>
-            <Button Text="Search Item"/>
-            <Button Text="Scan QR code"/>
-        </StackLayout>
+        
+        <AbsoluteLayout>
+            <Image
+            x:Name="Background"
+              AbsoluteLayout.LayoutBounds="0,0,1,1"        
+           AbsoluteLayout.LayoutFlags="All"
+           Aspect="AspectFill"
+            />
+            <Grid   
+                AbsoluteLayout.LayoutBounds=".5,.5,.9,.6"
+                AbsoluteLayout.LayoutFlags="All">
+                <Button
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    BackgroundColor="#0ba3f4"
+                    Image="Add.png"/>
+                <Button 
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    BackgroundColor="#0ba3f4"
+                    Image="search.png"
+                    />
+                <Button 
+                    Grid.Column="0"
+                    Grid.Row="1"
+                    BackgroundColor="#0ba3f4"
+                    Image="Scan.png"/>
+                <Button
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    BackgroundColor="#0ba3f4"
+                    Image="logout.png"
+                    />
+            </Grid>
+        </AbsoluteLayout>
+        
     </ContentPage.Content>
 </ContentPage>

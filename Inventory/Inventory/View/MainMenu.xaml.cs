@@ -15,6 +15,7 @@ namespace Inventory.View
 		public MainMenu ()
 		{
 			InitializeComponent ();
-		}
+            Background.Source = ImageSource.FromResource("Inventory.Image.background.jpg");
+        }
 	}
 }

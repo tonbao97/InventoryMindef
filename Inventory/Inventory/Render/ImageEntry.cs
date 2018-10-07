@@ -27,11 +27,14 @@ namespace Inventory.Render
         public static readonly BindableProperty ImageAlignmentProperty =
             BindableProperty.Create(nameof(ImageAlignment), typeof(ImageAlignment), typeof(ImageEntry), ImageAlignment.Left);
 
+
+
         public Color LineColor
         {
             get { return (Color)GetValue(LineColorProperty); }
             set { SetValue(LineColorProperty, value); }
         }
+        
 
         public int ImageWidth
         {

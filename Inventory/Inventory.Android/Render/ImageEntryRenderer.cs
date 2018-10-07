@@ -34,6 +34,7 @@ namespace Inventory.Droid.Render
 
 
             var editText = this.Control;
+           
             if (!string.IsNullOrEmpty(element.Image))
             {
                 switch (element.ImageAlignment)
