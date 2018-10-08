@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory.View.SearchItem;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +18,11 @@ namespace Inventory.View
 			InitializeComponent ();
             Background.Source = ImageSource.FromResource("Inventory.Image.background.jpg");
         }
-	}
+
+        async void SearchButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SearchItemPage());
+        }
+
+    }
 }

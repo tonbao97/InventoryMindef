@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventory.View.SearchItem.SearchItemPage"
+             Title="Inventory Directory">
+    
+    <StackLayout Padding="5,0,5,0">
+
+        <StackLayout>
+            <SearchBar Placeholder="Search..."/>
+            <StackLayout Orientation="Horizontal" Padding="0,0,0,5">
+                <Label Text="Location: " VerticalTextAlignment="Center" FontSize="16"/>
+                <Picker x:Name="locationFilter" Title="Choose location..." SelectedIndexChanged="locationFilter_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>All</x:String>
+                        <x:String>Technical</x:String>
+                        <x:String>Application</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- havent set event changed handler yet !-->
+        <ListView x:Name="listView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding EquipmentCategory}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding ItemType}" TextColor="Black"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <StackLayout Padding="0,10,0,10">
+            <Button Text="Show All" Clicked="ShowButton_Clicked" HorizontalOptions="Center"/>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>
