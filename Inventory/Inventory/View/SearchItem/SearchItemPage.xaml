@@ -4,13 +4,14 @@
              x:Class="Inventory.View.SearchItem.SearchItemPage"
              Title="Inventory Directory">
     
-    <StackLayout Padding="5,0,5,0">
+    <StackLayout>
 
-        <StackLayout>
+        <StackLayout Padding="5,0,5,0">
             <SearchBar Placeholder="Search..."/>
-            <StackLayout Orientation="Horizontal" Padding="0,0,0,5">
+            <StackLayout Orientation="Horizontal">
                 <Label Text="Location: " VerticalTextAlignment="Center" FontSize="16"/>
-                <Picker x:Name="locationFilter" Title="Choose location..." SelectedIndexChanged="locationFilter_SelectedIndexChanged">
+                <Picker x:Name="locationFilter" Title="Choose location..." SelectedIndexChanged="locationFilter_SelectedIndexChanged" FontSize="16" MinimumHeightRequest="16">
+                    <!-- These pickers have not been made bindable to the list as a filter yet -->
                     <Picker.Items>
                         <x:String>All</x:String>
                         <x:String>Technical</x:String>
@@ -21,17 +22,20 @@
         </StackLayout>
 
         <!-- havent set event changed handler yet !-->
-        <ListView x:Name="listView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding EquipmentCategory}">
+        <ListView x:Name="listView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding EquipmentCategory}" ItemSelected="Item_ItemSelected" SelectionMode="">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding ItemType}" TextColor="Black"/>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                            <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Text="(3)" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
 
-        <StackLayout Padding="0,10,0,10">
-            <Button Text="Show All" Clicked="ShowButton_Clicked" HorizontalOptions="Center"/>
-        </StackLayout>
+        <Button Text="Show All" Clicked="ShowButton_Clicked"/>
 
     </StackLayout>
 

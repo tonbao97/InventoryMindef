@@ -23,7 +23,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Services\ItemsFilteredPage.xaml">
+    <Compile Update="Services\ItemsFilteredServicePage.xaml.cs">
+      <DependentUpon>ItemsFilteredServicePage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Services\ItemsFilteredServicePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\Login.xaml">

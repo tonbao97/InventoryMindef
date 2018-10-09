@@ -41,16 +41,30 @@ namespace Inventory.View.SearchItem
                     new Equipment { EquipmentId="009", SerialNo="19-119-1119", ItemCategory="Other Devices", ItemType="Others Etc.", Location="Application"}
                 }
             };
+
+            //This is to add count of itemsitemtype
+            //int ItemTypeCount = 0;
+            //foreach (Equipment ItemType in listView.ItemsSource)
+            //{
+            //    ItemTypeCount++;
+            //}
         }
 
         async void ShowButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ItemsFilteredPage());
+            await Navigation.PushAsync(new ItemsFilteredServicePage());
         }
 
         private void locationFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
+
+        async void Item_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            await Navigation.PushAsync(new ItemsFilteredServicePage());
+            // the idea here is that if they select a specific item type then the item filter page applies that filter to output that specific outcome
+        }
+
     }
 }

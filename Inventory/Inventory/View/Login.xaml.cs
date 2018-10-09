@@ -21,16 +21,19 @@ namespace Inventory.View
 
         private void Login_Clicked(object sender, EventArgs e)
         {
-            if (Username.Text.Equals("") || Password.Text.Equals(""))
-            {
-                DisplayAlert("Notice", "Please enter username and password","Okay");
-                Error.Text = "Username and password can't be empty";
-            }
-            else
-            {
-                Navigation.PushAsync(new MainMenu());
-            }
-          
+            #region // disabled login exception for debugging
+            //if (Username.Text.Equals("") || Password.Text.Equals(""))
+            //{
+            //    DisplayAlert("Notice", "Please enter username and password","Okay");
+            //    Error.Text = "Username and password can't be empty";
+            //}
+            //else
+            //{
+            //    Navigation.PushAsync(new MainMenu());
+            //}
+            Navigation.PushAsync(new MainMenu());
+            #endregion
+
         }
     }
 }
