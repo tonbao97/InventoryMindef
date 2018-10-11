@@ -16,11 +16,5 @@ namespace Inventory.View.AddNew
 		{
 			InitializeComponent ();
 		}
-
-        private void CameraButton_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("to bind to camera function", "New Item", "OK");
-        }
-
-    }
+	}
 }
