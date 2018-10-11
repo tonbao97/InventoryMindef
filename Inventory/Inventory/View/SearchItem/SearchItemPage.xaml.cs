@@ -60,7 +60,7 @@ namespace Inventory.View.SearchItem
 
         }
 
-        async void Item_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        async void Item_ItemTapped(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushAsync(new ItemsFilteredServicePage());
             // the idea here is that if they select a specific item type then the item filter page applies that filter to output that specific outcome

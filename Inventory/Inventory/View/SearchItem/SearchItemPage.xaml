@@ -22,7 +22,7 @@
         </StackLayout>
 
         <!-- havent set event changed handler yet !-->
-        <ListView x:Name="listView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding EquipmentCategory}" ItemSelected="Item_ItemSelected" SelectionMode="">
+        <ListView x:Name="listView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding EquipmentCategory}" ItemTapped="Item_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
@@ -36,7 +36,7 @@
         </ListView>
 
         <Button Text="Show All" Clicked="ShowButton_Clicked"/>
-
+        <!--Button element does not want to be entered in a ViewCell if its in a list; consider alternative UI other than ListView if issue-->
     </StackLayout>
 
 </ContentPage>
