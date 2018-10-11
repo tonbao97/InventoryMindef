@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+<form method="post" action="/api/Account/Register">
+    <input type="text" name="Email" />
+    <input type="password" name="Password" />
+    <input type="password" name="ConfirmPassword" />
+    <button type="submit">Submit</button>
+</form>
