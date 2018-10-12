@@ -17,10 +17,17 @@ namespace Inventory.View.AddNew
 		public AddNewPage ()
 		{
 			InitializeComponent();
-
+            var tapGestureRecognizer = new TapGestureRecognizer();
+            tapGestureRecognizer.Tapped += (s, e) => {
+                OnTapped();
+            };
+            TakenPicture.GestureRecognizers.Add(tapGestureRecognizer);
         }
 
-        private async void OnTapped (object sender, EventArgs e)
+    
+
+
+        private async void OnTapped ()
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
