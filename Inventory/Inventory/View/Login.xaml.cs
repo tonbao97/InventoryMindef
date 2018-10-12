@@ -26,28 +26,28 @@ namespace Inventory.View
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
-      
-            if (Username.Text.Equals("") || Password.Text.Equals(""))
-            {
-                await DisplayAlert("Notice", "Please enter username and password", "Okay");
-                Error.Text = "Username and password can't be empty";
-            }
-            else
-            {
-                var dict = new Dictionary<string, string>();
-                dict.Add("username", Username.Text);
-                dict.Add("password", Password.Text);
-                dict.Add("grant_type", "password");
-                var client = new HttpClient();
-                //var req = new HttpRequestMessage(HttpMethod.Post, Url) { Content = new FormUrlEncodedContent(dict) };
-                var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
-                var text = response.Content.ReadAsStringAsync();
-                await DisplayAlert("Test", text.Result,"Ok");
-                //var listfruits = JsonConvert.DeserializeObject<Token>();
+
+            //if (Username.Text.Equals("") || Password.Text.Equals(""))
+            //{
+            //    await DisplayAlert("Notice", "Please enter username and password", "Okay");
+            //    Error.Text = "Username and password can't be empty";
+            //}
+            //else
+            //{
+            //    var dict = new Dictionary<string, string>();
+            //    dict.Add("username", Username.Text);
+            //    dict.Add("password", Password.Text);
+            //    dict.Add("grant_type", "password");
+            //    var client = new HttpClient();
+            //    //var req = new HttpRequestMessage(HttpMethod.Post, Url) { Content = new FormUrlEncodedContent(dict) };
+            //    var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
+            //    var text = response.Content.ReadAsStringAsync();
+            //    await DisplayAlert("Test", text.Result,"Ok");
+            //    //var listfruits = JsonConvert.DeserializeObject<Token>();
 
 
-            }
-
+            //}
+            await Navigation.PushAsync(new MainMenu());
         }
     }
 }
