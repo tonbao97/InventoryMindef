@@ -58,8 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -93,7 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Inventory\Inventory.csproj">
-      <Project>{90272A39-F866-4E86-9F42-CCFA83D50B87}</Project>
+      <Project>{DC5C0C29-D814-4C34-B222-4071F3EDFFF1}</Project>
       <Name>Inventory</Name>
     </ProjectReference>
   </ItemGroup>
