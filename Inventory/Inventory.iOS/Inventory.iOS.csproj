@@ -148,12 +148,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Inventory\Inventory.csproj">
-      <Project>{90272A39-F866-4E86-9F42-CCFA83D50B87}</Project>
+      <Project>{DC5C0C29-D814-4C34-B222-4071F3EDFFF1}</Project>
       <Name>Inventory</Name>
     </ProjectReference>
   </ItemGroup>
