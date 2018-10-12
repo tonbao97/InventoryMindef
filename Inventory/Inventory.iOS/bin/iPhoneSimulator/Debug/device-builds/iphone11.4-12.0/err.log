@@ -1,6 +1,0 @@
-MonoTouch: Could not install sigaction override, unexpected sigaction implementation.
-2018-10-12 20:58:16.574228+0800 Inventory.iOS[3672:84157] Xamarin.iOS: Socket error while connecting to IDE on 127.0.0.1:10000: Connection refused
-2018-10-12 20:58:17.140895+0800 Inventory.iOS[3672:84087] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=3672
-2018-10-12 20:58:17.141113+0800 Inventory.iOS[3672:84087] SecTaskCopyDebugDescription: Inventory.iOS[3672]/0#-1 LF=0
-2018-10-12 20:58:32.624106+0800 Inventory.iOS[3672:84087] SecTaskLoadEntitlements failed error=22 cs_flags=200, pid=3672
-2018-10-12 20:58:32.625445+0800 Inventory.iOS[3672:84087] SecTaskCopyDebugDescription: Inventory.iOS[3672]/0#-1 LF=0
