@@ -18,7 +18,8 @@
                         VerticalOptions="FillAndExpand"/>
             </AbsoluteLayout>
 
-            <ScrollView>
+            <ScrollView Orientation="Vertical">
+
                 <TableView Intent="Form">
                     <TableRoot >
                         <TableSection Title="Delivery Details" >
@@ -171,11 +172,15 @@
                                 </StackLayout>
                             </ViewCell>
 
+                            <ViewCell>
+                                <Button Text="Save New Item"/>
+                            </ViewCell>
                         </TableSection>
                     </TableRoot>
+                    
                 </TableView>
+               
             </ScrollView>
-            <Button Text="Save New Item"/>
         </StackLayout>
         
     </ContentPage.Content>
