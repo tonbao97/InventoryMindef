@@ -14,7 +14,9 @@
            AbsoluteLayout.LayoutFlags="All"
            Aspect="AspectFill"
             />
-            <Grid   
+            <Grid
+                ColumnSpacing="20"
+                RowSpacing="20"
                 AbsoluteLayout.LayoutBounds=".5,.5,.9,.6"
                 AbsoluteLayout.LayoutFlags="All">
                 <Button
@@ -22,22 +24,31 @@
                     Grid.Row="0"
                     BackgroundColor="#0ba3f4"
                     Image="Add.png"
-                    Clicked="AddButton_Clicked"/>
+                    Clicked="AddButton_Clicked"
+                    BorderColor="Black"
+                    BorderWidth="1"
+                    />
                 <Button 
                     Grid.Column="1"
                     Grid.Row="0"
                     BackgroundColor="#0ba3f4"
                     Image="search.png"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Clicked="SearchButton_Clicked"/>
                 <Button 
                     Grid.Column="0"
                     Grid.Row="1"
                     BackgroundColor="#0ba3f4"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Image="Scan.png"/>
                 <Button
                     Grid.Column="1"
                     Grid.Row="1"
                     BackgroundColor="#0ba3f4"
+                    BorderColor="Black"
+                    BorderWidth="1"
                     Image="logout.png"
                     />
             </Grid>

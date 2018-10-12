@@ -36,32 +36,34 @@
             HasShadow="False">
             <StackLayout BackgroundColor="Transparent">
                 <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
+                
                 <local:ImageEntry TextColor="Black" 
                         Image="username" 
                         Placeholder="Username"
                         LineColor="Blue"
                         x:Name="Username"
-                        Text=""
-                        />
+                        Text=""/>
+                
                 <local:ImageEntry TextColor="Black" 
                         Image="password" 
                         Placeholder="Password"
                         LineColor="Blue"
                         IsPassword="True"
                         x:Name="Password"
-                        Text=""
-                 />
+                        Text=""/>
                 <!--<Entry Placeholder="Username" TextColor="Black"/>
                 <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
             </StackLayout>
 
         </Frame>
         <Button Text="Login" 
-                BackgroundColor="#3193e1"
-                TextColor="White"    
+                BackgroundColor="White"
+                TextColor="DarkBlue"
            AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
            BorderRadius="50"
+                BorderColor="DarkBlue"
+                BorderWidth="1"
            Clicked="Login_Clicked"     
                 />
 
