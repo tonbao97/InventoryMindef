@@ -9,7 +9,6 @@
         <StackLayout Padding="0,5,0,0">
 
             <AbsoluteLayout>
-<<<<<<< HEAD
                 <Frame
                    BackgroundColor="Gray"
                         AbsoluteLayout.LayoutBounds="0.5,0.1,120,120"
@@ -25,10 +24,6 @@
                         <TapGestureRecognizer Tapped="OnTapped"/>
                     </Frame.GestureRecognizers>
                 </Frame>
-=======
-                <Button Clicked="CameraButton_Clicked" IsVisible="True" AbsoluteLayout.LayoutBounds="0.5,0.1,240,120" AbsoluteLayout.LayoutFlags="PositionProportional" Text="'camera function'"/>
-                <!--I want this button to show the captured image, unsure how to code; Binding? BoxView?-->
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
             </AbsoluteLayout>
 
             <TableView Intent="Form">
@@ -42,30 +37,17 @@
                                 <!--In the future need to make this be customized to the format of the actual DO in the database-->
                             </StackLayout>
                         </ViewCell>
-<<<<<<< HEAD
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Delivery Date :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <DatePicker Date="{x:Static sys:DateTime.Today}" Format="dd MMM yyyy" MinimumDate="{x:Static sys:DateTime.Today}" FontSize="Small" TextColor="Gray" />
-=======
-                        <ViewCell >
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Delivery Date :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <DatePicker Date="{x:Static sys:DateTime.Today}" Format="dd MMM yyyy" MinimumDate="{x:Static sys:DateTime.Today}" FontSize="Small" TextColor="Gray" VerticalOptions="Center"/>
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
                                 <!--The date picker here cannot be entered a date before today, may not be a required condition in real use-->
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-<<<<<<< HEAD
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Supplier Name :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Entry Keyboard="Default" Placeholder="Enter Supplier Name" PlaceholderColor="Gray" FontSize="Small" />
-=======
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Supplier Name :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <Entry Keyboard="Default" Placeholder="Enter Supplier Name" PlaceholderColor="Gray" FontSize="Small" VerticalOptions="Center"/>
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
                             </StackLayout>
                         </ViewCell>
 
@@ -73,15 +55,9 @@
                     <TableSection Title="Item Details">
 
                         <ViewCell>
-<<<<<<< HEAD
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Item Type (Category) :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Picker x:Name="itemCategoryPicker" Title="Choose New Item Category" >
-=======
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Item Type (Category) :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center" />
-                                <Picker x:Name="itemCategoryPicker" Title="Choose New Item Category" VerticalOptions="Center" FontSize="Small">
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
                                     <Picker.Items>
                                         <x:String>Computer</x:String>
                                         <x:String>Accessories/Parts</x:String>
@@ -91,17 +67,10 @@
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-<<<<<<< HEAD
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Item Type :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <!--This picker needs to bind with itemCategoryPicker above-->
                                 <Picker x:Name="itemtypePicker" Title="Choose Item Type" >
-=======
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Item Type :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <!--This picker needs to bind with itemCategoryPicker above-->
-                                <Picker x:Name="itemtypePicker" Title="Choose Item Type" VerticalOptions="Center" FontSize="Small">
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
                                     <Picker.Items>
                                         <!--If Category Computer-->
                                         <x:String>Desktop</x:String>
@@ -155,15 +124,9 @@
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-<<<<<<< HEAD
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Picker x:Name="itemBrand" Title="Choose Item Brand" >
-=======
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <Picker x:Name="itemBrand" Title="Choose Item Brand" VerticalOptions="Center" FontSize="Small">
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
                                     <Picker.Items>
                                         <x:String>Acer</x:String>
                                         <x:String>Dell</x:String>
@@ -195,7 +158,6 @@
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
-<<<<<<< HEAD
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Model :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Entry Keyboard="Default" Placeholder="Enter Item Model" PlaceholderColor="Gray" />
@@ -212,30 +174,12 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Receiver Name :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Entry Text="This should the the Username" />
-=======
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Model :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <Entry Keyboard="Default" Placeholder="Enter Item Model" PlaceholderColor="Gray" VerticalOptions="Center" FontSize="Small"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Quantity : " VerticalTextAlignment="Center"/>
-                                <Label Text="{Binding Source={x:Reference itemQuantityStepper}, Path=Value}}" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <Stepper x:Name="itemQuantityStepper" VerticalOptions="Center"/>
-                            </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
-                                <Label Text="Receiver Name :" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                                <Entry Text="'this should the the login user name" VerticalOptions="Center" FontSize="Small" FontAttributes="Italic"/>
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
                                 <!--This last entry should automatically set the login user as the receiver name-->
                             </StackLayout>
                         </ViewCell>
+
                         <ViewCell>
                             <Button Text="Save New Item"/>
-                            <!--Handler not set set-->
                         </ViewCell>
 
                     </TableSection>

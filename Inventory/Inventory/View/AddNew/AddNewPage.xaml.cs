@@ -16,7 +16,6 @@ namespace Inventory.View.AddNew
 	{
 		public AddNewPage ()
 		{
-<<<<<<< HEAD
 			InitializeComponent();
 
         }
@@ -60,15 +59,5 @@ namespace Inventory.View.AddNew
             }
             await DisplayAlert("File Location", file.Path, "OK");
         }
-=======
-			InitializeComponent ();
-		}
-
-        private void CameraButton_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("to bind to camera function", "New Item", "OK");
-        }
-
->>>>>>> d88d39b5518ed9291cc5190ae60b7cd1b2e3886b
     }
 }
