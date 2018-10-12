@@ -17,11 +17,14 @@ namespace Inventory.View.AddNew
 		public AddNewPage ()
 		{
 			InitializeComponent();
+
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
                 OnTapped();
             };
+
             TakenPicture.GestureRecognizers.Add(tapGestureRecognizer);
+
         }
 
     
@@ -43,7 +46,7 @@ namespace Inventory.View.AddNew
                 CustomPhotoSize = 50,
                 PhotoSize = PhotoSize.MaxWidthHeight,
                 MaxWidthHeight = 2000,
-                DefaultCamera = CameraDevice.Front
+                DefaultCamera = CameraDevice.Rear
             });
 
             if (file == null)
