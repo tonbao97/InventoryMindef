@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventory.View.SearchItem.SearchItemPage"
+             Title="Inventory Directory">
+    
+    <StackLayout>
+
+        <StackLayout Padding="5,0,5,0">
+            <SearchBar Placeholder="Search..."/>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Location: " VerticalTextAlignment="Center" FontSize="16"/>
+                <Picker x:Name="locationFilter" Title="Choose location..." SelectedIndexChanged="locationFilter_SelectedIndexChanged" FontSize="16" MinimumHeightRequest="16">
+                    <!-- These pickers have not been made bindable to the list as a filter yet -->
+                    <Picker.Items>
+                        <x:String>All</x:String>
+                        <x:String>Technical</x:String>
+                        <x:String>Application</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+        </StackLayout>
+
+        <!-- havent set event changed handler yet !-->
+        <ListView x:Name="listView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding EquipmentCategory}" ItemTapped="Item_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                            <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
+                            <Label Text="(3)" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Show All" Clicked="ShowButton_Clicked"/>
+        <!--Button element does not want to be entered in a ViewCell if its in a list; consider alternative UI other than ListView if issue-->
+    </StackLayout>
+
+</ContentPage>

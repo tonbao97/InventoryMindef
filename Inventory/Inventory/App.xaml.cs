@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventory.View;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -11,7 +12,7 @@ namespace Inventory
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()

@@ -11,7 +11,9 @@ namespace Inventory
     {
         public MainPage()
         {
+             
             InitializeComponent();
+           
         }
     }
 }
