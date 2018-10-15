@@ -29,6 +29,11 @@ namespace Inventory.View
         {
             await Navigation.PushAsync(new SearchItemPage());
         }
-        
+
+        private void ScanButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
