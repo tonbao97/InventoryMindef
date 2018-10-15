@@ -59,19 +59,17 @@
 
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
-<<<<<<< HEAD
-                                <Label Text="Item Type (Category) :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Picker x:Name="itemCategoryPicker" Title="Choose New Item Category" VerticalOptions="Center" FontSize="Small">
-=======
                                 <Label Text="Category:" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Picker x:Name="itemCategoryPicker" Title="Choose New Item Category" FontSize="Small" VerticalOptions="Center">
->>>>>>> eac4d358ff3282b000e6b213290f0ea082a91350
+
                                     <Picker.Items>
                                         <x:String>Computer</x:String>
                                         <x:String>Accessories/Parts</x:String>
                                         <x:String>Other Devices</x:String>
                                     </Picker.Items>
+                                    
                                 </Picker>
+                                    
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
