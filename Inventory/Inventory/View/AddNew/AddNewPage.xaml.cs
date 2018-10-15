@@ -10,7 +10,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Inventory.View.AddNew
-{
+{   
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddNewPage : ContentPage
 	{
