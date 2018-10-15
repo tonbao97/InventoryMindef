@@ -42,7 +42,8 @@
                     BackgroundColor="#0ba3f4"
                     BorderColor="Black"
                     BorderWidth="1"
-                    Image="Scan.png"/>
+                    Image="Scan.png"
+                    Clicked="ScanButton_Clicked"/>
                 <Button
                     Grid.Column="1"
                     Grid.Row="1"
