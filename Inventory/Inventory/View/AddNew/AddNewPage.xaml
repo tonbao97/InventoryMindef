@@ -40,10 +40,8 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Supplier Name :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-<<<<<<< HEAD
-=======
                                 <!--<Entry Keyboard="Default" Placeholder="Choose Supplier Name" PlaceholderColor="Gray" FontSize="Small" VerticalOptions="Center"/>-->
->>>>>>> 6a8f4741d077d24a44bb9cfd732249e69aceb7c9
+
                                 <Picker x:Name="SupplierPicker" Title="Choose Supplier" FontSize="Small" VerticalOptions="Center">
                                     <Picker.Items>
                                         <x:String>Aidee</x:String>
@@ -52,9 +50,7 @@
                                         <x:String>Anas</x:String>
                                     </Picker.Items>
                                 </Picker>
-<<<<<<< HEAD
                                 <Button Text="+" WidthRequest="30"/>
-=======
                                 <Button Text="+" 
                                         WidthRequest="40" 
                                         HeightRequest="30"
@@ -63,7 +59,6 @@
                                         BackgroundColor="#166bf4"
                                         TextColor="White"
                                         />
->>>>>>> 6a8f4741d077d24a44bb9cfd732249e69aceb7c9
                             </StackLayout>
                         </ViewCell>
 
