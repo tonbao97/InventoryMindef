@@ -61,6 +61,9 @@
     <PackageReference Include="Plugin.Permissions">
       <Version>3.0.0.12</Version>
     </PackageReference>
+    <PackageReference Include="Rg.Plugins.Popup">
+      <Version>1.1.4.168</Version>
+    </PackageReference>
     <PackageReference Include="Xam.FormsPlugin.IconEntry">
       <Version>1.1.1</Version>
     </PackageReference>

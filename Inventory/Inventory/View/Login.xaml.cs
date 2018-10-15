@@ -39,7 +39,6 @@ namespace Inventory.View
                 //dict.Add("password", Password.Text);
                 //dict.Add("grant_type", "password");
                 //var client = new HttpClient();
-                ////var req = new HttpRequestMessage(HttpMethod.Post, Url) { Content = new FormUrlEncodedContent(dict) };
                 //var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
                 //if (response.IsSuccessStatusCode)
                 //{
@@ -47,15 +46,17 @@ namespace Inventory.View
 
                 //    var Token = JsonConvert.DeserializeObject<Token>(text.Result);
 
+                //    await DisplayAlert("Error", Token.access_token + Token.userName , "Ok");
                 await Navigation.PushAsync(new MainMenu());
                 //}
                 //else
                 //{
                 //    await DisplayAlert("Error", "Wrong username or password", "Ok");
+                //    Error.Text = "Wrong username or password";
                 //}
-                //}
-
             }
+
+        }
         }
     }
-}
+
