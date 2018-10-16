@@ -1,5 +1,6 @@
 ﻿using Inventory.View.AddNew;
 using Inventory.View.SearchItem;
+using Inventory.View.Scan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,9 +31,9 @@ namespace Inventory.View
             await Navigation.PushAsync(new SearchItemPage());
         }
 
-        private void ScanButton_Clicked(object sender, EventArgs e)
+        async void ScanButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ScanPage());
         }
 
     }

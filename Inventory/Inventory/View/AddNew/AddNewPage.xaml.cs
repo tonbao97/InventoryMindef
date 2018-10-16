@@ -14,18 +14,17 @@ namespace Inventory.View.AddNew
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddNewPage : ContentPage
 	{
-		public AddNewPage ()
+		public AddNewPage()
 		{
 			InitializeComponent();
+
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
                 OnTapped();
             };
+
             TakenPicture.GestureRecognizers.Add(tapGestureRecognizer);
         }
-
-    
-
 
         private async void OnTapped ()
         {
