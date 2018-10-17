@@ -19,22 +19,25 @@ namespace Inventory.View.AddNew
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddNewPage : ContentPage
 	{
+<<<<<<< HEAD
 
 
         private const string Url = "http://192.168.137.232:12345/api/Equipments/AddEquipment";
         private HttpClient client = new HttpClient();
         public AddNewPage ()
+=======
+		public AddNewPage()
+>>>>>>> 84eb0a28e8c0cea45e4f767488fa28d698f7a94f
 		{
 			InitializeComponent();
+
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) => {
                 OnTapped();
             };
+
             TakenPicture.GestureRecognizers.Add(tapGestureRecognizer);
         }
-
-    
-
 
         private async void OnTapped ()
         {
