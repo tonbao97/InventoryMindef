@@ -15,14 +15,11 @@ namespace Inventory.View.AddNew
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddNewPage : ContentPage
 	{
-
-
-
         private const string Url = "http://192.168.137.232:12345/api/Equipments/AddEquipment";
         private HttpClient client = new HttpClient();
         bool once = false;
-		public AddNewPage()
 
+		public AddNewPage()
 		{
 			InitializeComponent();
 

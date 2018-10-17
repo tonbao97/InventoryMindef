@@ -11,5 +11,14 @@ namespace Inventory.Models
         public string ItemCategory { get; set; }
         public string ItemType { get; set; }
         public string Location { get; set; }
+
+        public string DeliveryOrderNo { get; set; }
+        public string DeliveryDate { get; set; }
+        public string SupplierName { get; set; }
+        public int CategoryID { get; set; }
+        public string BrandName { get; set; }
+        public string Model { get; set; }
+        public int Quantity { get; set; }
+        public string Picture { get; set; }
     }
 }

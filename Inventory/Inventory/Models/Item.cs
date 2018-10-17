@@ -15,7 +15,15 @@ namespace Inventory.Models
         public int Quantity { get; set; }
         public string Picture { get; set; }
 
-        public Item(string deliveryOrderNo, string deliveryDate, string supplierName, int categoryID, string brandName, string model, int quantity, string picture)
+        public Item(
+            string deliveryOrderNo, 
+            string deliveryDate, 
+            string supplierName, 
+            int categoryID, 
+            string brandName, 
+            string model, 
+            int quantity, 
+            string picture)
         {
             DeliveryOrderNo = deliveryOrderNo;
             DeliveryDate = deliveryDate;

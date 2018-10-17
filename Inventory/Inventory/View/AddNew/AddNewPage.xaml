@@ -151,8 +151,6 @@
                             </StackLayout>
                         </ViewCell>
                         
-                        
-                        
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>

@@ -12,9 +12,9 @@ namespace Inventory.Services
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItemDetailsPage : ContentPage
 	{
-		public ItemDetailsPage ()
+		public ItemDetailsPage()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 	}
 }
