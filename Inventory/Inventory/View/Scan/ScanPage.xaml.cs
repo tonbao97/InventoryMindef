@@ -19,31 +19,40 @@ namespace Inventory.View.Scan
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScanPage : ContentPage
     {
+        bool Scanned = false;
         public ScanPage()
         {
             InitializeComponent();
         }
 
-        async void ScanButton_Clicked(object sender, EventArgs e)
+        protected override void OnAppearing()
         {
-            var scan = new ZXingScannerPage();
-            await Navigation.PushAsync(scan);
-            scan.OnScanResult += (result) =>
+            base.OnAppearing();
+            ScanQr();
+            PictureTaken.Source = ImageSource.FromUri(new Uri("https://firebasestorage.googleapis.com/v0/b/fir-7f783.appspot.com/o/Pic%2Fimage.jpg?alt=media&token=6ecba52d-f686-49d7-a288-7145b7baa5e3"));
+        }
+
+        private void ScanQr() {
+            if (!Scanned)
             {
-                Device.BeginInvokeOnMainThread(async () =>
+                var scan = new ZXingScannerPage();
+                Navigation.PushAsync(scan);
+                scan.OnScanResult += (result) =>
                 {
-                    await Navigation.PopAsync();
-                    ScannedCode.Text = result.Text;
-                });
-            };
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        ScannedCode.Text = result.Text;
+                        Scanned = true;
+                        await Navigation.PopAsync();
+                    });
+                };
+            }
         }
 
         async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ItemDetailsPage());
         }
-
-
 
 
         //private  async void Button_Clicked(object sender, EventArgs e)

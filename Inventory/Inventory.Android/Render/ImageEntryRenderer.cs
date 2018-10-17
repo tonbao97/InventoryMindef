@@ -49,6 +49,11 @@ namespace Inventory.Droid.Render
             }
             editText.CompoundDrawablePadding = 25;
             Control.Background.SetColorFilter(element.LineColor.ToAndroid(), PorterDuff.Mode.SrcAtop);
+            var gradientDrawable = new GradientDrawable();
+            gradientDrawable.SetStroke(3,Android.Graphics.Color.Black);
+            gradientDrawable.SetColor(Android.Graphics.Color.ParseColor("#E8E8E8"));
+            Control.SetBackground(gradientDrawable);
+            Control.SetPadding(50,Control.PaddingTop,Control.PaddingRight,Control.PaddingBottom);
         }
 
         private BitmapDrawable GetDrawable(string imageEntryImage)

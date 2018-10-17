@@ -1,20 +1,28 @@
-﻿using Plugin.Media;
+﻿using Inventory.Models;
+using Newtonsoft.Json;
+using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Rg.Plugins.Popup.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Inventory.View.AddNew
-{   
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AddNewPage : ContentPage
 	{
+
+
+
+        private const string Url = "http://192.168.137.232:12345/api/Equipments/AddEquipment";
+        private HttpClient client = new HttpClient();
+        bool once = false;
 		public AddNewPage()
+
 		{
 			InitializeComponent();
 
@@ -64,6 +72,33 @@ namespace Inventory.View.AddNew
                 //Url.Text = imgurl;
             }
             await DisplayAlert("File Location", file.Path, "OK");
+        }
+
+        private void AddSupplier_Clicked(object sender, EventArgs e)
+        {
+            PopupNavigation.Instance.PushAsync(new PopupSupplier());
+        }
+
+        private void AddBrand_Clicked(object sender, EventArgs e)
+        {
+            PopupNavigation.Instance.PushAsync(new PopupBrand());
+        }
+
+        private void Save_Clicked(object sender, EventArgs e)
+        {
+
+            string token = Application.Current.Properties["Token"].ToString();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
+            DateTime day = Date.Date;
+            var DayChoose = String.Format("{0:yyyy/MM/dd}", day);
+
+            Item newItem = new Item(DeliveryOrderNo.Text, DayChoose, SupplierPicker.SelectedItem.ToString(), CategoryPicker.SelectedIndex, itemBrand.SelectedItem.ToString(), Model.Text, int.Parse(Quantity.Text), "");
+
+
+            var content = JsonConvert.SerializeObject(newItem);
+            var res = client.PostAsync(Url, new StringContent(content, Encoding.UTF8, "application/json"));
+            DisplayAlert("Check", res.Result.ToString(), "OK");
+
         }
     }
 }

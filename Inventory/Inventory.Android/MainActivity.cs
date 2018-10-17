@@ -24,6 +24,7 @@ namespace Inventory.Droid
             base.OnCreate(savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            Rg.Plugins.Popup.Popup.Init(this,savedInstanceState);
             ImageCircleRenderer.Init();
             LoadApplication(new App());
         }

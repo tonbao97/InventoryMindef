@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventory.View.AddNew.PopupBrand"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:local="clr-namespace:Inventory.Render">
+    <StackLayout
+        Margin="12"
+        Padding="24"
+        Spacing="24"
+        BackgroundColor="White"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        HeightRequest="150"
+        WidthRequest="300">
+
+            <Label Text="Add new Brand"/>
+            <local:ImageEntry TextColor="Black" 
+         Placeholder="Add Brand"
+         x:Name="Brand"/>
+        <Button Text="Add"
+           BackgroundColor="White"
+           TextColor="DarkBlue"
+           BorderRadius="50"
+           BorderColor="DarkBlue"
+           BorderWidth="1"
+           Clicked="Add_Clicked"  />
+    </StackLayout>
+
+</pages:PopupPage>

@@ -19,6 +19,7 @@
             </AbsoluteLayout>
             
             <Label Text="" x:Name="ScannedCode" TextColor="Red" HorizontalOptions="Center"/>
+<<<<<<< HEAD
             <StackLayout Padding="30,10,30,10" HorizontalOptions="CenterAndExpand">
                 <Button Text="New Scan" Clicked="ScanButton_Clicked"/>
                 <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>
@@ -29,6 +30,12 @@
                 <!-- I also want this view option to popup only after a scan has been inputted -->
                 <!-- The button should open up the ItemDetailsPage which should apply the scanned ID to return that item's details -->
             </StackLayout>
+=======
+            <!--<StackLayout Padding="30,10,30,10">
+                <Button Text="New Scan" Clicked="ScanButton_Clicked"/>
+                <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            </StackLayout>-->
+>>>>>>> 5d756af7808671f2da8aea046f4ffc53dbdaadb8
 
         </StackLayout>
     </ContentPage.Content>
