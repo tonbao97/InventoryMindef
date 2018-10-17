@@ -20,11 +20,16 @@ namespace Inventory.Models
             DeliveryOrderNo = deliveryOrderNo;
             DeliveryDate = deliveryDate;
             SupplierName = supplierName;
-            CategoryID = categoryID;
+            CategoryID = categoryID + 1;
             BrandName = brandName;
             Model = model;
             Quantity = quantity;
             Picture = picture;
+        }
+
+        public override string ToString()
+        {
+            return string.Format($"{DeliveryOrderNo}  {DeliveryDate}  {SupplierName}  {CategoryID} {BrandName} {Model} {Quantity} {Picture} ");
         }
     }
 }

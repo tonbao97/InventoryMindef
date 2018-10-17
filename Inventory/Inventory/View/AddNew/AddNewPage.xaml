@@ -21,10 +21,9 @@
 
             <TableView Intent="Form">
                 <TableRoot >
-                    
-                    <TableSection Title="Delivery Details" >
 
-                        <ViewCell>
+                    <TableSection Title="Delivery Details" >
+                        <ViewCell >
                             <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
                                 <Label Text="Delivery Order No. :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
                                 <Entry Keyboard="Default" 
@@ -32,7 +31,7 @@
                                        PlaceholderColor="Gray" 
                                        FontSize="Small" 
                                        VerticalOptions="Center"
-                                       x:Name="DeliveryOrderNo"
+                                       x:Name="DeliveryOrderNo"                                    
                                        />
                                 <!--In the future need to make this be customized to the format of the actual DO in the database-->
                             </StackLayout>
