@@ -12,6 +12,7 @@ using ZXing.QrCode;
 using ZXing.Mobile;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Inventory.Services;
 
 namespace Inventory.View.Scan
 {
@@ -35,6 +36,11 @@ namespace Inventory.View.Scan
                     ScannedCode.Text = result.Text;
                 });
             };
+        }
+
+        async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ItemDetailsPage());
         }
 
 
