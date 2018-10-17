@@ -51,6 +51,7 @@
                     BorderColor="Black"
                     BorderWidth="1"
                     Image="logout.png"
+                    Clicked="Logout_Clicked"
                     />
             </Grid>
         </AbsoluteLayout>

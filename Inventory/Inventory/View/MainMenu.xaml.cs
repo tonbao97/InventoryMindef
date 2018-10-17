@@ -35,5 +35,12 @@ namespace Inventory.View
 
         }
 
+        private void Logout_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.Properties["Token"] = null;
+            Application.Current.Properties["Name"] = null;
+            Application.Current.Properties["Type"] = null;
+            Navigation.PopAsync();
+        }
     }
 }
