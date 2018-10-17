@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace Data.Models
         public virtual HDDOption HDD { get; set; }
         public virtual OSOption OS { get; set; }
         public virtual VGAOption VGA { get; set; }
+        [ForeignKey("ComputerID")]
         public virtual Equipment Computer { get; set; }
 
 

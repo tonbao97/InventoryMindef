@@ -12,6 +12,75 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="ApplicationInsights.config">
       <publishTime>10/04/2018 09:35:18</publishTime>
     </File>
+    <File Include="Areas/Admin/Views/Categories/Create.cshtml">
+      <publishTime>10/11/2018 22:24:23</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Categories/Delete.cshtml">
+      <publishTime>10/11/2018 22:01:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Categories/Details.cshtml">
+      <publishTime>10/11/2018 22:01:23</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Categories/Edit.cshtml">
+      <publishTime>10/11/2018 22:26:43</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Categories/Index.cshtml">
+      <publishTime>10/11/2018 22:01:27</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Equipments/Create.cshtml">
+      <publishTime>10/11/2018 13:31:54</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Equipments/Delete.cshtml">
+      <publishTime>10/11/2018 13:12:54</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Equipments/Details.cshtml">
+      <publishTime>10/11/2018 13:12:55</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Equipments/Edit.cshtml">
+      <publishTime>10/11/2018 23:05:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Equipments/Index.cshtml">
+      <publishTime>10/11/2018 23:03:44</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/EquipmentTypes/Create.cshtml">
+      <publishTime>10/11/2018 13:40:43</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/EquipmentTypes/Delete.cshtml">
+      <publishTime>10/11/2018 13:34:16</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/EquipmentTypes/Details.cshtml">
+      <publishTime>10/11/2018 13:34:19</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/EquipmentTypes/Edit.cshtml">
+      <publishTime>10/11/2018 13:34:22</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/EquipmentTypes/Index.cshtml">
+      <publishTime>10/11/2018 13:47:36</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Items/Create.cshtml">
+      <publishTime>10/11/2018 23:19:02</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Items/Delete.cshtml">
+      <publishTime>10/11/2018 23:19:04</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Items/Details.cshtml">
+      <publishTime>10/11/2018 23:19:06</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Items/Edit.cshtml">
+      <publishTime>10/11/2018 23:19:08</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Items/Index.cshtml">
+      <publishTime>10/11/2018 23:19:10</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
+      <publishTime>10/17/2018 14:04:59</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/web.config">
+      <publishTime>10/11/2018 13:10:57</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/_ViewStart.cshtml">
+      <publishTime>10/11/2018 13:12:50</publishTime>
+    </File>
     <File Include="Areas/HelpPage/HelpPage.css">
       <publishTime>10/04/2018 09:35:11</publishTime>
     </File>
@@ -84,14 +153,41 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/ApplicationInsights.config">
       <publishTime>10/04/2018 09:35:18</publishTime>
     </File>
+    <File Include="bin/Autofac.dll">
+      <publishTime>08/18/2016 15:15:34</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.Mvc.dll">
+      <publishTime>04/10/2017 15:40:32</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.dll">
+      <publishTime>06/21/2018 18:25:22</publishTime>
+    </File>
+    <File Include="bin/Autofac.Integration.WebApi.pdb">
+      <publishTime>06/21/2018 18:25:22</publishTime>
+    </File>
+    <File Include="bin/CommonServiceLocator.dll">
+      <publishTime>09/01/2018 04:02:00</publishTime>
+    </File>
+    <File Include="bin/CommonServiceLocator.pdb">
+      <publishTime>09/01/2018 04:02:00</publishTime>
+    </File>
+    <File Include="bin/Core.dll">
+      <publishTime>10/12/2018 21:03:10</publishTime>
+    </File>
+    <File Include="bin/Core.dll.config">
+      <publishTime>10/11/2018 15:22:12</publishTime>
+    </File>
+    <File Include="bin/Core.pdb">
+      <publishTime>10/12/2018 21:03:10</publishTime>
+    </File>
     <File Include="bin/Data.dll">
-      <publishTime>10/11/2018 12:28:47</publishTime>
+      <publishTime>10/17/2018 14:39:28</publishTime>
     </File>
     <File Include="bin/Data.dll.config">
-      <publishTime>10/04/2018 10:02:12</publishTime>
+      <publishTime>10/13/2018 08:56:24</publishTime>
     </File>
     <File Include="bin/Data.pdb">
-      <publishTime>10/11/2018 12:28:47</publishTime>
+      <publishTime>10/17/2018 14:39:28</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 10:32:26</publishTime>
@@ -100,31 +196,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 10:32:26</publishTime>
     </File>
     <File Include="bin/Inventory.dll">
-      <publishTime>10/11/2018 12:28:53</publishTime>
+      <publishTime>10/17/2018 14:39:33</publishTime>
     </File>
     <File Include="bin/Inventory.pdb">
-      <publishTime>10/11/2018 12:28:53</publishTime>
+      <publishTime>10/17/2018 14:39:33</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
-      <publishTime>11/30/2016 17:07:42</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.DependencyCollector.dll">
-      <publishTime>12/07/2016 12:45:42</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.PerfCounterCollector.dll">
-      <publishTime>12/07/2016 12:50:34</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.ServerTelemetryChannel.dll">
-      <publishTime>12/06/2016 16:15:48</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Web.dll">
-      <publishTime>12/07/2016 12:49:10</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.WindowsServer.dll">
-      <publishTime>12/07/2016 12:50:34</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.ApplicationInsights.dll">
-      <publishTime>12/06/2016 16:09:52</publishTime>
+      <publishTime>10/12/2018 18:25:29</publishTime>
     </File>
     <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
       <publishTime>04/03/2015 18:07:22</publishTime>
@@ -321,38 +417,101 @@ by editing this MSBuild file. In order to learn more about this please visit htt
     <File Include="bin/roslyn/VBCSCompiler.exe.config">
       <publishTime>09/22/2017 00:42:00</publishTime>
     </File>
+    <File Include="bin/Service.dll">
+      <publishTime>10/17/2018 14:39:28</publishTime>
+    </File>
+    <File Include="bin/Service.pdb">
+      <publishTime>10/17/2018 14:39:28</publishTime>
+    </File>
+    <File Include="bin/System.Configuration.ConfigurationManager.dll">
+      <publishTime>11/20/2017 18:09:04</publishTime>
+    </File>
     <File Include="bin/System.Net.Http.Formatting.dll">
-      <publishTime>01/28/2015 05:02:42</publishTime>
+      <publishTime>05/10/2018 22:38:56</publishTime>
+    </File>
+    <File Include="bin/System.Web.Cors.dll">
+      <publishTime>05/10/2018 22:37:02</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
-      <publishTime>01/28/2015 05:04:30</publishTime>
+      <publishTime>05/10/2018 22:42:40</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.Cors.dll">
+      <publishTime>05/10/2018 22:39:40</publishTime>
     </File>
     <File Include="bin/System.Web.Http.dll">
-      <publishTime>01/28/2015 05:02:54</publishTime>
+      <publishTime>05/10/2018 22:39:16</publishTime>
     </File>
     <File Include="bin/System.Web.Http.Owin.dll">
       <publishTime>01/28/2015 05:03:16</publishTime>
     </File>
     <File Include="bin/System.Web.Http.WebHost.dll">
-      <publishTime>01/28/2015 05:03:46</publishTime>
+      <publishTime>01/28/2015 04:03:46</publishTime>
     </File>
     <File Include="bin/System.Web.Mvc.dll">
-      <publishTime>01/28/2015 05:02:18</publishTime>
+      <publishTime>05/10/2018 22:38:08</publishTime>
     </File>
     <File Include="bin/System.Web.Optimization.dll">
       <publishTime>02/11/2014 16:26:04</publishTime>
     </File>
     <File Include="bin/System.Web.Razor.dll">
-      <publishTime>01/28/2015 05:02:32</publishTime>
+      <publishTime>05/10/2018 22:38:32</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Deployment.dll">
-      <publishTime>01/28/2015 05:04:30</publishTime>
+      <publishTime>05/10/2018 22:42:40</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.dll">
-      <publishTime>01/28/2015 05:04:30</publishTime>
+      <publishTime>05/10/2018 22:42:40</publishTime>
     </File>
     <File Include="bin/System.Web.WebPages.Razor.dll">
-      <publishTime>01/28/2015 05:04:30</publishTime>
+      <publishTime>05/10/2018 22:42:40</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.dll">
+      <publishTime>09/01/2018 04:01:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Abstractions.pdb">
+      <publishTime>09/01/2018 04:01:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Configuration.dll">
+      <publishTime>09/01/2018 04:02:00</publishTime>
+    </File>
+    <File Include="bin/Unity.Configuration.pdb">
+      <publishTime>09/01/2018 04:02:00</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.dll">
+      <publishTime>09/01/2018 04:01:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Container.pdb">
+      <publishTime>09/01/2018 04:01:54</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.Configuration.dll">
+      <publishTime>09/01/2018 04:02:06</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.Configuration.pdb">
+      <publishTime>09/01/2018 04:02:06</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.dll">
+      <publishTime>09/01/2018 04:02:02</publishTime>
+    </File>
+    <File Include="bin/Unity.Interception.pdb">
+      <publishTime>09/01/2018 04:02:02</publishTime>
+    </File>
+    <File Include="bin/Unity.Mvc.dll">
+      <publishTime>08/29/2018 13:10:58</publishTime>
+    </File>
+    <File Include="bin/Unity.RegistrationByConvention.dll">
+      <publishTime>09/01/2018 04:02:04</publishTime>
+    </File>
+    <File Include="bin/Unity.RegistrationByConvention.pdb">
+      <publishTime>09/01/2018 04:02:04</publishTime>
+    </File>
+    <File Include="bin/Unity.ServiceLocation.dll">
+      <publishTime>09/01/2018 04:02:00</publishTime>
+    </File>
+    <File Include="bin/Unity.ServiceLocation.pdb">
+      <publishTime>09/01/2018 04:02:00</publishTime>
+    </File>
+    <File Include="bin/WebActivatorEx.dll">
+      <publishTime>10/05/2016 13:11:52</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>09/10/2013 18:28:38</publishTime>
@@ -430,7 +589,43 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/04/2018 09:34:57</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>10/04/2018 09:34:57</publishTime>
+      <publishTime>10/17/2018 14:05:33</publishTime>
+    </File>
+    <File Include="Views/UserManage/ConfirmEmail.cshtml">
+      <publishTime>10/17/2018 11:10:15</publishTime>
+    </File>
+    <File Include="Views/UserManage/ExternalLoginConfirmation.cshtml">
+      <publishTime>10/17/2018 12:51:07</publishTime>
+    </File>
+    <File Include="Views/UserManage/ExternalLoginFailure.cshtml">
+      <publishTime>10/17/2018 11:10:15</publishTime>
+    </File>
+    <File Include="Views/UserManage/ForgotPassword.cshtml">
+      <publishTime>10/17/2018 12:51:15</publishTime>
+    </File>
+    <File Include="Views/UserManage/ForgotPasswordConfirmation.cshtml">
+      <publishTime>10/17/2018 11:10:15</publishTime>
+    </File>
+    <File Include="Views/UserManage/Login.cshtml">
+      <publishTime>10/17/2018 12:50:53</publishTime>
+    </File>
+    <File Include="Views/UserManage/Register.cshtml">
+      <publishTime>10/17/2018 12:51:28</publishTime>
+    </File>
+    <File Include="Views/UserManage/ResetPassword.cshtml">
+      <publishTime>10/17/2018 12:51:33</publishTime>
+    </File>
+    <File Include="Views/UserManage/ResetPasswordConfirmation.cshtml">
+      <publishTime>10/17/2018 12:51:40</publishTime>
+    </File>
+    <File Include="Views/UserManage/SendCode.cshtml">
+      <publishTime>10/17/2018 12:51:47</publishTime>
+    </File>
+    <File Include="Views/UserManage/VerifyCode.cshtml">
+      <publishTime>10/17/2018 12:51:51</publishTime>
+    </File>
+    <File Include="Views/UserManage/_ExternalLoginsListPartial.cshtml">
+      <publishTime>10/17/2018 12:50:58</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>10/04/2018 09:34:57</publishTime>
@@ -439,7 +634,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/04/2018 09:34:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/11/2018 12:28:54</publishTime>
+      <publishTime>10/16/2018 15:15:47</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -20,6 +20,7 @@ namespace Data
         public InventoryEntities()
             : base("name=InventoryEntities")
         {
+            this.Configuration.ProxyCreationEnabled = false;
         }
 
         public DbSet<Accessory> Accessories { get; set; }

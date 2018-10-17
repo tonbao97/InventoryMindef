@@ -4,3 +4,77 @@ C:\Users\trung\OneDrive\Desktop\test project\Inventory\Core\obj\Debug\Core.cspro
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Core\obj\Debug\Core.dll
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Core\obj\Debug\Core.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Core.dll.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Core.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\System.Net.Security.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\obj\Debug\Core.csproj.CopyComplete
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\obj\Debug\Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Core\obj\Debug\Core.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Core.dll.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Core.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\AutoMapper.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Caffeinated.Toolbox.Web.Security.WinNtAuthentication.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Newtonsoft.Json.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Net.Security.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.ValueTuple.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Helpers.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Mvc.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Mvc.Extensions.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Razor.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.WebPages.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\AutoMapper.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\AutoMapper.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.Owin.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\Newtonsoft.Json.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.ValueTuple.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Helpers.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Mvc.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Mvc.Extensions.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Mvc.Extensions.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.Razor.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.WebPages.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\bin\Debug\en-US\System.Web.Mvc.Extensions.resources.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\obj\Debug\Core.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\obj\Debug\Core.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\obj\Debug\Core.csproj.CopyComplete
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\obj\Debug\Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Core\obj\Debug\Core.pdb

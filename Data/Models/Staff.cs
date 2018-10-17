@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,10 @@ namespace Data.Models
 {
     public class Staff: BasicAttr
     {
+        [DisplayName(@"Staff")]
+        public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
+        public string IdentityNo { get; set; }
         public string Designation { get; set; }
         public string MobileNumber { get; set; }
         public string TelephoneNumber { get; set; }

@@ -131,3 +131,319 @@ C:\Users\trung\OneDrive\Desktop\test project\Inventory\Inventory\obj\Release\Inv
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Inventory\obj\Release\Inventory.csproj.CopyComplete
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Inventory\obj\Release\Inventory.dll
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Inventory\obj\Release\Inventory.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\ApplicationInsights.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Inventory.dll.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Inventory.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Inventory.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\csc.exe
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\csc.exe.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\csc.rsp
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\csi.exe
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\csi.exe.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\csi.rsp
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.AppContext.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Console.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.IO.Compression.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.IO.Pipes.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.Claims.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Threading.Thread.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.ValueTuple.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Xml.XPath.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\vbc.exe
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\vbc.exe.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\vbc.rsp
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\VBCSCompiler.exe
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Antlr3.Runtime.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Autofac.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Autofac.Integration.Mvc.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Data.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\EntityFramework.SqlServer.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.Web.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.ApplicationInsights.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Newtonsoft.Json.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Service.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Net.Http.Formatting.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Cors.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Helpers.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.Cors.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.WebHost.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Mvc.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Optimization.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Razor.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.WebPages.Deployment.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.WebPages.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.WebPages.Razor.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Unity.Abstractions.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Unity.Container.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Unity.Mvc.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\WebActivatorEx.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\WebGrease.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\PagedList.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Core.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Core.dll.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Data.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Data.dll.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Service.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Autofac.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Autofac.Integration.Mvc.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Net.Http.Formatting.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Helpers.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.Cors.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Mvc.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Razor.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.WebPages.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.WebPages.Deployment.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.WebPages.Razor.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Newtonsoft.Json.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.WebHost.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Optimization.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Antlr3.Runtime.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\EntityFramework.SqlServer.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\System.Web.Http.Owin.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.ApplicationInsights.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\Microsoft.AI.Web.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\bin\PagedList.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\obj\Release\Inventory.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\obj\Release\Inventory.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\obj\Release\Inventory.csproj.CopyComplete
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\obj\Release\Inventory.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Inventory\obj\Release\Inventory.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\ApplicationInsights.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Inventory.dll.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Inventory.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Inventory.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\csc.exe
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\csc.exe.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\csc.rsp
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\csi.exe
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\csi.exe.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\csi.rsp
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.AppContext.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Console.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Diagnostics.Process.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.IO.Compression.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.IO.FileSystem.DriveInfo.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.IO.Pipes.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.Claims.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Threading.Thread.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.ValueTuple.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Xml.XPath.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\vbc.exe
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\vbc.exe.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\vbc.rsp
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\VBCSCompiler.exe
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Antlr3.Runtime.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.Integration.Mvc.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Data.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\EntityFramework.SqlServer.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.Web.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.ApplicationInsights.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Newtonsoft.Json.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Service.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Net.Http.Formatting.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Cors.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Helpers.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.Cors.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.WebHost.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Mvc.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Optimization.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Razor.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.WebPages.Deployment.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.WebPages.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.WebPages.Razor.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Abstractions.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Container.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Mvc.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\WebActivatorEx.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\WebGrease.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\PagedList.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Core.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Core.dll.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Data.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Data.dll.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Service.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.Integration.Mvc.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Net.Http.Formatting.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Helpers.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.Cors.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Mvc.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Razor.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.WebPages.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.WebPages.Deployment.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.WebPages.Razor.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Newtonsoft.Json.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.WebHost.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Optimization.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Antlr3.Runtime.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\EntityFramework.SqlServer.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Web.Http.Owin.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.ApplicationInsights.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Microsoft.AI.Web.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\PagedList.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\obj\Release\Inventory.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\obj\Release\Inventory.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\obj\Release\Inventory.csproj.CopyComplete
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\obj\Release\Inventory.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\obj\Release\Inventory.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.Integration.WebApi.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\CommonServiceLocator.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\System.Configuration.ConfigurationManager.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Configuration.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Interception.Configuration.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Interception.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.RegistrationByConvention.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.ServiceLocation.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.Integration.WebApi.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Autofac.Integration.WebApi.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\CommonServiceLocator.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Abstractions.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Configuration.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Container.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Interception.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.Interception.Configuration.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.RegistrationByConvention.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Inventory\bin\Unity.ServiceLocation.pdb

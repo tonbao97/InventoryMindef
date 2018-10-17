@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace Data.Models
 {
     public class Supplier: BasicAttr
     {
+        [DisplayName(@"Supplier")]
+        public string Name { get; set; }
         public DateTime CreatedDate { get; set; }
         public string ContactPerson { get; set; }
         public string MobileNumber { get; set; }
@@ -20,7 +23,8 @@ namespace Data.Models
             this.CreatedDate = DateTime.Now;
         }
 
-        public virtual ICollection<Equipment> Equipments { get; set; }
+        public virtual ICollection<DeliveryPackage> DeliveryPackages { get; set; }
+
 
     }
 }

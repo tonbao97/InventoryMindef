@@ -1,0 +1,36 @@
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Service.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Service.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Data.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\PagedList.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Data.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Data.dll.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\bin\Release\PagedList.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\obj\Release\Service.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\obj\Release\Service.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\obj\Release\Service.csproj.CopyComplete
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\obj\Release\Service.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Service\obj\Release\Service.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Service.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Service.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Data.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\PagedList.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Data.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Data.dll.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\bin\Release\PagedList.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\obj\Release\Service.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\obj\Release\Service.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\obj\Release\Service.csproj.CopyComplete
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\obj\Release\Service.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Service\obj\Release\Service.pdb

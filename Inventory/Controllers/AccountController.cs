@@ -18,11 +18,13 @@ using Inventory.Providers;
 using Inventory.Results;
 using Data;
 using Data.Models;
+using System.Web.Http.Cors;
 
 namespace Inventory.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
+    [EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";

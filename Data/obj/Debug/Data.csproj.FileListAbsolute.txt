@@ -29,3 +29,65 @@ C:\Users\trung\OneDrive\Desktop\test project\Inventory\Data\obj\Debug\Data.cspro
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Data\obj\Debug\Data.dll
 C:\Users\trung\OneDrive\Desktop\test project\Inventory\Data\obj\Debug\Data.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Data.dll.config
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Data.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Data.pdb
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Owin.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\PagedList.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\bin\Debug\PagedList.xml
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\obj\Debug\Data.dll
+C:\Users\trung\OneDrive\Desktop\test project\Inventory - Copy\Data\obj\Debug\Data.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Data.dll.config
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Data.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Data.pdb
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Newtonsoft.Json.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Owin.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\PagedList.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\Newtonsoft.Json.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\bin\Debug\PagedList.xml
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\obj\Debug\Data.csprojAssemblyReference.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\obj\Debug\Data.csproj.CoreCompileInputs.cache
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\obj\Debug\Data.csproj.CopyComplete
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\obj\Debug\Data.dll
+C:\Users\trung\OneDrive\Documents\GitHub\InventoryProject\Data\obj\Debug\Data.pdb

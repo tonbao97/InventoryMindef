@@ -7,7 +7,10 @@ using System.Threading.Tasks;
 
 namespace Data
 {
-    class InventorySampleData : DropCreateDatabaseIfModelChanges<InventoryEntities>
+    public class InventorySampleData : DropCreateDatabaseIfModelChanges<InventoryEntities>
     {
+        protected override void Seed(InventoryEntities context)
+        {
+        }
     }
 }
