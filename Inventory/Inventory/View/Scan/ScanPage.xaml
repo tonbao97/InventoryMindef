@@ -19,10 +19,10 @@
             </AbsoluteLayout>
             
             <Label Text="" x:Name="ScannedCode" TextColor="Red" HorizontalOptions="Center"/>
-            <StackLayout Padding="30,10,30,10">
+            <!--<StackLayout Padding="30,10,30,10">
                 <Button Text="New Scan" Clicked="ScanButton_Clicked"/>
                 <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>
-            </StackLayout>
+            </StackLayout>-->
 
         </StackLayout>
     </ContentPage.Content>
