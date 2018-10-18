@@ -3,8 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inventory.View.AddNew.AddNewPage"
              Title="Add New Item"
-             xmlns:local="clr-namespace:Inventory.Render"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"> <!--this is to direct xaml to markup extension to the c# assembly that stores DateTime.Today-->
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"> 
+    
+    <!--this is to direct xaml to markup extension to the c# assembly that stores DateTime.Today-->
     
     <ContentPage.Content>
         <StackLayout Padding="0,5,0,0">
@@ -12,30 +13,32 @@
             <AbsoluteLayout>
                 <Image
                         BackgroundColor="Gray"
-                        AbsoluteLayout.LayoutBounds="0.5,0.1,200,200"
+                        AbsoluteLayout.LayoutBounds="0.5,0.1,300,300"
                         AbsoluteLayout.LayoutFlags="PositionProportional"
                         x:Name="TakenPicture"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"/>
             </AbsoluteLayout>
 
-            <TableView Intent="Form">
-                <TableRoot >
-
+            <TableView>
+                <TableRoot>
                     <TableSection Title="Delivery Details" >
-                        <ViewCell >
+                        <!--In the future need to make this be customized to the format of the actual DO in the database-->
+
+                        <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
                                 <Label Text="Delivery Order No. :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
                                 <Entry Keyboard="Default" 
                                        Placeholder="'Format of DO: xx-xxx-xx'" 
+                                       Focused="DeliveryOrderNo_Focused"
                                        PlaceholderColor="Gray" 
                                        FontSize="Small" 
                                        VerticalOptions="Center"
-                                       x:Name="DeliveryOrderNo"                                    
-                                       />
-                                <!--In the future need to make this be customized to the format of the actual DO in the database-->
+                                       x:Name="DeliveryOrderNo"/>
                             </StackLayout>
                         </ViewCell>
+
+
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Delivery Date :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
@@ -56,12 +59,6 @@
                                 <!--<Entry Keyboard="Default" Placeholder="Choose Supplier Name" PlaceholderColor="Gray" FontSize="Small" VerticalOptions="Center"/>-->
 
                                 <Picker x:Name="SupplierPicker" Title="Choose Supplier" FontSize="Small" VerticalOptions="Center">
-                                    <Picker.Items>
-                                        <x:String>Aidee</x:String>
-                                        <x:String>Tin</x:String>
-                                        <x:String>Masdey</x:String>
-                                        <x:String>Anas</x:String>
-                                    </Picker.Items>
                                 </Picker>
                                 <Button Text="+" 
                                         WidthRequest="40" 
@@ -76,7 +73,7 @@
                         </ViewCell>
 
                     </TableSection>
-                    
+
                     <TableSection Title="Item Details">
 
                         <ViewCell>
@@ -90,10 +87,10 @@
                                         <x:String>Other Devices</x:String>
                                     </Picker.Items>
                                 </Picker>
-                                
+
                             </StackLayout>
                         </ViewCell>
-                        
+
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Category:" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
@@ -150,40 +147,13 @@
                                 </Picker>
                             </StackLayout>
                         </ViewCell>
-                        
-                        
-                        
+
+
+
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Picker x:Name="itemBrand" Title="Choose Item Brand" VerticalOptions="Center" FontSize="Small">
-                                    <Picker.Items>
-                                        <x:String>Acer</x:String>
-                                        <x:String>Dell</x:String>
-                                        <x:String>Apple</x:String>
-                                        <x:String>Mac</x:String>
-                                        <x:String>Lenovo</x:String>
-                                        <x:String>Samsung</x:String>
-                                        <x:String>Lexmark</x:String>
-                                        <x:String>Toshiba</x:String>
-                                        <x:String>Kyocera</x:String>
-                                        <x:String>Hitachi</x:String>
-                                        <x:String>Transcend</x:String>
-                                        <x:String>APC</x:String>
-                                        <x:String>EPSON</x:String>
-                                        <x:String>INFOCUS</x:String>
-                                        <x:String>CANON</x:String>
-                                        <x:String>Fujitsu</x:String>
-                                        <x:String>HP</x:String>
-                                        <x:String>Sony</x:String>
-                                        <x:String>Western Digital</x:String>
-                                        <x:String>Kingston</x:String>
-                                        <x:String>Alcatel</x:String>
-                                        <x:String>BENQ</x:String>
-                                        <x:String>MT</x:String>
-                                        <x:String>FENGJIE</x:String>
-                                        <x:String>-null-</x:String>
-                                    </Picker.Items>
                                 </Picker>
                                 <Button Text="+" 
                                         WidthRequest="40" 
@@ -219,7 +189,7 @@
                                        x:Name="Quantity"
                                        />
                             </StackLayout>
-                        </ViewCell> 
+                        </ViewCell>
                         <ViewCell>
                             <Button Text="Save New Item"
                                      BorderColor="Black"
@@ -229,12 +199,12 @@
                                      Clicked="Save_Clicked"
                                     />
                         </ViewCell>
-                        
+
                     </TableSection>
-                    
+
                 </TableRoot>
             </TableView>
-               
+
         </StackLayout>
         
     </ContentPage.Content>

@@ -4,6 +4,8 @@ using Plugin.Media;
 using Plugin.Media.Abstractions;
 using Rg.Plugins.Popup.Services;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -16,25 +18,31 @@ namespace Inventory.View.AddNew
 	public partial class AddNewPage : ContentPage
 	{
 
-
+         ObservableCollection<string> Supplier { get; set; } = new ObservableCollection<string>() {"Tin","Masdey","Aidee","Anas"};
+         ObservableCollection<string> Brands { get; set; } = new ObservableCollection<string>() { "Acer", "Dell", "Apple", "Mac", "Lenovo", "Samsung", "Lexmark", "Toshiba", "Kyocera", "Hitachi", "Transcend", "APC", "EPSON", "INFOCUS", "CANON", "Fujitsu", "HP", "Sony", "Western Digital", "Kingston", "Alcatel", "BENQ", "MT", "FENGJIE" };
+         List<string> Category = new List<string>();
+        List<string> item_type = new List<string>();
 
         private const string Url = "http://192.168.137.232:12345/api/Equipments/AddEquipment";
         private HttpClient client = new HttpClient();
-        bool once = false;
-		public AddNewPage()
+
+        
+
+        public AddNewPage() 
 
 		{
 			InitializeComponent();
 
             var tapGestureRecognizer = new TapGestureRecognizer();
-            tapGestureRecognizer.Tapped += (s, e) => {
+            tapGestureRecognizer.Tapped += (s, e) =>
+            {
                 OnTapped();
             };
 
             TakenPicture.GestureRecognizers.Add(tapGestureRecognizer);
         }
 
-        private async void OnTapped ()
+        private async void OnTapped()
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
@@ -99,6 +107,20 @@ namespace Inventory.View.AddNew
             var res = client.PostAsync(Url, new StringContent(content, Encoding.UTF8, "application/json"));
             DisplayAlert("Check", res.Result.ToString(), "OK");
 
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            SupplierPicker.ItemsSource = Supplier;
+            itemBrand.ItemsSource = Brands;
+        }
+
+        private void DeliveryOrderNo_Focused(object sender, FocusEventArgs e)
+        {
+
+            DeliveryOrderNo.Focus();
         }
     }
 }
