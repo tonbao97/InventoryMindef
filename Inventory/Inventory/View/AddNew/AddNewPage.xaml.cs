@@ -18,6 +18,7 @@ namespace Inventory.View.AddNew
 	public partial class AddNewPage : ContentPage
 	{
 
+
          ObservableCollection<string> Supplier { get; set; } = new ObservableCollection<string>() {"Tin","Masdey","Aidee","Anas"};
          ObservableCollection<string> Brands { get; set; } = new ObservableCollection<string>() { "Acer", "Dell", "Apple", "Mac", "Lenovo", "Samsung", "Lexmark", "Toshiba", "Kyocera", "Hitachi", "Transcend", "APC", "EPSON", "INFOCUS", "CANON", "Fujitsu", "HP", "Sony", "Western Digital", "Kingston", "Alcatel", "BENQ", "MT", "FENGJIE" };
          List<string> Category = new List<string>();
@@ -26,10 +27,7 @@ namespace Inventory.View.AddNew
         private const string Url = "http://192.168.137.232:12345/api/Equipments/AddEquipment";
         private HttpClient client = new HttpClient();
 
-        
-
-        public AddNewPage() 
-
+		public AddNewPage()
 		{
 			InitializeComponent();
 

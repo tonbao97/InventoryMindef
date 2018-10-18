@@ -15,9 +15,10 @@ namespace Inventory.View
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainMenu : ContentPage
 	{
-		public MainMenu ()
+		public MainMenu()
 		{
-			InitializeComponent ();
+			InitializeComponent();
+
             Background.Source = ImageSource.FromResource("Inventory.Image.background.jpg");
         }
 

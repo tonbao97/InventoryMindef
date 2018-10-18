@@ -20,10 +20,13 @@
             
             <Label Text="" x:Name="ScannedCode" TextColor="Red" HorizontalOptions="Center"/>
 
+
+ 
             <!--<StackLayout Padding="30,10,30,10" HorizontalOptions="CenterAndExpand">
+            
                 <Button Text="New Scan" Clicked="ScanButton_Clicked"/>
-                <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>
-                -->
+                <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>-->
+          
           <!-- This label should be made so that the basic details of the item are returned after the scan. To be made bindable --><!--
             </StackLayout>-->
           
@@ -33,12 +36,11 @@
                 <!-- The button should open up the ItemDetailsPage which should apply the scanned ID to return that item's details -->
             </StackLayout>
 
+
             <!--<StackLayout Padding="30,10,30,10">
                 <Button Text="New Scan" Clicked="ScanButton_Clicked"/>
                 <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>
             </StackLayout>-->
-
-
         </StackLayout>
     </ContentPage.Content>
 

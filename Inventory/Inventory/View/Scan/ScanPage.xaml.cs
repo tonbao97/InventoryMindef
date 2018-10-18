@@ -55,19 +55,19 @@ namespace Inventory.View.Scan
         }
 
 
-        //private  async void Button_Clicked(object sender, EventArgs e)
-        //{
-        //    var scan = new ZXingScannerPage();
-        //    await Navigation.PushAsync(scan);
-        //    scan.OnScanResult += (result) =>
-        //    {
-        //            Device.BeginInvokeOnMainThread(async () =>
-        //            {
-        //                await Navigation.PopAsync();
-        //                scannedCode.Text = result.Text;
-        //            });
-        //    };
-
-        //}
+        private  async void ScanButton_Clicked(object sender, EventArgs e)
+        {
+            var scan = new ZXingScannerPage();
+            await Navigation.PushAsync(scan);
+            scan.OnScanResult += (result) =>
+            {
+                    Device.BeginInvokeOnMainThread(async () =>
+                    {
+                        await Navigation.PopAsync();
+                        // scannedCode.Text = result.Text;
+                    });
+            };
+        
+        }
     }
 }

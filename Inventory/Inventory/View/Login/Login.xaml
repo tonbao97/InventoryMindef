@@ -24,13 +24,13 @@
            Aspect="AspectFill"
            HorizontalOptions="Center"
            Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"
-          />
+        />
         
         
         
         <Frame
             AbsoluteLayout.LayoutBounds="0.5,0.5,1,200"        
-           AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
             BackgroundColor="White"
             Opacity="0.5"
             HasShadow="False">
@@ -64,7 +64,8 @@
            BorderRadius="50"
            BorderColor="DarkBlue"
            BorderWidth="1"
-           Clicked="Login_Clicked"/>
+           Clicked="Login_Clicked"
+        />
 
     </AbsoluteLayout>
 

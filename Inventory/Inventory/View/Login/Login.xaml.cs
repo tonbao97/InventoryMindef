@@ -18,6 +18,7 @@ namespace Inventory.View
         private const string Url = "http://192.168.137.232:12345/Token";
 
         private HttpClient client = new HttpClient();
+
         public Login()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Inventory.View
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
+            await Navigation.PushAsync(new MainMenu());
 
             //if (Username.Text.Equals("") || Password.Text.Equals(""))
             //{
@@ -40,6 +42,13 @@ namespace Inventory.View
             //    dict.Add("grant_type", "password");
             //    var client = new HttpClient();
             //    var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
+
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        var text = response.Content.ReadAsStringAsync();
+
+
+
             //    if (response.IsSuccessStatusCode)
             //    {
             //        var text = response.Content.ReadAsStringAsync();
@@ -49,6 +58,7 @@ namespace Inventory.View
             //        Application.Current.Properties["Token"] = Token.access_token;
             //        Application.Current.Properties["Name"] = Token.userName;
             //        Application.Current.Properties["Type"] = Token.token_type;
+
             //        await Navigation.PushAsync(new MainMenu());
             //    }
             //    else
@@ -59,22 +69,30 @@ namespace Inventory.View
             //}
 
             await Navigation.PushAsync(new MainMenu());
-        }
 
+
+            //        await Navigation.PushAsync(new MainMenu());
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert("Error", "Wrong username or password", "Ok");
+            //        Error.Text = "Wrong username or password";
+            //    }
+            //}
+
+        }
 
         protected override void OnAppearing()
         {
             if (Application.Current.Properties.ContainsKey("Token"))
             {
-                if (Application.Current.Properties["Token"] != null)
+                if(Application.Current.Properties["Token"] != null)
                 {
                     Navigation.PushAsync(new MainMenu());
                 }
             }
             base.OnAppearing();
         }
-    }  
-
-
     }
+}
 

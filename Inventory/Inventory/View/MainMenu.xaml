@@ -3,17 +3,17 @@
     NavigationPage.HasBackButton="False"
     Title="Main Menu"
     xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Inventory.View.MainMenu">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Inventory.View.MainMenu">
+    
     <ContentPage.Content>
         
         <AbsoluteLayout>
             <Image
-            x:Name="Background"
-              AbsoluteLayout.LayoutBounds="0,0,1,1"        
-           AbsoluteLayout.LayoutFlags="All"
-           Aspect="AspectFill"
-            />
+                x:Name="Background"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"        
+                AbsoluteLayout.LayoutFlags="All"
+                Aspect="AspectFill"/>
             <Grid
                 ColumnSpacing="20"
                 RowSpacing="20"
@@ -26,8 +26,7 @@
                     Image="Add.png"
                     Clicked="AddButton_Clicked"
                     BorderColor="Black"
-                    BorderWidth="1"
-                    />
+                    BorderWidth="1"/>
                 <Button 
                     Grid.Column="1"
                     Grid.Row="0"
@@ -51,8 +50,7 @@
                     BorderColor="Black"
                     BorderWidth="1"
                     Image="logout.png"
-                    Clicked="Logout_Clicked"
-                    />
+                    Clicked="Logout_Clicked"/>
             </Grid>
         </AbsoluteLayout>
         
