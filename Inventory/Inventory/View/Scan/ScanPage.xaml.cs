@@ -51,7 +51,7 @@ namespace Inventory.View.Scan
 
         async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ItemDetailsPage());
+            await Navigation.PushAsync(new ItemDetailsServicePage());
         }
 
 

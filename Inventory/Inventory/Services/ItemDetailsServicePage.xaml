@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventory.Services.ItemDetailsServicePage"
+             Title="'EquipmentID'"> <!-- The title should be a bindable title of the scanned equipment ID -->
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <TableView Intent="Data">
+                <TableRoot >
+
+                    <TableSection Title="Item Details">
+                        <!-- All details on this page should be bindable to the scanned item qr code/barcode -->
+                        <ViewCell >
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Equipment ID: " HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'equipmentId'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Serial No. : " HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                <Label Text="'serialNo" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Item Category :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'itemCategory'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Item Type :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'itemType'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'brand'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Model :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'model'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        
+                    </TableSection>
+
+                    <TableSection Title="Item Status">
+                        
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Currently Issued To :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'issuedUserName'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Unit :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'issuedUserUnit'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Contact No. :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'issuedUserContactNo'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Location :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'location'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Delivery Order No. :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'deliveryOrderNo'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Delivery Date :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'deliveryDate'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Years in use :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'DateSpan of deliveryDate to TodayDate'" VerticalOptions="Center" FontSize="Small"/>
+                                <!-- Wanted to include a datespan so that user knows the years the item has been in use -->
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Contact No. :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'issuedUserContactNo'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                <Label Text="Supplier :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+                                <Label Text="'supplierName'" VerticalOptions="Center" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                        <!-- Did not include quantity because does each QR code have multiple items? shouldnt it be each item have onl 1 unique ID? -->
+
+                    </TableSection>
+                    
+                </TableRoot>
+            </TableView>
+        </StackLayout>
+        
+    </ContentPage.Content>
+
+</ContentPage>
