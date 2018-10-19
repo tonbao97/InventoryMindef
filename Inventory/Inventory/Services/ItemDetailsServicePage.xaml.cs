@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace Inventory.Services
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ItemDetailsPage : ContentPage
+	public partial class ItemDetailsServicePage : ContentPage
 	{
-		public ItemDetailsPage()
+		public ItemDetailsServicePage()
 		{
 			InitializeComponent();
 		}
