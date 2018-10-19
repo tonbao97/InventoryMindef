@@ -1,6 +1,9 @@
-﻿using Rg.Plugins.Popup.Pages;
+﻿using Inventory.Models.AddPageModel;
+using Rg.Plugins.Popup.Pages;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +23,10 @@ namespace Inventory.View.AddNew
 
         private void Add_Clicked(object sender, EventArgs e)
         {
-
+            var Brands = (ObservableCollection<Brand>)BindingContext;
+            Brand NewBrand = new Brand(Brand.Text,null,null,null,null,true,Brands.Count+1);
+            Brands.Add(NewBrand);
+            PopupNavigation.Instance.PopAsync(true);
         }
     }
 }

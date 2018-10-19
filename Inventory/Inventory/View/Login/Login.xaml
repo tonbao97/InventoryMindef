@@ -14,9 +14,7 @@
             x:Name="Background"
               AbsoluteLayout.LayoutBounds="0,0,1,1"        
            AbsoluteLayout.LayoutFlags="All"
-           Aspect="AspectFill"
-     
-            />
+           Aspect="AspectFill" />
 
         <ic:CircleImage 
            AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        

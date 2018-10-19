@@ -1,4 +1,6 @@
-﻿using Inventory.Models;
+﻿using Firebase.Storage;
+using Inventory.Models;
+using Inventory.Models.AddPageModel;
 using Newtonsoft.Json;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -6,6 +8,7 @@ using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -19,18 +22,32 @@ namespace Inventory.View.AddNew
 	{
 
 
-         ObservableCollection<string> Supplier { get; set; } = new ObservableCollection<string>() {"Tin","Masdey","Aidee","Anas"};
-         ObservableCollection<string> Brands { get; set; } = new ObservableCollection<string>() { "Acer", "Dell", "Apple", "Mac", "Lenovo", "Samsung", "Lexmark", "Toshiba", "Kyocera", "Hitachi", "Transcend", "APC", "EPSON", "INFOCUS", "CANON", "Fujitsu", "HP", "Sony", "Western Digital", "Kingston", "Alcatel", "BENQ", "MT", "FENGJIE" };
-         List<string> Category = new List<string>();
-        List<string> item_type = new List<string>();
+         ObservableCollection<Supplier> SupplierList { get; set; } = new ObservableCollection<Supplier>();
+         ObservableCollection<Brand> Brands { get; set; } = new ObservableCollection<Brand>();
+        // Add this to ^^^ for hardcode info test { "Acer", "Dell", "Apple", "Mac", "Lenovo", "Samsung", "Lexmark", "Toshiba", "Kyocera", "Hitachi", "Transcend", "APC", "EPSON", "INFOCUS", "CANON", "Fujitsu", "HP", "Sony", "Western Digital", "Kingston", "Alcatel", "BENQ", "MT", "FENGJIE" }
+        ObservableCollection<EquipmentTypes> Equipmenttypes { get; set; } = new ObservableCollection<EquipmentTypes>();
+        ObservableCollection<Category> Category { get; set; } = new ObservableCollection<Category>();
+        private MediaFile file;
 
-        private const string Url = "http://192.168.137.232:12345/api/Equipments/AddEquipment";
+        private const string Url = "http://192.168.1.103:12345";
+        private const string UrlSuppliers = Url + "/api/GetSuppliers";
+        private const string UrlAdd = Url + "/api/Equipments/AddEquipment";
+        private const string UrlBrands = Url + "/api/Equipments/GetBrands";
+        private const string UrlEquipmenttypes = Url + "/api/GetEquipmenttypes";
+        private const string UrlCategories = Url + "/api/Equipments/GetCategories";
+        int SupIndex;
+        int EquipmentTypeIndex;
+        int CategoryIndex;
+        int BrandIndex;
+
+
         private HttpClient client = new HttpClient();
 
 		public AddNewPage()
 		{
 			InitializeComponent();
-
+            string token = Application.Current.Properties["Token"].ToString();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             var tapGestureRecognizer = new TapGestureRecognizer();
             tapGestureRecognizer.Tapped += (s, e) =>
             {
@@ -42,13 +59,18 @@ namespace Inventory.View.AddNew
 
         private async void OnTapped()
         {
+            SupIndex = SupplierPicker.SelectedIndex;
+            EquipmentTypeIndex = EquipmentTypePicker.SelectedIndex;
+            CategoryIndex = CategoryPicker.SelectedIndex;
+            BrandIndex = itemBrand.SelectedIndex;
+
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("No Camera", ":( No camera available.", "OK");
                 return;
             }
 
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 Directory = "Test",
                 SaveToAlbum = true,
@@ -69,56 +91,87 @@ namespace Inventory.View.AddNew
                     var stream = file.GetStream();
                     return stream;
                 });
-
-                //var stroageImage = await new FirebaseStorage("fir-7f783.appspot.com")
-                //    .Child("Pic")
-                //    .Child("image.jpg")
-                //    .PutAsync(file.GetStream());
-                //string imgurl = stroageImage;
-                //Url.Text = imgurl;
             }
-            await DisplayAlert("File Location", file.Path, "OK");
+            SupplierPicker.SelectedIndex = SupIndex;
+            EquipmentTypePicker.SelectedIndex = EquipmentTypeIndex;
+            CategoryPicker.SelectedIndex = CategoryIndex;
+            itemBrand.SelectedIndex = BrandIndex;
         }
 
         private void AddSupplier_Clicked(object sender, EventArgs e)
         {
-            PopupNavigation.Instance.PushAsync(new PopupSupplier());
+            var SupplierAddPage = new PopupSupplier();
+            SupplierAddPage.BindingContext = SupplierList;
+            PopupNavigation.Instance.PushAsync(SupplierAddPage);
         }
 
         private void AddBrand_Clicked(object sender, EventArgs e)
         {
-            PopupNavigation.Instance.PushAsync(new PopupBrand());
+
+            var BrandAddPage = new PopupBrand();
+            BrandAddPage.BindingContext = Brands;
+            PopupNavigation.Instance.PushAsync(BrandAddPage);
         }
 
-        private void Save_Clicked(object sender, EventArgs e)
+        private async void Save_Clicked(object sender, EventArgs e)
         {
 
-            string token = Application.Current.Properties["Token"].ToString();
-            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
             DateTime day = Date.Date;
             var DayChoose = String.Format("{0:yyyy/MM/dd}", day);
 
-            Item newItem = new Item(DeliveryOrderNo.Text, DayChoose, SupplierPicker.SelectedItem.ToString(), CategoryPicker.SelectedIndex, itemBrand.SelectedItem.ToString(), Model.Text, int.Parse(Quantity.Text), "");
+
+            var stroageImage = await new FirebaseStorage("fir-7f783.appspot.com")
+                .Child("Pic")
+                .Child(Model.Text)
+                .PutAsync(file.GetStream());
+            string imgurl = stroageImage;
+
+            Item newItem = new Item(DeliveryOrderNo.Text, DayChoose, SupplierPicker.Items[SupplierPicker.SelectedIndex].ToString(), CategoryPicker.SelectedIndex, itemBrand.Items[itemBrand.SelectedIndex].ToString(), Model.Text, int.Parse(Quantity.Text), "");
 
 
             var content = JsonConvert.SerializeObject(newItem);
-            var res = client.PostAsync(Url, new StringContent(content, Encoding.UTF8, "application/json"));
-            DisplayAlert("Check", res.Result.ToString(), "OK");
+            var res = client.PostAsync(UrlAdd, new StringContent(content, Encoding.UTF8, "application/json"));
+            await DisplayAlert("Check", res.Result.ToString(), "OK");
 
         }
 
-        protected override void OnAppearing()
+        protected async override void OnAppearing()
         {
             base.OnAppearing();
+            
+            var Supplier = await client.GetStringAsync(UrlSuppliers);
+            var listSupplier = JsonConvert.DeserializeObject<List<Supplier>>(Supplier);
+            SupplierList = new ObservableCollection<Supplier>(listSupplier);
 
-            SupplierPicker.ItemsSource = Supplier;
+            SupplierPicker.ItemsSource = SupplierList;
+            SupplierPicker.ItemDisplayBinding = new Binding("Name");
+
+
+            var Brand = await client.GetStringAsync(UrlBrands);
+            var listBrand = JsonConvert.DeserializeObject<List<Brand>>(Brand);
+            Brands = new ObservableCollection<Brand>(listBrand);
+            
+
             itemBrand.ItemsSource = Brands;
-        }
+            itemBrand.ItemDisplayBinding = new Binding("Name");
 
-        private void DeliveryOrderNo_Focused(object sender, FocusEventArgs e)
-        {
+            var Equipmenttype = await client.GetStringAsync(UrlEquipmenttypes);
+            var listEquipmenttypes = JsonConvert.DeserializeObject<List<EquipmentTypes>>(Equipmenttype);
+            Equipmenttypes = new ObservableCollection<EquipmentTypes>(listEquipmenttypes);
 
-            DeliveryOrderNo.Focus();
+
+            EquipmentTypePicker.ItemsSource = Equipmenttypes;
+            EquipmentTypePicker.ItemDisplayBinding = new Binding("Name");
+
+
+            var Categories = await client.GetStringAsync(UrlCategories);
+            var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
+            Category = new ObservableCollection<Category>(listCategory);
+
+
+            CategoryPicker.ItemsSource = Category;
+            CategoryPicker.ItemDisplayBinding = new Binding("Name");
         }
+        
     }
 }

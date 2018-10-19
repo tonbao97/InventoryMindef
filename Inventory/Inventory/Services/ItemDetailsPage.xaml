@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Inventory.Services.ItemDetailsPage"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Title="'EquipmentID'"> <!-- The title should be a bindable title of the scanned equipment ID -->
     
     <ContentPage.Content>
@@ -57,9 +58,7 @@
                                         BorderColor="Black"
                                         BorderWidth="1"
                                         BackgroundColor="#166bf4"
-                                        TextColor="White"
-                                        Clicked="AddSupplier_Clicked"
-                                        />
+                                        TextColor="White"/>
                             </StackLayout>
                         </ViewCell>
 

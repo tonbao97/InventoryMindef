@@ -8,7 +8,8 @@
     <!--this is to direct xaml to markup extension to the c# assembly that stores DateTime.Today-->
     
     <ContentPage.Content>
-        <StackLayout Padding="0,5,0,0">
+
+        <StackLayout Padding="0,5,0,0" Margin="5, 5, 0, 0">
 
             <AbsoluteLayout>
                 <Image
@@ -20,17 +21,16 @@
                         VerticalOptions="FillAndExpand"/>
             </AbsoluteLayout>
 
-            <TableView>
+
+            <TableView Intent="Form" HeightRequest="-2">
                 <TableRoot>
                     <TableSection Title="Delivery Details" >
                         <!--In the future need to make this be customized to the format of the actual DO in the database-->
-
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
                                 <Label Text="Delivery Order No. :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
                                 <Entry Keyboard="Default" 
                                        Placeholder="'Format of DO: xx-xxx-xx'" 
-                                       Focused="DeliveryOrderNo_Focused"
                                        PlaceholderColor="Gray" 
                                        FontSize="Small" 
                                        VerticalOptions="Center"
@@ -58,8 +58,11 @@
                                 <Label Text="Supplier Name :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <!--<Entry Keyboard="Default" Placeholder="Choose Supplier Name" PlaceholderColor="Gray" FontSize="Small" VerticalOptions="Center"/>-->
 
-                                <Picker x:Name="SupplierPicker" Title="Choose Supplier" FontSize="Small" VerticalOptions="Center">
-                                </Picker>
+                                <Picker x:Name="SupplierPicker" 
+                                        Title="Choose Supplier" 
+                                        FontSize="Small" 
+                                        VerticalOptions="Center"
+                                        />
                                 <Button Text="+" 
                                         WidthRequest="40" 
                                         HeightRequest="30"
@@ -81,11 +84,6 @@
                                 <Label Text="Equipment Type :" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
                                 <!--This picker needs to bind with itemCategoryPicker above-->
                                 <Picker x:Name="EquipmentTypePicker" Title="Choose Equipment Type" FontSize="Small" VerticalOptions="Center">
-                                    <Picker.Items>
-                                        <x:String>Computer</x:String>
-                                        <x:String>Accessories/Parts</x:String>
-                                        <x:String>Other Devices</x:String>
-                                    </Picker.Items>
                                 </Picker>
 
                             </StackLayout>
@@ -95,13 +93,13 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Category:" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Picker x:Name="CategoryPicker" Title="Choose Item Category" VerticalOptions="Center" FontSize="Small">
-                                    <Picker.Items>
-                                        <!--If Category Computer-->
+                                    <!--<Picker.Items>
+                                        --><!--If Category Computer--><!--
                                         <x:String>Desktop</x:String>
                                         <x:String>Notebook</x:String>
                                         <x:String>Tablet</x:String>
                                         <x:String>Toughbook</x:String>
-                                        <!--If Category Accessories/Parts-->
+                                        --><!--If Category Accessories/Parts--><!--
                                         <x:String>CMOS Battery</x:String>
                                         <x:String>FDFSD</x:String>
                                         <x:String>Hard Case Kit</x:String>
@@ -128,7 +126,7 @@
                                         <x:String>VGA Cable - 10m</x:String>
                                         <x:String>Battery</x:String>
                                         <x:String>Interface Card</x:String>
-                                        <!--If Category Others-->
+                                        --><!--If Category Others--><!--
                                         <x:String>Printer</x:String>
                                         <x:String>Scanner</x:String>
                                         <x:String>Projector</x:String>
@@ -143,7 +141,7 @@
                                         <x:String>Splitter</x:String>
                                         <x:String>Interface Card</x:String>
                                         <x:String>FAN</x:String>
-                                    </Picker.Items>
+                                    </Picker.Items>-->
                                 </Picker>
                             </StackLayout>
                         </ViewCell>

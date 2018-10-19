@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <None Remove="Image\background.jpg" />
+    <None Remove="View\AddNew\AddNewPage.xaml.cs~RF4b1b5b.TMP" />
   </ItemGroup>
 
   <ItemGroup>
