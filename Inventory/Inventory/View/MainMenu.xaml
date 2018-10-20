@@ -4,7 +4,8 @@
     Title="Main Menu"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Inventory.View.MainMenu">
+    x:Class="Inventory.View.MainMenu"
+    NavigationPage.HasNavigationBar="False">
     
     <ContentPage.Content>
         
@@ -13,12 +14,14 @@
                 x:Name="Background"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"        
                 AbsoluteLayout.LayoutFlags="All"
-                Aspect="AspectFill"/>
+                Aspect="AspectFill"
+            />
             <Grid
                 ColumnSpacing="20"
                 RowSpacing="20"
                 AbsoluteLayout.LayoutBounds=".5,.5,.9,.6"
                 AbsoluteLayout.LayoutFlags="All">
+                
                 <Button
                     Grid.Column="0"
                     Grid.Row="0"
@@ -26,7 +29,9 @@
                     Image="Add.png"
                     Clicked="AddButton_Clicked"
                     BorderColor="Black"
-                    BorderWidth="1"/>
+                    BorderWidth="1"
+                    HeightRequest="100"
+                 />
                 <Button 
                     Grid.Column="1"
                     Grid.Row="0"
@@ -34,7 +39,8 @@
                     Image="search.png"
                     BorderColor="Black"
                     BorderWidth="1"
-                    Clicked="SearchButton_Clicked"/>
+                    Clicked="SearchButton_Clicked"
+                />
                 <Button 
                     Grid.Column="0"
                     Grid.Row="1"
@@ -42,7 +48,8 @@
                     BorderColor="Black"
                     BorderWidth="1"
                     Image="Scan.png"
-                    Clicked="ScanButton_Clicked"/>
+                    Clicked="ScanButton_Clicked"
+                />
                 <Button
                     Grid.Column="1"
                     Grid.Row="1"
@@ -50,7 +57,9 @@
                     BorderColor="Black"
                     BorderWidth="1"
                     Image="logout.png"
-                    Clicked="Logout_Clicked"/>
+                    Clicked="Logout_Clicked"
+                />
+                
             </Grid>
         </AbsoluteLayout>
         

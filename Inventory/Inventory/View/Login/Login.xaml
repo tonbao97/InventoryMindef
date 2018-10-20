@@ -1,71 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage 
-             Title="Login Page"
-             xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Inventory.View.Login"
-             xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
-             xmlns:local="clr-namespace:Inventory.Render">
+            Title="Login Page"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Inventory.View.Login"
+            xmlns:ic="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+            xmlns:local="clr-namespace:Inventory.Render"
+            NavigationPage.HasNavigationBar="False">
 
     <AbsoluteLayout>
         <!-- Place new controls here -->
-
         <Image
             x:Name="Background"
-              AbsoluteLayout.LayoutBounds="0,0,1,1"        
-           AbsoluteLayout.LayoutFlags="All"
-           Aspect="AspectFill"
-     
-            />
-
-        <ic:CircleImage 
-           AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        
-           AbsoluteLayout.LayoutFlags="PositionProportional"
-           Aspect="AspectFill"
-           HorizontalOptions="Center"
-           Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"        
+            AbsoluteLayout.LayoutFlags="All"
+            Aspect="AspectFill"
         />
         
-        
-        
         <Frame
-            AbsoluteLayout.LayoutBounds="0.5,0.5,1,200"        
+            AbsoluteLayout.LayoutBounds="0.5,0.6,1,160"        
             AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
             BackgroundColor="White"
             Opacity="0.5"
-            HasShadow="False">
+            Padding="10,10,10,10">
             <StackLayout BackgroundColor="Transparent">
                 <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
-                
-                <local:ImageEntry TextColor="Black" 
-                        Image="username" 
-                        Placeholder="Username"
-                        LineColor="Blue"
-                        x:Name="Username"
-                        Text=""/>
-                
-                <local:ImageEntry TextColor="Black" 
-                        Image="password" 
-                        Placeholder="Password"
-                        LineColor="Blue"
-                        IsPassword="True"
-                        x:Name="Password"
-                        Text=""/>
-                <!--<Entry Placeholder="Username" TextColor="Black"/>
+                <StackLayout Grid.Row="1" 
+                             Orientation="Horizontal"
+                             Spacing="1"
+                             >
+                    <Image Source="username.png" 
+                           Aspect="AspectFit" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="CenterAndExpand" 
+                           HeightRequest="40" 
+                           WidthRequest="40"
+                           BackgroundColor="Transparent"
+                    />
+                    <Entry x:Name="Username" 
+                           TextColor="Black"  
+                           Placeholder="User Name" 
+                           Keyboard="Default"  
+                           BackgroundColor="White" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand"
+                           >
+                    </Entry>
+                </StackLayout>
+                <StackLayout Grid.Row="1" 
+                             Orientation="Horizontal"
+                             Spacing="1"
+                             >
+                    <Image Source="password.png" 
+                           Aspect="AspectFit" 
+                           HorizontalOptions="Center" 
+                           VerticalOptions="CenterAndExpand" 
+                           HeightRequest="40" 
+                           WidthRequest="40"
+                           BackgroundColor="Transparent"
+                    />
+                    <Entry x:Name="Password" 
+                           TextColor="Black"  
+                           Placeholder="Password" 
+                           IsPassword="True" 
+                           BackgroundColor="White" 
+                           HorizontalOptions="FillAndExpand" 
+                           VerticalOptions="CenterAndExpand"
+                           Opacity="0.9">
+                    </Entry>
+                </StackLayout>
+
+                <!--<Entry Placeholder="Username" TextColor="Black"/
                 <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
             </StackLayout>
-
         </Frame>
-        <Button Text="Login"  
-           AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
-           AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-           BackgroundColor="White"
-           TextColor="DarkBlue"
-           BorderRadius="50"
-           BorderColor="DarkBlue"
-           BorderWidth="1"
-           Clicked="Login_Clicked"
+        
+        <ic:CircleImage 
+            AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+            Aspect="Fill"
+            HorizontalOptions="Center"
+            HeightRequest="150"
+            WidthRequest="150"
+            Source="mainmenuImage.jpg}"
         />
+        
+        <Button Text="Login"  
+               AbsoluteLayout.LayoutBounds="0.5,0.8,1,50"        
+               AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+               BackgroundColor="White"
+               TextColor="DarkBlue"
+               BorderRadius="50"
+               BorderColor="DarkBlue"
+               BorderWidth="1"
+               Clicked="Login_Clicked"
+        />
+        
 
     </AbsoluteLayout>
 
