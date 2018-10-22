@@ -50,15 +50,15 @@
 		<link rel="stylesheet" href="vendor/circliful/circliful.css" />
 
 		<!-- Tags CSS -->
-		<link href="vendor/tags/tagmanager.css" rel="stylesheet" />
-    
+		<link href="vendor/tags/tagmanager.css" rel="stylesheet" /> 
+
         <script src="js/jquery.js"></script>
         <script> 
             $(function(){
               $("#includedContent").load("aside_nav.html"); 
             });
         </script>
-
+    
 	</head>
 	<body>
 
@@ -140,68 +140,96 @@
 
                                 <!-- section container start -->
                                 <div class="section-container">
-                                    <h6 class="section-title">New Supplier</h6>
-
+                                    <h6 class="section-title">New Location</h6>
+                                        
 									<div class="section-wrapper white left">
                                         <div class="row gutters">
                                             <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
                                                 <div class="form-group">
-                                                    <label>Supplier Name</label>
-                                                    <input class="form-control" placeholder="Supplier Name" type="text">
-                                                </div>
-											</div>
-                                        </div>
-                                        <div class="row gutters">
-                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label>Contact Person</label>
-                                                    <input class="form-control" placeholder="Contact Person Name" type="text">
-                                                </div>
-											</div>
-                                        </div>
-                                        <div class="row gutters">
-                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label>Office Number</label>
-                                                    <input class="form-control" placeholder="Office Number" type="text">
-                                                </div>
-											</div>
-                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label>Mobile Number</label>
-                                                    <input class="form-control" placeholder="Mobile Number" type="text">
-                                                </div>
-											</div>
-                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label>Fax Number</label>
-                                                    <input class="form-control" placeholder="Fax Number" type="text">
-                                                </div>
-											</div>
-                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
-                                                <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input class="form-control" placeholder="Email" type="email">
+                                                    <label>Main Unit</label>
+                                                    <select class="form-control">
+                                                        <option>TDDB</option>
+                                                        <option>TUDB</option>
+                                                        <option>TLDB</option>
+                                                        <option>IL ABDB</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row gutters">
                                             <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
                                                 <div class="form-group">
-                                                    <label>Address</label>
-                                                    <textarea rows="6" class="form-control" placeholder="Address"></textarea>
+                                                    <label>Unit</label>
+                                                    <select class="form-control">
+                                                        <option>Pejabat Urusetia Timbalan Menteri ABDB</option>
+                                                        <option>Pejabat Urusetia Pemerintah ABDB</option>
+                                                        <option>Pejabat Setiausaha Tetap Pentadbiran dan Kewangan</option>
+                                                        <option>Pejabat Urusetia Timbalan Pemerintah ABDB</option>
+                                                        <option>1Bn, Kombat, TDDB</option>
+                                                        <option>2Bn, Kombat, TDDB</option>
+                                                        <option>3Bn, Kombat, TDDB</option>
+                                                        <option>Bn Bantu, TDDB</option>
+                                                        <option>Armada TLDB</option>
+                                                        <option>Logistik TLDB</option>
+                                                        <option>Kuarter Master TLDB</option>
+                                                        <option>Latihan TLDB</option>
+                                                        <option>Markas TUDB</option>
+                                                        <option>Cawangan Gerakan TUDB/No 1 Wing</option>
+                                                        <option>Skuadron No 1 TUDB</option>
+                                                        <option>Skuadron No 2 TUDB</option>
+                                                        <option>Skuadron No 4 TUDB</option>
+                                                        <option>Skuadron No 5 TUDB</option>
+                                                        <option>UPTPUT TUDB</option>
+                                                        <option>Markas Rejimen Udara TUDB</option>
+                                                        <option>Skuadron No 33 TUDB</option>
+                                                        <option>Skuadron Pertahanan Pengkalan TUDB</option>
+                                                        <option>Cawangan Logistik TUDB/ NO 5 Wing</option>
+                                                        <option>Skuadron Kejuruteraan TUDB</option>
+                                                        <option>Cawangan Bekal TUDB/ No. 4 wing</option>
+                                                        <option>Cawangan Latihan TUDB/ No 7 Wing</option>
+                                                        <option>Skuadron No 63 TUDB</option>
+                                                        <option>Skuadron Penilaian dan Piawaian TUDB</option>
+                                                    </select>
                                                 </div>
-                                            </div>
+											</div>
                                         </div>
                                         <div class="row gutters">
                                             <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
                                                 <div class="form-group">
-                                                    <label>Active</label>
-                                                    <input type="checkbox" name="active">
+                                                    <label>Sub-Unit</label>
+                                                    <select class="form-control">
+                                                        <option>Arkib</option>
+                                                        <option>Kuarter Master</option>
+                                                        <option>Cawangan Penyiasatan Khas</option>
+                                                        <option>Pusat Khidmat Bomba & Keselamatan</option>
+                                                        <option>Kejuruteraan Darat (Land Engineering)</option>
+                                                        <option>Pusat Khidmat Pergigian (Dental Services)</option>
+                                                        <option>Kompeni Markas</option>
+                                                        <option>Pejabat Padang Tembak</option>
+                                                        <option>Markas Pemerintah Garison</option>
+                                                        <option>Pusat Kalibrasi</option>
+                                                        <option>Unit Teknologi Maklumat Pertahanan</option>
+                                                        <option>Unit Perundangan Tentera</option>
+                                                        <option>Pusat Kaunseling</option>
+                                                        <option>Pejabat Perkhidmatan Gaji</option>
+                                                        <option>Pejabat Gaji</option>
+                                                        <option>Jabatan Protokal Adat Istiadat</option>
+                                                        <option>Pejabat Pusat Perkhidmatan</option>
+                                                        <option>Pejabat Pentadbiran</option>
+                                                        <option>Unit Audit Dalaman</option>
+                                                        <option>Askar Simpanan Melayu Diraja Brunei (ASMDB)</option>
+                                                        <option>Polis Tentera ABDB</option>
+                                                        <option>Pejabat Pentadbiran Awam</option>
+                                                        <option>Pejabat Pengurusan Strategi (OSM)</option>
+                                                        <option>Cawangan Sekuriti Pertahanan (DSB)</option>
+                                                        <option>Pancaragam ABDB</option>
+                                                        <option>Pusat Khidmat Perubatan & Kesihatan (Medical Services)/MRS</option>
+                                                        <option>Cawangan Latihan Perisikan</option>
+                                                        <option>Technical Equipment Maintence Department (TEMD)</option>
+                                                    </select>
                                                 </div>
-                                            </div>
+											</div>
                                         </div>
-
                                         <div class="row gutters">
                                             <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
                                                 <div class="form-group">
@@ -215,7 +243,6 @@
 								<!-- section container end -->
                             </div>
 						<!-- Row end -->
-						
 					</div>
 					<!-- END: .main-content -->
 
@@ -307,4 +334,6 @@
 		</script>
 		
 	</body>
+
+<!-- Mirrored from bootstrap.gallery/kingfisher/light-sidebar/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Oct 2018 13:16:55 GMT -->
 </html>
