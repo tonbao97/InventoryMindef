@@ -17,52 +17,51 @@
            Aspect="AspectFill" />
 
         <ic:CircleImage 
+            x:Name="Logo"
            AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        
            AbsoluteLayout.LayoutFlags="PositionProportional"
            Aspect="AspectFill"
            HorizontalOptions="Center"
            Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"/>
-        
-        
-        
-        <Frame
-            AbsoluteLayout.LayoutBounds="0.5,0.5,1,200"        
-            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+
+            <Frame
             BackgroundColor="White"
             Opacity="0.5"
-            HasShadow="False">
-            <StackLayout BackgroundColor="Transparent">
-                <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
-                
-                <local:ImageEntry TextColor="Black" 
+            HasShadow="False"
+            AbsoluteLayout.LayoutBounds="0.5,0.5,1,200"        
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                >
+                <StackLayout BackgroundColor="Transparent">
+                    <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
+
+                    <local:ImageEntry TextColor="Black" 
                         Image="username" 
                         Placeholder="Username"
                         LineColor="Blue"
                         x:Name="Username"
                         Text=""/>
-                
-                <local:ImageEntry TextColor="Black" 
+
+                    <local:ImageEntry TextColor="Black" 
                         Image="password" 
                         Placeholder="Password"
                         LineColor="Blue"
                         IsPassword="True"
                         x:Name="Password"
                         Text=""/>
-                <!--<Entry Placeholder="Username" TextColor="Black"/>
+                    <!--<Entry Placeholder="Username" TextColor="Black"/>
                 <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
-            </StackLayout>
+                </StackLayout>
+            </Frame>
 
-        </Frame>
-        <Button Text="Login"  
-           AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
-           AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+            <Button Text="Login"  
+             AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
+            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
            BackgroundColor="White"
            TextColor="DarkBlue"
            BorderRadius="50"
            BorderColor="DarkBlue"
            BorderWidth="1"
-           Clicked="Login_Clicked"
-        />
+           Clicked="Login_Clicked"/>
 
     </AbsoluteLayout>
 

@@ -26,6 +26,7 @@ namespace Inventory.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             Rg.Plugins.Popup.Popup.Init(this,savedInstanceState);
             ImageCircleRenderer.Init();
+            RequestedOrientation = ScreenOrientation.Portrait;
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)

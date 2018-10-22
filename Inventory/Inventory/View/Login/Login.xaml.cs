@@ -55,12 +55,13 @@ namespace Inventory.View
             //    }
             //    else
             //    {
-            //        await DisplayAlert("Error", "Wrong username or password", "Ok");
+            //        
             //        Error.Text = "Wrong username or password";
             //    }
             //}
+
             await Navigation.PushAsync(new MainMenu());
-            }
+        }
 
         //protected override void OnAppearing()
         //{
@@ -73,6 +74,20 @@ namespace Inventory.View
         //    }
         //    base.OnAppearing();
         //}
+
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            if (height<400)
+            {
+                Logo.IsVisible = false;
+            }
+            else
+            {
+                Logo.IsVisible = true;
+            }
+        }
     }
 }
 
