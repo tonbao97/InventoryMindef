@@ -1,0 +1,1097 @@
+<!doctype html>
+<html lang="en">
+	
+<!-- Mirrored from bootstrap.gallery/kingfisher/light-sidebar/tasks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Oct 2018 13:18:13 GMT -->
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<meta name="description" content="Kingfisher Admin Panel" />
+		<meta name="keywords" content="Admin Dashboard, Admin, Tasks, Upcoming Tasks, Today Tasks Dashboard, Bootstrap4, Sass, CSS3, HTML5, Responsive Dashboard, Responsive Admin Template, Lobipanel, Drag &amp; Drop, Admin Template, Best Admin Template, Bootstrap Template, Themeforest" />
+		<meta name="author" content="Bootstrap Gallery" />
+		<link rel="shortcut icon" href="img/favicon.ico" />
+		<title>Kingfisher Bootstrap 4 Admin Dashboard - Tasks</title>
+
+		<!--
+			**********************
+			**********************
+			Common CSS files
+			**********************
+			**********************
+		-->
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+		<!-- Icomoon Icons CSS -->
+		<link rel="stylesheet" href="fonts/icomoon/icomoon.css" />
+
+		<!-- Master CSS -->
+		<link rel="stylesheet" href="css/main.css" />
+
+	</head>
+	<body>
+
+		<!-- Loading start -->
+		<div id="loading-wrapper">
+			<div id="loader"></div>
+		</div>
+		<!-- Loading end -->
+
+		<!-- BEGIN .app-wrap -->
+		<div class="app-wrap">
+
+			<!-- BEGIN .app-heading -->
+			<header class="app-header">
+
+				<!-- Container fluid starts -->
+				<div class="container-fluid">
+
+					<!-- Row start -->
+					<div class="row gutters">
+						<div class="col-xl-7 col-lg-7 col-md-6 col-sm-7 col-7">
+							
+							<!-- BEGIN .logo -->
+							<div class="logo-block">
+								<a href="index-2.html" class="logo">
+									<img src="img/logo.png" alt="Kingfisher Admin Dashboard" />
+								</a>
+								<a class="mini-nav-btn" href="#" id="onoffcanvas-nav">
+									<i class="open"></i>
+									<i class="open"></i>
+									<i class="open"></i>
+								</a>
+								<a href="#app-side" data-toggle="onoffcanvas" class="onoffcanvas-toggler" aria-expanded="true">
+									<i class="open"></i>
+									<i class="open"></i>
+									<i class="open"></i>
+								</a>
+							</div>
+							<!-- END .logo -->
+
+							<!-- Live updates start -->
+							<div class="live-updates">
+								<ul class="header-news" id="header-news">
+									<li>
+										<a href="javascript:void(0)">
+											<i class="icon-shopping-basket"></i>
+											<span>25 new items sold out in Themeforest.</span>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">
+											<i class="icon-timer"></i>
+											<span>7 new features updated successfully.</span>
+										</a>
+									</li>
+									<li>
+										<a href="javascript:void(0)">
+											<i class="icon-star"></i>
+											<span>Successfully launched new product.</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<!-- Live updates end -->
+
+						</div>
+						<div class="col-xl-5 col-lg-5 col-md-6 col-sm-5 col-5">
+
+							<!-- Header actions start -->
+							<ul class="header-actions">
+								<li class="dropdown">
+									<a href="#" id="notifications" data-toggle="dropdown" aria-haspopup="true">
+										<i class="icon-notifications_none"></i>
+										<span class="count-label">7</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="notifications">
+										<ul class="imp-notify">
+											<li>
+												<div class="icon">W</div>
+												<div class="details">
+													<h6 class="username">Wilson</h6>
+													<p class="desc">The best Dashboard design I have seen ever.</p>
+													<p class="time">6:30 PM</p>
+												</div>
+											</li>
+											<li>
+												<div class="icon green">J</div>
+												<div class="details">
+													<h6 class="username">John Smith</h6>
+													<p class="desc">Jhonny sent you a message. Read now!</p>
+													<p class="time">7:20 PM</p>
+												</div>
+											</li>
+											<li>
+												<div class="icon red">R</div>
+												<div class="details">
+													<h6 class="username">Zustin Mezzell</h6>
+													<p class="desc">Stella, Added you as a Friend. Accept it!</p>
+													<p class="time">3:45 PM</p>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li>
+									<a href="#" id="todos" data-toggle="dropdown" aria-haspopup="true">
+										<i class="icon-person_outline"></i>
+										<span class="count-label red">5</span>
+									</a>
+									<div class="dropdown-menu dropdown-menu-right lg" aria-labelledby="todos">
+										<ul class="tasks-widget">
+											<li>
+												<p>Task #48<span>90%</span></p>
+												<div class="progress">
+													<div class="progress-bar bg-success" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+														<span class="sr-only">90% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<p>Task #98<span>60%</span></p>
+												<div class="progress">
+													<div class="progress-bar bg-info" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+														<span class="sr-only">60% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+											<li>
+												<p>Task #7<span>40%</span></p>
+												<div class="progress">
+													<div class="progress-bar bg-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+														<span class="sr-only">40% Complete (success)</span>
+													</div>
+												</div>
+											</li>
+										</ul>
+									</div>
+								</li>
+								<li class="dropdown">
+									<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+										<span class="avatar">ER<span class="status online"></span></span>
+										<span class="user-name">Emily Russell</span>
+										<i class="icon-chevron-small-down downarrow"></i>
+									</a>
+									<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+										<div class="admin-settings">
+											<ul class="admin-settings-list">
+												<li>
+													<a href="profile.html">
+														<span class="icon icon-face"></span>
+														<span class="text-name">My Profile</span>
+														<span class="badge badge-success">75% Complete</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="icon icon-notifications_none"></span>
+														<span class="text-name">Notifications</span>
+														<span class="badge badge-orange">12</span>
+													</a>
+												</li>
+												<li>
+													<a href="#">
+														<span class="icon icon-av_timer"></span>
+														<span class="text-name">Secure Account</span>
+													</a>
+												</li>
+											</ul>
+											<div class="actions">
+												<a href="login.html" class="btn btn-primary">Logout</a>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<!-- Header actions end -->
+
+						</div>
+					</div>
+					<!-- Row start -->
+					
+				</div>
+				<!-- Container fluid ends -->
+
+			</header>
+			<!-- END: .app-heading -->
+
+			<!-- BEGIN .app-container -->
+			<div class="app-container">
+
+				<!-- BEGIN .app-side -->
+				<aside class="app-side fixed" id="app-side">
+
+					<!-- BEGIN .side-content -->
+					<div class="side-content ">
+
+						<!-- BEGIN .user actions -->
+						<ul class="user-actions">
+							<li class="quick-links">Quick Links</li>
+							<li>
+								<a href="tasks.html" data-toggle="tooltip" data-placement="top" title="Tasks">
+									<i class="icon-assignment_turned_in"></i>
+								</a>
+							</li>
+							<li>
+								<a href="chat.html" data-toggle="tooltip" data-placement="top" title="Chat">
+									<i class="icon-rate_review"></i>
+								</a>
+							</li>
+							<li>
+								<a href="index2.html" data-toggle="tooltip" data-placement="top" title="Analytics">
+									<i class="icon-chart-line"></i>
+								</a>
+							</li>
+							<li>
+								<a href="custom-tables.html" data-toggle="tooltip" data-placement="top" title="Custom Tables">
+									<i class="icon-border_all"></i>
+								</a>
+							</li>
+							<li>
+								<a href="cards.html" class="red" data-toggle="tooltip" data-placement="top" title="Custom Cards">
+									<i class="icon-book3"></i>
+								</a>
+							</li>
+							<li>
+								<a href="secure.html" class="red" data-toggle="tooltip" data-placement="top" title="Account Status">
+									<i class="icon-verified_user"></i>
+								</a>
+							</li>
+						</ul>
+						<!-- END .user actions -->
+
+						<!-- Nav scroll start -->
+						<div class="sidebarNavScroll">
+
+							<!-- BEGIN .side-nav -->
+							<nav class="side-nav">
+								
+								<!-- BEGIN: side-nav-content -->
+								<ul class="unifyMenu" id="unifyMenu">
+									<li>
+										<a href="index-2.html">
+											<span class="has-icon">
+												<i class="icon-laptop_windows"></i>
+											</span>
+											<span class="nav-title">Dashboard</span>
+										</a>
+									</li>
+									<li class="selected">
+										<a href="tasks.html">
+											<span class="has-icon">
+												<i class="icon-assignment"></i>
+											</span>
+											<span class="nav-title">Tasks</span>
+											<span class="badge">7</span>
+										</a>
+									</li>
+									<li>
+										<a href="chat.html">
+											<span class="has-icon">
+												<i class="icon-message2"></i>
+											</span>
+											<span class="nav-title">Chat</span>
+										</a>
+									</li>
+									<li>
+										<a href="index2.html">
+											<span class="has-icon">
+												<i class="icon-broken_image"></i>
+											</span>
+											<span class="nav-title">Dashboard 2</span>
+										</a>
+									</li>
+									<li>
+										<a href="widgets.html">
+											<span class="has-icon">
+												<i class="icon-style"></i>
+											</span>
+											<span class="nav-title">Widgets</span>
+											<span class="badge orange">20+</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-view_day"></i>
+											</span>
+											<span class="nav-title">Forms</span>
+											<span class="lbl"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='form-inputs.html'>Form Inputs</a>
+											</li>
+											<li>
+												<a href='input-groups.html'>Inputs Groups</a>
+											</li>
+											<li>
+												<a href='bs-select.html'>BS Select</a>
+											</li>
+											<li>
+												<a href='range-sliders.html'>Range Sliders</a>
+											</li>
+											<li>
+												<a href='summernote-editor.html'>Editor</a>
+											</li>
+											<li>
+												<a href='checkbox-radio.html'>Checkbox &amp; Radio</a>
+											</li>
+											<li>
+												<a href='contact.html'>Contact Form</a>
+											</li>
+											<li>
+												<a href='contact2.html'>Contact Form #2</a>
+											</li>
+											<li>
+												<a href='contact3.html'>Contact Form #3</a>
+											</li>
+											<li>
+												<a href='contact4.html'>Contact Form #4</a>
+											</li>
+											<li>
+												<a href='subscribe-form.html'>Subscribe Form</a>
+											</li>
+											<li>
+												<a href='checkout-form.html'>Checkout Form</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="custom-tables.html">
+											<span class="has-icon">
+												<i class="icon-view_week"></i>
+											</span>
+											<span class="nav-title">Custom Tables</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-layers"></i>
+											</span>
+											<span class="nav-title">Layouts</span>
+											<span class="lbl red"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='custom-drag.html'>Custom Panels</a>
+											</li>
+											<li>
+												<a href='layout.html'>Default Layout</a>
+											</li>
+											<li>
+												<a href='fixed-sidebar.html'>Fixed Sidebar</a>
+											</li>
+											<li>
+												<a href='boxed.html'>Boxed Layout</a>
+											</li>
+											<li>
+												<a href='fullscreen.html'>Full Screen</a>
+											</li>
+											<li>
+												<a href='layout-no-quick-actions.html'>No Quick Links</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-receipt"></i>
+											</span>
+											<span class="nav-title">Pages</span>
+											<span class="lbl green"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='profile.html'>User Profile</a>
+											</li>
+											<li>
+												<a href='contacts.html'>Contacts</a>
+											</li>
+											<li>
+												<a href='calendar.html'>Calendar</a>
+											</li>
+											<li>
+												<a href='invoice.html'>Invoice</a>
+											</li>
+											<li>
+												<a href='timeline.html'>Timeline</a>
+											</li>
+											<li>
+												<a href="pricing.html">Pricing</a>
+											</li>
+											<li>
+												<a href="faq.html">Faq's</a>
+											</li>
+											<li>
+												<a href="search.html">Search results</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="cards.html">
+											<span class="has-icon">
+												<i class="icon-book3"></i>
+											</span>
+											<span class="nav-title">Cards</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-public"></i>
+											</span>
+											<span class="nav-title">Maps</span>
+											<span class="lbl yellow"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='map-skins.html'>Snazzy Maps</a>
+											</li>
+											<li>
+												<a href='google-maps.html'>Google Maps</a>
+											</li>
+											<li>
+												<a href='vector-maps.html'>Vector Maps</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="gallery.html">
+											<span class="has-icon">
+												<i class="icon-image2"></i>
+											</span>
+											<span class="nav-title">Gallery</span>
+										</a>
+									</li>
+									<li>
+										<a href="comments.html">
+											<span class="has-icon">
+												<i class="icon-chat_bubble_outline"></i>
+											</span>
+											<span class="nav-title">Comments</span>
+										</a>
+									</li>
+									<li>
+										<a href="datepickers.html">
+											<span class="has-icon">
+												<i class="icon-insert_invitation"></i>
+											</span>
+											<span class="nav-title">Datepickers</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-chart-area-outline"></i>
+											</span>
+											<span class="nav-title">Graphs</span>
+											<span class="lbl"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='c3-graphs.html'>C3 Graphs</a>
+											</li>
+											<li>
+												<a href='flot.html'>Flot Graphs</a>
+											</li>
+											<li>
+												<a href='morris.html'>Morris Graphs</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-beaker"></i>
+											</span>
+											<span class="nav-title">UI Elements</span>
+											<span class="lbl yellow"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='general-elements.html'>General Elements</a>
+											</li>
+											<li>
+												<a href='buttons.html'>Buttons</a>
+											</li>
+											<li>
+												<a href='tabs.html'>Tabs</a>
+											</li>
+											<li>
+												<a href="modals.html">Modals</a>
+											</li>
+											<li>
+												<a href='accordion.html'>Accordion</a>
+											</li>
+											<li>
+												<a href="labels-badges.html">Labels &amp; Badges</a>
+											</li>
+											<li>
+												<a href='notifications.html'>Notifications</a>
+											</li>
+											<li>
+												<a href='carousel.html'>Carousels</a>
+											</li>
+											<li>
+												<a href='list-items.html'>List Items</a>
+											</li>
+											<li>
+												<a href='cards.html'>Cards</a>
+											</li>
+											<li>
+												<a href='navbars.html'>Navbars</a>
+											</li>
+											<li>
+												<a href='popovers-tooltips.html'>Popovers &amp; Tooltips</a>
+											</li>
+											<li>
+												<a href='progress.html'>Progress Bars</a>
+											</li>
+											<li>
+												<a href='pagination.html'>Pagination</a>
+											</li>
+											<li>
+												<a href='typography.html'>Typography</a>
+											</li>
+											<li>
+												<a href='media-objects.html'>Media Objects</a>
+											</li>
+											<li>
+												<a href='icons.html'>Icons</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="tables.html">
+											<span class="has-icon">
+												<i class="icon-border_outer"></i>
+											</span>
+											<span class="nav-title">Tables</span>
+										</a>
+									</li>
+									<li>
+										<a href="datatables.html">
+											<span class="has-icon">
+												<i class="icon-border_all"></i>
+											</span>
+											<span class="nav-title">Data Tables</span>
+										</a>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-lock_outline"></i>
+											</span>
+											<span class="nav-title">Authentication</span>
+											<span class="lbl red"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='login.html'>Login</a>
+											</li>
+											<li>
+												<a href='signup.html'>Signup</a>
+											</li>
+											<li>
+												<a href='forgot-pwd.html'>Forgot Password</a>
+											</li>
+											<li>
+												<a href="locked-screen.html">Locked Screen</a>
+											</li>
+											<li>
+												<a href='error404.html'>Error 404</a>
+											</li>
+											<li>
+												<a href='error505.html'>Error 505</a>
+											</li>
+											<li>
+												<a href='secure.html'>Secure Account</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="#" class="has-arrow" aria-expanded="false">
+											<span class="has-icon">
+												<i class="icon-format_align_left"></i>
+											</span>
+											<span class="nav-title">Multi Level Nav</span>
+											<span class="lbl"></span>
+										</a>
+										<ul aria-expanded="false">
+											<li>
+												<a href='#'>Level #One</a>
+											</li>
+											<li>
+												<a href="#" class="has-arrow" aria-expanded="false">
+													<span class="nav-title">Level #One</span>
+												</a>
+												<ul aria-expanded="false">
+													<li>
+														<a href='#'>Level #Two</a>
+													</li>
+													<li>
+														<a href='#'>Level #Two</a>
+													</li>
+													<li>
+														<a href='#'>Level #Two</a>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+								<!-- END: side-nav-content -->
+
+							</nav>
+							<!-- END: .side-nav -->
+
+							<!-- Sidebar widgets start -->
+							<div class="sidebar-widget">
+								<ul class="contributions">
+									<li>
+										<p>Kingfisher Template <span>$9180</span></p>
+										<div class="progress sm mb-1">
+											<div class="progress-bar bg-orange" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</li>
+									<li>
+										<p>New Project <span>$5179</span></p>
+										<div class="progress sm mb-1">
+											<div class="progress-bar bg-success" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</li>
+									<li>
+										<p>Balance <span>$12595</span></p>
+										<div class="progress sm mb-1">
+											<div class="progress-bar bg-info" role="progressbar" style="width: 35%;" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- Sidebar widgets end -->
+
+						</div>
+						<!-- Nav scroll end -->
+
+					</div>
+					<!-- END: .side-content -->
+
+				</aside>
+				<!-- END: .app-side -->
+
+				<!-- BEGIN .app-main -->
+				<div class="app-main">
+
+					<!-- BEGIN .main-heading -->
+					<header class="tasks-banner">
+						<div class="container-fluid">
+							<div class="row justify-content-md-center">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+									<div class="page-title">
+										<h3>My Tasks</h3>
+										<h6 id="today-date">&nbsp;</h6>
+									</div>
+									<div class="tasks-search">
+										<div class="input-group">
+											<input type="text" class="form-control" placeholder="Search Tasks" aria-label="Recipient's username">
+											<div class="input-group-append">
+												<button class="btn btn-info" type="button">Search</button>
+											</div>
+										</div>
+									</div>
+									<button class="add-btn" type="button" data-toggle="modal" data-target="#createNewTask">
+										<i class="icon-plus2"></i>
+									</button>
+								</div>
+							</div>
+						</div>
+					</header>
+					<!-- END: .main-heading -->
+
+					<!--*************************
+						*************************
+						*************************
+						 Modal example start 
+						*************************
+						*************************
+						*************************-->
+						<!-- Modal -->
+						<div class="modal fade" id="createNewTask" tabindex="-1" role="dialog" aria-labelledby="createNewTaskTitle" aria-hidden="true">
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="createNewTaskTitle">Create Task</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input type="email" class="form-control form-control-sm" id="taskName" placeholder="Task Name">
+										</div>
+										<div class="row gutters">
+											<div class="col-6">
+												<div class="form-group">
+													<input type="date" class="form-control form-control-sm" />
+												</div>
+											</div>
+											<div class="col-6">
+												<div class="form-group">
+													<input type="date" class="form-control form-control-sm" />
+												</div>
+											</div>
+										</div>
+										<div class="form-group m-0">
+											<textarea rows="3" class="form-control form-control-sm" placeholder="Task Description"></textarea>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-danger btn-rounded">Create Task</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!--*************************
+						*************************
+						*************************
+						 Modal example end 
+						*************************
+						*************************
+					*************************-->
+
+					<!-- BEGIN .main-content -->
+					<div class="main-content">
+
+						<!-- Row start -->
+						<div class="row no-gutters">
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+								<section class="task-container high-priority">
+									<h4 class="task-header">Today's Tasks - 7</h4>
+									<div class="tasks-list">
+										<ul>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Create new notification</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Email</span>
+															<span class="badge">Message</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_00">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>													
+												</div>
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Major Release Reminder</div>
+														<div class="task-desc">Global beta-test technologies beta-test clicks-and-mortar global cross-platform dynamic standards-compliant.</div>
+														<div class="task-types">
+															<span class="badge">Release</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_00">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>														
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>												
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Dashboard design which takes 9 days</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Design</span>
+															<span class="badge">Estimation</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_01">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>												
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Coffee with Julia</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Chat</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_02">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Team Meeting</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Meeting</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_02">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>
+											</li>
+											<li>
+												<div class="task-checkbox">													
+													<div class="label">
+														<div class="task-name">Trekking with Maria</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Sports</span>
+															<span class="badge">Trekking</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_02">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>												
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+								<section class="task-container low-priority">
+									<h4 class="task-header">Upcoming Tasks - 10</h4>
+									<div class="tasks-list">
+										<ul>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Team Meeting</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Meeting</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_00">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>												
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Design new page</div>
+														<div class="task-desc">Global beta-test technologies beta-test clicks-and-mortar global cross-platform dynamic standards-compliant.</div>
+														<div class="task-types">
+															<span class="badge">Design</span>
+															<span class="badge">Pages</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_00">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Dashboard design which takes 10 days</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Dashboard</span>
+															<span class="badge">Estimation</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_01">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>												
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Watch Football Match</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Sports</span>
+															<span class="badge">Football</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_02">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Coffee with Julia</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Friends</span>
+															<span class="badge">Coffee</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_02">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>
+											</li>
+											<li>
+												<div class="task-checkbox">
+													<div class="label">
+														<div class="task-name">Watch Football Match</div>
+														<div class="task-desc">Incentivize, incentivize convergence weblogs, schemas sticky plug-and-play. Customized markets, sticky one-to-one exploit.</div>
+														<div class="task-types">
+															<span class="badge">Football</span>
+														</div>
+													</div>
+													<div class="check">
+														<input type="checkbox" name="task_02">
+														<div class="ripple-container">
+															<div class="check-off"></div>
+															<div class="check-on"><i class="icon-tick"></i></div>
+															<div class="check-ripple"></div>
+														</div>
+													</div>
+													<span class="task-msg">Well done!</span>
+												</div>												
+											</li>
+										</ul>
+									</div>
+								</section>
+							</div>
+						</div>
+						<!-- Row end -->
+
+					</div>
+					<!-- END: .main-content -->
+
+					<!-- BEGIN .main-footer -->
+					<footer class="main-footer">
+						Copyright Kingfisher Admin 2018.
+					</footer>
+					<!-- END: .main-footer -->
+
+				</div>
+				<!-- END: .app-main -->
+
+			</div>
+			<!-- END: .app-container -->
+
+		</div>
+		<!-- END: .app-wrap -->
+
+
+		<!--
+			**********************
+			**********************
+			Common JS files
+			**********************
+			**********************
+		-->
+		
+		<!-- jQuery JS. -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Info: jQuery UI is required for datepicker and date range or any jQuery UI related plugins -->
+		<script src="js/jquery-ui.min.js"></script>
+
+		<!-- Tether js, then other JS. -->
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="vendor/unifyMenu/unifyMenu.js"></script>
+		<script src="vendor/onoffcanvas/onoffcanvas.js"></script>
+		<script src="js/moment.js"></script>
+
+		<!-- News Ticker JS -->
+		<script src="vendor/newsticker/newsTicker.min.js"></script>
+		<script src="vendor/newsticker/custom-newsTicker.js"></script>
+
+		<!-- Slimscroll JS -->
+		<script src="vendor/slimscroll/slimscroll.min.js"></script>
+		<script src="vendor/slimscroll/custom-scrollbar.js"></script>
+
+		<!-- Daterange JS -->
+		<script src="vendor/daterange/daterange.js"></script>
+		<script src="vendor/daterange/custom-daterange.js"></script>
+
+		<!-- Common JS -->
+		<script src="js/common.js"></script>
+
+	</body>
+
+<!-- Mirrored from bootstrap.gallery/kingfisher/light-sidebar/tasks.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Oct 2018 13:18:13 GMT -->
+</html>
