@@ -24,44 +24,45 @@
            HorizontalOptions="Center"
            Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"/>
 
-            <Frame
-            BackgroundColor="White"
-            Opacity="0.5"
-            HasShadow="False"
-            AbsoluteLayout.LayoutBounds="0.5,0.5,1,200"        
-            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-                >
-                <StackLayout BackgroundColor="Transparent">
-                    <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
+        <Frame
+        BackgroundColor="White"
+        Opacity="0.5"
+        HasShadow="False"
+        AbsoluteLayout.LayoutBounds="0.5,0.5,1,200"        
+        AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+            >
+            <StackLayout BackgroundColor="Transparent">
+                <Label x:Name="Error" IsEnabled="False" TextColor="Red"/>
 
-                    <local:ImageEntry TextColor="Black" 
-                        Image="username" 
-                        Placeholder="Username"
-                        LineColor="Blue"
-                        x:Name="Username"
-                        Text=""/>
+                <local:ImageEntry TextColor="Black" 
+                    Image="username" 
+                    Placeholder="Username"
+                    LineColor="Blue"
+                    x:Name="Username"
+                    Text=""/>
 
-                    <local:ImageEntry TextColor="Black" 
-                        Image="password" 
-                        Placeholder="Password"
-                        LineColor="Blue"
-                        IsPassword="True"
-                        x:Name="Password"
-                        Text=""/>
-                    <!--<Entry Placeholder="Username" TextColor="Black"/>
-                <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
-                </StackLayout>
-            </Frame>
+                <local:ImageEntry TextColor="Black" 
+                    Image="password" 
+                    Placeholder="Password"
+                    LineColor="Blue"
+                    IsPassword="True"
+                    x:Name="Password"
+                    Text=""/>
+                <!--<Entry Placeholder="Username" TextColor="Black"/>
+            <Entry IsPassword="True" Placeholder="Password" TextColor="Black"/>-->
+            </StackLayout>
+        </Frame>
 
-            <Button Text="Login"  
-             AbsoluteLayout.LayoutBounds="0.5,0.7,1,50"        
-            AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
-           BackgroundColor="White"
-           TextColor="DarkBlue"
-           BorderRadius="50"
-           BorderColor="DarkBlue"
-           BorderWidth="1"
-           Clicked="Login_Clicked"/>
+        <Button Text="Login"  
+                AbsoluteLayout.LayoutBounds="0.5,0.7,1,70"        
+                AbsoluteLayout.LayoutFlags="PositionProportional,WidthProportional"
+                Margin="10"
+                BackgroundColor="White"
+                TextColor="DarkBlue"
+                BorderRadius="50"
+                BorderColor="DarkBlue"
+                BorderWidth="1"
+                Clicked="Login_Clicked"/>
 
     </AbsoluteLayout>
 

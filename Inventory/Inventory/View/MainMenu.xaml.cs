@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace Inventory.View
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainMenu : ContentPage
-	{
-		public MainMenu()
-		{
-			InitializeComponent();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainMenu : ContentPage
+    {
+        public MainMenu()
+        {
+            InitializeComponent();
 
             Background.Source = ImageSource.FromResource("Inventory.Image.background.jpg");
         }
@@ -29,7 +30,7 @@ namespace Inventory.View
 
         async void SearchButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SearchItemPage());
+            await Navigation.PushAsync(new SearchItemOptionPage());
         }
 
         async void ScanButton_Clicked(object sender, EventArgs e)

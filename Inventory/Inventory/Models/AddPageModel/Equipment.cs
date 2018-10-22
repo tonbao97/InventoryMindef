@@ -11,6 +11,7 @@ namespace Inventory.Models
         public string ItemCategory { get; set; }
         public string ItemType { get; set; }
         public string Location { get; set; }
+        public string UserId { get; set; } // temp property is for app only
 
         public string DeliveryOrderNo { get; set; }
         public string DeliveryDate { get; set; }
