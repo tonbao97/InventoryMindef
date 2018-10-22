@@ -11,19 +11,19 @@ namespace Data.Models
     {
         [DisplayName(@"Equipment")]
         public string Name { get; set; }
-        public string Model { get; set; }
         public DateTime CreatedDate { get; set; }
         public int CategoryID { get; set; }
         public int Quantity { get; set; }
         public int BrandID { get; set; }
         public int DeliveryPackageID { get; set; }
+        public int PictureID { get; set; }
         public double Price { get; set; }
         public bool IsConfirmed { get; set; }
         public Equipment()
         {
             this.CreatedDate = DateTime.Now;
         }
-
+        public virtual Picture Picture { get; set; }
         public virtual Brand Brand { get; set; }
         public virtual Category Category { get; set; }
         public virtual DeliveryPackage DeliveryPackage { get; set; }

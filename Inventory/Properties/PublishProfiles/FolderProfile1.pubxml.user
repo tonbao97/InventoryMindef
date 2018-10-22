@@ -16,31 +16,31 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/11/2018 22:24:23</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Categories/Delete.cshtml">
-      <publishTime>10/11/2018 22:01:21</publishTime>
+      <publishTime>10/21/2018 15:15:01</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Categories/Details.cshtml">
-      <publishTime>10/11/2018 22:01:23</publishTime>
+      <publishTime>10/21/2018 15:15:10</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Categories/Edit.cshtml">
       <publishTime>10/11/2018 22:26:43</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Categories/Index.cshtml">
-      <publishTime>10/11/2018 22:01:27</publishTime>
+      <publishTime>10/21/2018 15:14:42</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Equipments/Create.cshtml">
-      <publishTime>10/11/2018 13:31:54</publishTime>
+      <publishTime>10/19/2018 20:37:31</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Equipments/Delete.cshtml">
-      <publishTime>10/11/2018 13:12:54</publishTime>
+      <publishTime>10/19/2018 20:37:36</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Equipments/Details.cshtml">
-      <publishTime>10/11/2018 13:12:55</publishTime>
+      <publishTime>10/19/2018 20:37:39</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Equipments/Edit.cshtml">
-      <publishTime>10/11/2018 23:05:36</publishTime>
+      <publishTime>10/19/2018 20:37:44</publishTime>
     </File>
     <File Include="Areas/Admin/Views/Equipments/Index.cshtml">
-      <publishTime>10/11/2018 23:03:44</publishTime>
+      <publishTime>10/19/2018 20:37:46</publishTime>
     </File>
     <File Include="Areas/Admin/Views/EquipmentTypes/Create.cshtml">
       <publishTime>10/11/2018 13:40:43</publishTime>
@@ -172,22 +172,22 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/01/2018 04:02:00</publishTime>
     </File>
     <File Include="bin/Core.dll">
-      <publishTime>10/12/2018 21:03:10</publishTime>
+      <publishTime>10/21/2018 13:56:11</publishTime>
     </File>
     <File Include="bin/Core.dll.config">
       <publishTime>10/11/2018 15:22:12</publishTime>
     </File>
     <File Include="bin/Core.pdb">
-      <publishTime>10/12/2018 21:03:10</publishTime>
+      <publishTime>10/21/2018 13:56:11</publishTime>
     </File>
     <File Include="bin/Data.dll">
-      <publishTime>10/17/2018 14:39:28</publishTime>
+      <publishTime>10/22/2018 13:00:52</publishTime>
     </File>
     <File Include="bin/Data.dll.config">
       <publishTime>10/13/2018 08:56:24</publishTime>
     </File>
     <File Include="bin/Data.pdb">
-      <publishTime>10/17/2018 14:39:28</publishTime>
+      <publishTime>10/22/2018 13:00:52</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>03/02/2015 10:32:26</publishTime>
@@ -196,10 +196,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>03/02/2015 10:32:26</publishTime>
     </File>
     <File Include="bin/Inventory.dll">
-      <publishTime>10/17/2018 14:39:33</publishTime>
+      <publishTime>10/22/2018 14:11:35</publishTime>
     </File>
     <File Include="bin/Inventory.pdb">
-      <publishTime>10/17/2018 14:39:33</publishTime>
+      <publishTime>10/22/2018 14:11:35</publishTime>
     </File>
     <File Include="bin/Microsoft.AI.Agent.Intercept.dll">
       <publishTime>10/12/2018 18:25:29</publishTime>
@@ -418,10 +418,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/22/2017 00:42:00</publishTime>
     </File>
     <File Include="bin/Service.dll">
-      <publishTime>10/17/2018 14:39:28</publishTime>
+      <publishTime>10/22/2018 13:00:53</publishTime>
     </File>
     <File Include="bin/Service.pdb">
-      <publishTime>10/17/2018 14:39:28</publishTime>
+      <publishTime>10/22/2018 13:00:53</publishTime>
     </File>
     <File Include="bin/System.Configuration.ConfigurationManager.dll">
       <publishTime>11/20/2017 18:09:04</publishTime>
@@ -634,7 +634,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/04/2018 09:34:57</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/16/2018 15:15:47</publishTime>
+      <publishTime>10/22/2018 14:11:37</publishTime>
     </File>
   </ItemGroup>
 </Project>

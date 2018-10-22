@@ -21,7 +21,11 @@ namespace Inventory
 
             // Web API routes
             config.MapHttpAttributeRoutes();
-
+            config.Routes.MapHttpRoute(
+                "GetItemInfo",
+                "api/getiteminfo",
+                new { controller = "Items", action = "GetItemInfo" }
+            );
             config.Routes.MapHttpRoute(
                 "GetBrands",
                 "api/getbrands",

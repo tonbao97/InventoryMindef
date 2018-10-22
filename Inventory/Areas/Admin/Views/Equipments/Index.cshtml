@@ -18,7 +18,10 @@
             @Html.DisplayNameFor(model => model.Category.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Supplier.Name)
+            @Html.DisplayNameFor(model => model.DeliveryPackage.DeliveryOrderNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.CreatedDate)
@@ -30,7 +33,7 @@
             @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.IsConfirmed)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -53,7 +56,10 @@
             @Html.DisplayFor(modelItem => item.Category.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Supplier.Name)
+            @Html.DisplayFor(modelItem => item.DeliveryPackage.DeliveryOrderNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.CreatedDate)
@@ -65,7 +71,7 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.IsConfirmed)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)

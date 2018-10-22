@@ -9,6 +9,8 @@ using Data.Models;
 using System.Security.Claims;
 using Microsoft.Owin.Security;
 using System;
+using System.Net.Mail;
+using System.Net;
 
 namespace Inventory
 {
@@ -18,7 +20,23 @@ namespace Inventory
         public Task SendAsync(IdentityMessage message)
         {
             // Plug in your email service here to send an email.
-            return Task.FromResult(0);
+            //SmtpClient client = new SmtpClient();
+            //return client.SendMailAsync(ConfigurationManager.AppSettings["SupportEmailAddr"],
+            //                            message.Destination,
+            //                            message.Subject,
+            //                            message.Body);
+
+            SmtpClient client = new SmtpClient();
+            client.Port = 587;
+            client.Host = "smtp.gmail.com";
+            client.EnableSsl = true;
+            //client.Timeout = 10000;
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential("trungtin719.tt2@gmail.com", "zxcasdqwe123");
+
+            return client.SendMailAsync("trungtin719.tt2@gmail.com", message.Destination, message.Subject, message.Body);
+            //return Task.FromResult(0);
         }
     }
 

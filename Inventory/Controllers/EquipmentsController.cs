@@ -10,6 +10,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using System.Web.Http.Results;
 using Data;
 using Data.Models;
 using Inventory.Models;
@@ -20,7 +21,7 @@ using Service;
 namespace Inventory.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
-
+    [Authorize]
     public class EquipmentsController : ApiController
     {
         private InventoryEntities db = new InventoryEntities();
@@ -53,24 +54,25 @@ namespace Inventory.Controllers
             return db.Equipments;
         }
 
-        public IQueryable<Brand> GetBrands()
+        public IQueryable<BrandModel> GetBrands()
         {
-            return db.Brands;
+            
+            return db.Brands.Select(p => new BrandModel() { Id = p.Id, Name = p.Name });
         }
 
-        public IQueryable<Supplier> GetSuppliers()
+        public IQueryable<SupplierModel> GetSuppliers()
         {
-            return db.Suppliers;
+            return db.Suppliers.Select(p => new SupplierModel() { Id = p.Id, Name = p.Name });
         }
 
-        public IQueryable<EquipmentType> GetEquipmentTypes()
+        public IQueryable<EquipmentTypeModel> GetEquipmentTypes()
         {
-            return db.EquipmentTypes;
+            return db.EquipmentTypes.Select(p => new EquipmentTypeModel() { Id = p.Id, Name = p.Name });
         }
 
-        public IQueryable<Category> GetCategories()
+        public IQueryable<CategoryModel> GetCategories()
         {
-            return db.Categories;
+            return db.Categories.Select(p => new CategoryModel() { Id = p.Id, Name = p.Name });
         }
 
         public IQueryable<Equipment> SearchEquipments()
@@ -204,6 +206,7 @@ namespace Inventory.Controllers
             equipment.IsConfirmed = true;
             equipment.IsActive = true;
             equipment.DeliveryPackageID = deliveryPackage.Id;
+            equipment.PictureID = picture.Id;
             db.Equipments.Add(equipment);
             db.SaveChanges();
 

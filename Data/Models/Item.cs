@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace Data.Models
         public int QRCode { get; set; }
         public int EquipmentID { get; set; }
         public int StatusID { get; set; }
-
+        public string SerialNo { get; set; }
         public Item()
         {
             this.CreatedDate = DateTime.Now;
@@ -20,6 +21,5 @@ namespace Data.Models
 
         public virtual Equipment Equipment { get; set; }
         public virtual Status Status { get; set; }
-
     }
 }

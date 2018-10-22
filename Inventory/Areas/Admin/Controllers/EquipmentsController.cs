@@ -8,30 +8,17 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
-using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    public class EquipmentsController : BaseController
+    public class EquipmentsController : Controller
     {
-        private ICategoryService categoryService;
-        private IEquipmentService equipmentService;
-        private IBrandService brandService;
-        private ISupplierService supplierService;
-
-        public EquipmentsController(IEquipmentService equipmentService, ICategoryService categoryService, ISupplierService supplierService,
-            IBrandService brandService)
-        {
-            this.equipmentService = equipmentService;
-            this.categoryService = categoryService;
-            this.brandService = brandService;
-            this.supplierService = supplierService;
-        }
+        private InventoryEntities db = new InventoryEntities();
 
         // GET: Admin/Equipments
         public ActionResult Index()
         {
-            var equipments = equipmentService.GetEquipments();
+            var equipments = db.Equipments.Include(e => e.Brand).Include(e => e.Category).Include(e => e.DeliveryPackage);
             return View(equipments.ToList());
         }
 
@@ -42,7 +29,7 @@ namespace Inventory.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Equipment equipment = equipmentService.GetEquipmentById(id.Value);
+            Equipment equipment = db.Equipments.Find(id);
             if (equipment == null)
             {
                 return HttpNotFound();
@@ -53,9 +40,9 @@ namespace Inventory.Areas.Admin.Controllers
         // GET: Admin/Equipments/Create
         public ActionResult Create()
         {
-            ViewBag.BrandID = new SelectList(brandService.GetBrands(), "Id", "Name");
-            ViewBag.CategoryID = new SelectList(categoryService.GetCategorys(), "Id", "Name");
-            ViewBag.SupplierID = new SelectList(supplierService.GetSuppliers(), "Id", "Name");
+            ViewBag.BrandID = new SelectList(db.Brands, "Id", "Name");
+            ViewBag.CategoryID = new SelectList(db.Categories, "Id", "Name");
+            ViewBag.DeliveryPackageID = new SelectList(db.DeliveryPackages, "Id", "DeliveryOrderNo");
             return View();
         }
 
@@ -64,16 +51,18 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,CategoryID,Quantity,BrandID,SupplierID,Price,Name,Description,Note,IsActive")] Equipment equipment)
+        public ActionResult Create([Bind(Include = "Id,Name,CreatedDate,CategoryID,Quantity,BrandID,DeliveryPackageID,Price,IsConfirmed,Description,Note,IsActive")] Equipment equipment)
         {
             if (ModelState.IsValid)
             {
-                equipmentService.CreateEquipment(equipment);
+                db.Equipments.Add(equipment);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BrandID = new SelectList(brandService.GetBrands(), "Id", "Name", equipment.BrandID);
-            ViewBag.CategoryID = new SelectList(categoryService.GetCategorys(), "Id", "Name", equipment.CategoryID);
+            ViewBag.BrandID = new SelectList(db.Brands, "Id", "Name", equipment.BrandID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "Id", "Name", equipment.CategoryID);
+            ViewBag.DeliveryPackageID = new SelectList(db.DeliveryPackages, "Id", "DeliveryOrderNo", equipment.DeliveryPackageID);
             return View(equipment);
         }
 
@@ -84,13 +73,14 @@ namespace Inventory.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Equipment equipment = equipmentService.GetEquipmentById(id.Value);
+            Equipment equipment = db.Equipments.Find(id);
             if (equipment == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.BrandID = new SelectList(brandService.GetBrands(), "Id", "Name", equipment.BrandID);
-            ViewBag.CategoryID = new SelectList(categoryService.GetCategorys(), "Id", "Name", equipment.CategoryID);
+            ViewBag.BrandID = new SelectList(db.Brands, "Id", "Name", equipment.BrandID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "Id", "Name", equipment.CategoryID);
+            ViewBag.DeliveryPackageID = new SelectList(db.DeliveryPackages, "Id", "DeliveryOrderNo", equipment.DeliveryPackageID);
             return View(equipment);
         }
 
@@ -99,15 +89,17 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,CategoryID,Quantity,BrandID,SupplierID,Price,Name,Description,Note,IsActive")] Equipment equipment)
+        public ActionResult Edit([Bind(Include = "Id,Name,CreatedDate,CategoryID,Quantity,BrandID,DeliveryPackageID,Price,IsConfirmed,Description,Note,IsActive")] Equipment equipment)
         {
             if (ModelState.IsValid)
             {
-                equipmentService.EditEquipment(equipment);
+                db.Entry(equipment).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BrandID = new SelectList(brandService.GetBrands(), "Id", "Name", equipment.BrandID);
-            ViewBag.CategoryID = new SelectList(categoryService.GetCategorys(), "Id", "Name", equipment.CategoryID);
+            ViewBag.BrandID = new SelectList(db.Brands, "Id", "Name", equipment.BrandID);
+            ViewBag.CategoryID = new SelectList(db.Categories, "Id", "Name", equipment.CategoryID);
+            ViewBag.DeliveryPackageID = new SelectList(db.DeliveryPackages, "Id", "DeliveryOrderNo", equipment.DeliveryPackageID);
             return View(equipment);
         }
 
@@ -118,7 +110,7 @@ namespace Inventory.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Equipment equipment = equipmentService.GetEquipmentById(id.Value);
+            Equipment equipment = db.Equipments.Find(id);
             if (equipment == null)
             {
                 return HttpNotFound();
@@ -131,10 +123,19 @@ namespace Inventory.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            equipmentService.DeleteEquipment(id);
+            Equipment equipment = db.Equipments.Find(id);
+            db.Equipments.Remove(equipment);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
