@@ -4,8 +4,7 @@
     Title="Main Menu"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="Inventory.View.MainMenu"
-    NavigationPage.HasNavigationBar="False">
+    x:Class="Inventory.View.MainMenu">
     
     <ContentPage.Content>
         
@@ -14,11 +13,9 @@
                 x:Name="Background"
                 AbsoluteLayout.LayoutBounds="0,0,1,1"        
                 AbsoluteLayout.LayoutFlags="All"
-                Aspect="AspectFill"
-            />
+                Aspect="AspectFill"/>
             <Grid
                 AbsoluteLayout.LayoutBounds=".5,.5,.9,.6"
-<<<<<<< HEAD
                 AbsoluteLayout.LayoutFlags="All"
                 ColumnSpacing="20"
                 RowSpacing="20">
@@ -29,10 +26,6 @@
                    Grid.Column="0"
                    Grid.Row="0"
                 />
-=======
-                AbsoluteLayout.LayoutFlags="All">
-                
->>>>>>> 34664efa1a28c6a60c86969bbf51de5a7ba9e805
                 <Button
                     Grid.Column="0"
                     Grid.Row="0"
@@ -40,7 +33,6 @@
                     Image="Add2.png"
                     Clicked="AddButton_Clicked"
                     BorderColor="Black"
-<<<<<<< HEAD
                     BorderWidth="1"/>
 
     <!--Search button-->
@@ -50,11 +42,6 @@
                    Grid.Column="1"
                    Grid.Row="0"
                 />
-=======
-                    BorderWidth="1"
-                    HeightRequest="100"
-                 />
->>>>>>> 34664efa1a28c6a60c86969bbf51de5a7ba9e805
                 <Button 
                     Grid.Column="1"
                     Grid.Row="0"
@@ -62,7 +49,6 @@
                     Image="search2.png"
                     BorderColor="Black"
                     BorderWidth="1"
-<<<<<<< HEAD
                     Clicked="SearchButton_Clicked"/>
 
     <!--Scan button-->
@@ -71,9 +57,6 @@
                    Opacity="0.7"
                    Grid.Column="0"
                    Grid.Row="1"
-=======
-                    Clicked="SearchButton_Clicked"
->>>>>>> 34664efa1a28c6a60c86969bbf51de5a7ba9e805
                 />
                 <Button 
                     Grid.Column="0"
@@ -81,7 +64,6 @@
                     BackgroundColor="Transparent"
                     BorderColor="Black"
                     BorderWidth="1"
-<<<<<<< HEAD
                     Image="Scan2.png"
                     Clicked="ScanButton_Clicked"/>
 
@@ -91,10 +73,6 @@
                    Opacity="0.7"
                    Grid.Column="1"
                    Grid.Row="1"
-=======
-                    Image="Scan.png"
-                    Clicked="ScanButton_Clicked"
->>>>>>> 34664efa1a28c6a60c86969bbf51de5a7ba9e805
                 />
                 <Button
                     Grid.Column="1"
@@ -102,15 +80,8 @@
                     BackgroundColor="Transparent"
                     BorderColor="Black"
                     BorderWidth="1"
-<<<<<<< HEAD
                     Image="logout2.png"
                     Clicked="Logout_Clicked"/>
-=======
-                    Image="logout.png"
-                    Clicked="Logout_Clicked"
-                />
-                
->>>>>>> 34664efa1a28c6a60c86969bbf51de5a7ba9e805
             </Grid>
         </AbsoluteLayout>
         
