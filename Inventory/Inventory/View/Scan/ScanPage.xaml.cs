@@ -33,20 +33,20 @@ namespace Inventory.View.Scan
         }
 
         private void ScanQr() {
-            if (!Scanned)
-            {
-                var scan = new ZXingScannerPage();
-                Navigation.PushAsync(scan);
-                scan.OnScanResult += (result) =>
-                {
-                    Device.BeginInvokeOnMainThread(async () =>
-                    {
-                        ScannedCode.Text = result.Text;
-                        Scanned = true;
-                        await Navigation.PopAsync();
-                    });
-                };
-            }
+            //if (!Scanned)
+            //{
+            //    var scan = new ZXingScannerPage();
+            //    Navigation.PushAsync(scan);
+            //    scan.OnScanResult += (result) =>
+            //    {
+            //        Device.BeginInvokeOnMainThread(async () =>
+            //        {
+            //            ScannedCode.Text = result.Text;
+            //            Scanned = true;
+            //            await Navigation.PopAsync();
+            //        });
+            //    };
+            //}
         }
 
         async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)

@@ -15,41 +15,72 @@
                 AbsoluteLayout.LayoutFlags="All"
                 Aspect="AspectFill"/>
             <Grid
-                ColumnSpacing="20"
-                RowSpacing="20"
                 AbsoluteLayout.LayoutBounds=".5,.5,.9,.6"
-                AbsoluteLayout.LayoutFlags="All">
+                AbsoluteLayout.LayoutFlags="All"
+                ColumnSpacing="20"
+                RowSpacing="20">
+    <!--Add Button--> 
+                <BoxView 
+                   BackgroundColor="White"     
+                   Opacity="0.7"
+                   Grid.Column="0"
+                   Grid.Row="0"
+                />
                 <Button
                     Grid.Column="0"
                     Grid.Row="0"
-                    BackgroundColor="#0ba3f4"
-                    Image="Add.png"
+                    BackgroundColor="Transparent"
+                    Image="Add2.png"
                     Clicked="AddButton_Clicked"
                     BorderColor="Black"
                     BorderWidth="1"/>
+
+    <!--Search button-->
+                <BoxView 
+                   BackgroundColor="White"     
+                   Opacity="0.7"
+                   Grid.Column="1"
+                   Grid.Row="0"
+                />
                 <Button 
                     Grid.Column="1"
                     Grid.Row="0"
-                    BackgroundColor="#0ba3f4"
-                    Image="search.png"
+                    BackgroundColor="Transparent"
+                    Image="search2.png"
                     BorderColor="Black"
                     BorderWidth="1"
                     Clicked="SearchButton_Clicked"/>
+
+    <!--Scan button-->
+                <BoxView 
+                   BackgroundColor="White"     
+                   Opacity="0.7"
+                   Grid.Column="0"
+                   Grid.Row="1"
+                />
                 <Button 
                     Grid.Column="0"
                     Grid.Row="1"
-                    BackgroundColor="#0ba3f4"
+                    BackgroundColor="Transparent"
                     BorderColor="Black"
                     BorderWidth="1"
-                    Image="Scan.png"
+                    Image="Scan2.png"
                     Clicked="ScanButton_Clicked"/>
+
+    <!--Logout button-->
+                <BoxView 
+                   BackgroundColor="White"     
+                   Opacity="0.7"
+                   Grid.Column="1"
+                   Grid.Row="1"
+                />
                 <Button
                     Grid.Column="1"
                     Grid.Row="1"
-                    BackgroundColor="#0ba3f4"
+                    BackgroundColor="Transparent"
                     BorderColor="Black"
                     BorderWidth="1"
-                    Image="logout.png"
+                    Image="logout2.png"
                     Clicked="Logout_Clicked"/>
             </Grid>
         </AbsoluteLayout>

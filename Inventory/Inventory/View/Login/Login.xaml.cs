@@ -27,52 +27,52 @@ namespace Inventory.View
         private async void Login_Clicked(object sender, EventArgs e)
         {
 
+            //if (Username.Text.Equals("") || Password.Text.Equals(""))
+            //{
+            //    await DisplayAlert("Notice", "Please enter username and password", "Okay");
+            //    Error.Text = "Username and password can't be empty";
+            //}
+            //else
+            //{
+            //    var dict = new Dictionary<string, string>();
+            //    dict.Add("username", Username.Text);
+            //    dict.Add("password", Password.Text);
+            //    dict.Add("grant_type", "password");
+            //    var client = new HttpClient();
+            //    var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
 
-            if (Username.Text.Equals("") || Password.Text.Equals(""))
-            {
-                await DisplayAlert("Notice", "Please enter username and password", "Okay");
-                Error.Text = "Username and password can't be empty";
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        var text = response.Content.ReadAsStringAsync();
+
+            //        var Token = JsonConvert.DeserializeObject<Token>(text.Result);
+
+            //        Application.Current.Properties["Token"] = Token.access_token;
+            //        Application.Current.Properties["Name"] = Token.userName;
+            //        Application.Current.Properties["Type"] = Token.token_type;
+
+            //        await Navigation.PushAsync(new MainMenu());
+            //    }
+            //    else
+            //    {
+            //        await DisplayAlert("Error", "Wrong username or password", "Ok");
+            //        Error.Text = "Wrong username or password";
+            //    }
+            //}
+            await Navigation.PushAsync(new MainMenu());
             }
-            else
-            {
-                var dict = new Dictionary<string, string>();
-                dict.Add("username", Username.Text);
-                dict.Add("password", Password.Text);
-                dict.Add("grant_type", "password");
-                var client = new HttpClient();
-                var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
 
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var text = response.Content.ReadAsStringAsync();
-
-                        var Token = JsonConvert.DeserializeObject<Token>(text.Result);
-
-                        Application.Current.Properties["Token"] = Token.access_token;
-                        Application.Current.Properties["Name"] = Token.userName;
-                        Application.Current.Properties["Type"] = Token.token_type;
-
-                        await Navigation.PushAsync(new MainMenu());
-                    }
-                    else
-                    {
-                        await DisplayAlert("Error", "Wrong username or password", "Ok");
-                        Error.Text = "Wrong username or password";
-                    }
-                }
-            }
-
-        protected override void OnAppearing()
-        {
-            if (Application.Current.Properties.ContainsKey("Token"))
-            {
-                if(Application.Current.Properties["Token"] != null)
-                {
-                    Navigation.PushAsync(new MainMenu());
-                }
-            }
-            base.OnAppearing();
-        }
+        //protected override void OnAppearing()
+        //{
+        //    if (Application.Current.Properties.ContainsKey("Token"))
+        //    {
+        //        if(Application.Current.Properties["Token"] != null)
+        //        {
+        //            Navigation.PushAsync(new MainMenu());
+        //        }
+        //    }
+        //    base.OnAppearing();
+        //}
     }
 }
 

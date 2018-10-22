@@ -63,6 +63,7 @@
                                         FontSize="Small" 
                                         VerticalOptions="Center"
                                         />
+                                
                                 <Button Text="+" 
                                         WidthRequest="40" 
                                         HeightRequest="30"
@@ -70,8 +71,7 @@
                                         BorderWidth="1"
                                         BackgroundColor="#166bf4"
                                         TextColor="White"
-                                        Clicked="AddSupplier_Clicked"
-                                        />
+                                        Clicked="AddSupplier_Clicked"/>
                             </StackLayout>
                         </ViewCell>
 
@@ -92,7 +92,10 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Category:" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Picker x:Name="CategoryPicker" Title="Choose Item Category" VerticalOptions="Center" FontSize="Small">
+                                <Picker x:Name="CategoryPicker" 
+                                        Title="Choose Item Category" 
+                                        VerticalOptions="Center" 
+                                        FontSize="Small">
                                     <!--<Picker.Items>
                                         --><!--If Category Computer--><!--
                                         <x:String>Desktop</x:String>
@@ -149,7 +152,10 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Picker x:Name="itemBrand" Title="Choose Item Brand" VerticalOptions="Center" FontSize="Small">
+                                <Picker x:Name="itemBrand" 
+                                        Title="Choose Item Brand" 
+                                        VerticalOptions="Center" 
+                                        FontSize="Small">
                                 </Picker>
                                 <Button Text="+" 
                                         WidthRequest="40" 

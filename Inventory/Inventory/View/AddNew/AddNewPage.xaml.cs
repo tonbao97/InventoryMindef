@@ -55,6 +55,7 @@ namespace Inventory.View.AddNew
             };
 
             TakenPicture.GestureRecognizers.Add(tapGestureRecognizer);
+          
         }
 
         private async void OnTapped()
@@ -113,8 +114,29 @@ namespace Inventory.View.AddNew
             PopupNavigation.Instance.PushAsync(BrandAddPage);
         }
 
-        private async void Save_Clicked(object sender, EventArgs e)
+        private void Save_Clicked(object sender, EventArgs e)
         {
+            Validate();
+        }
+
+
+        private void Validate() {
+
+            if (DeliveryOrderNo == null || Model.Text == null || Quantity.Text == null)
+            {
+                DisplayAlert("Noticed","Please input all the needed info","Ok");
+            }
+            else if (file == null)
+            {
+                DisplayAlert("Noticed", "Please take picture of item", "Ok");
+            }
+            else
+            {
+                SendInfoToDatabse();
+            }
+        }
+
+        private async void SendInfoToDatabse() {
 
             DateTime day = Date.Date;
             var DayChoose = String.Format("{0:yyyy/MM/dd}", day);
@@ -126,19 +148,19 @@ namespace Inventory.View.AddNew
                 .PutAsync(file.GetStream());
             string imgurl = stroageImage;
 
-            Item newItem = new Item(DeliveryOrderNo.Text, DayChoose, SupplierPicker.Items[SupplierPicker.SelectedIndex].ToString(), CategoryPicker.SelectedIndex, itemBrand.Items[itemBrand.SelectedIndex].ToString(), Model.Text, int.Parse(Quantity.Text), "");
+            Item newItem = new Item(DeliveryOrderNo.Text, DayChoose, SupplierPicker.Items[SupplierPicker.SelectedIndex].ToString(), CategoryPicker.SelectedIndex, itemBrand.Items[itemBrand.SelectedIndex].ToString(), Model.Text, int.Parse(Quantity.Text), imgurl);
 
 
             var content = JsonConvert.SerializeObject(newItem);
             var res = client.PostAsync(UrlAdd, new StringContent(content, Encoding.UTF8, "application/json"));
             await DisplayAlert("Check", res.Result.ToString(), "OK");
-
         }
+
 
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            
+
             var Supplier = await client.GetStringAsync(UrlSuppliers);
             var listSupplier = JsonConvert.DeserializeObject<List<Supplier>>(Supplier);
             SupplierList = new ObservableCollection<Supplier>(listSupplier);
@@ -150,7 +172,7 @@ namespace Inventory.View.AddNew
             var Brand = await client.GetStringAsync(UrlBrands);
             var listBrand = JsonConvert.DeserializeObject<List<Brand>>(Brand);
             Brands = new ObservableCollection<Brand>(listBrand);
-            
+
 
             itemBrand.ItemsSource = Brands;
             itemBrand.ItemDisplayBinding = new Binding("Name");
@@ -171,7 +193,13 @@ namespace Inventory.View.AddNew
 
             CategoryPicker.ItemsSource = Category;
             CategoryPicker.ItemDisplayBinding = new Binding("Name");
+
+
+            SupplierPicker.SelectedIndex = 0;
+            itemBrand.SelectedIndex = 0;
+            CategoryPicker.SelectedIndex = 0;
+            EquipmentTypePicker.SelectedIndex = 0;
         }
-        
+
     }
 }
