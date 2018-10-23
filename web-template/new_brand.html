@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+		<title>Admin Dashboard</title>
+		
+		<!--
+			**********************
+			**********************
+			Common CSS files
+			**********************
+			**********************
+		-->
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+
+		<!-- Icomoon Icons CSS -->
+		<link rel="stylesheet" href="fonts/icomoon/icomoon.css" />
+
+		<!-- Master CSS -->
+		<link rel="stylesheet" href="css/main.css" />
+
+		<!-- Daterange CSS -->
+		<link rel="stylesheet" href="vendor/daterange/daterange.css" />
+
+
+		<!--
+			**********************
+			**********************
+			Optional CSS files
+			**********************
+			**********************
+		-->
+
+		<!-- jQueryUI CSS -->
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+
+		<!-- Datepickers CSS -->
+		<link rel="stylesheet" href="css/datepicker.css" />
+
+		<!-- Morris CSS -->
+		<link rel="stylesheet" href="vendor/morris/morris.css" />
+
+		<!-- Circliful CSS -->
+		<link rel="stylesheet" href="vendor/circliful/circliful.css" />
+
+		<!-- Tags CSS -->
+		<link href="vendor/tags/tagmanager.css" rel="stylesheet" /> 
+
+        <script src="js/jquery.js"></script>
+        <script> 
+            $(function(){
+              $("#includedContent").load("aside_nav.html"); 
+            });
+        </script>
+    
+	</head>
+	<body>
+
+		<!-- Loading start -->
+		<div id="loading-wrapper">
+			<div id="loader"></div>
+		</div>
+		<!-- Loading end -->
+
+		<!-- BEGIN .app-wrap -->
+		<div class="app-wrap">
+
+			<!-- BEGIN .app-heading -->
+			<header class="app-header">
+				<div class="container-fluid">
+					<!-- Row start -->
+					<div class="row gutters">
+						<div class="col-xl-7 col-lg-7 col-md-6 col-sm-7 col-7">
+						</div>
+						<div class="col-xl-5 col-lg-5 col-md-6 col-sm-5 col-5">
+							<!-- Header actions start -->
+							<ul class="header-actions">
+								<li class="dropdown">
+									<a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+										<span class="avatar">AU<span class="status online"></span></span>
+										<span class="user-name">Admin User</span>
+										<i class="icon-chevron-small-down downarrow"></i>
+									</a>
+									<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+										<div class="admin-settings">
+											<div class="actions">
+												<a href="login.html" class="btn btn-primary">Logout</a>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<!-- Header actions end -->
+						</div>
+					</div>
+					<!-- Row start -->
+				</div>
+			</header>
+			<!-- END: .app-heading -->
+
+			<!-- BEGIN .app-container -->
+			<div class="app-container">
+
+				<!-- BEGIN .app-side -->
+				<div id="includedContent"></div>
+				<!-- END: .app-side -->
+
+				<!-- BEGIN .app-main -->
+				<div class="app-main">
+
+					<!-- BEGIN .main-heading -->
+					<header class="main-heading">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<div class="page-icon">
+										<i class="icon-laptop_windows"></i>
+									</div>
+									<div class="page-title">
+										<h3>Dashboard</h3>
+										<h6 class="sub-heading">Admin</h6>
+									</div>
+								</div>
+<!--
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+									<div class="datepicket-container primary">
+                                        <div id="datepicker"></div>
+                                        <div class="bg-primary"></div>
+                                    </div>
+								</div>
+-->
+							</div>
+						</div>
+					</header>
+					<!-- END: .main-heading -->
+
+					<!-- BEGIN .main-content -->
+					<div class="main-content">
+
+						<!-- Row start -->
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+                                <!-- section container start -->
+                                <div class="section-container">
+                                    <h6 class="section-title">New Brand</h6>
+                                        
+									<div class="section-wrapper white left">
+                                        <div class="row gutters">
+                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <label>Brand</label>
+                                                    <input class="form-control" placeholder="Brand Name" type="text">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row gutters">
+                                            <div class="col-xl-6 col-lg col-md-6 col-sm-6 col-12">
+                                                <div class="form-group">
+                                                    <button type="button" class="btn btn-outline-primary btn-rounded">Save</button>
+                                                </div>
+                                            </div>
+										</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						<!-- Row end -->
+						
+					</div>
+					<!-- END: .main-content -->
+
+					<!-- BEGIN .main-footer -->
+					<footer class="main-footer">
+
+					</footer>
+					<!-- END: .main-footer -->
+
+				</div>
+				<!-- END: .app-main -->
+
+			</div>
+			<!-- END: .app-container -->
+
+		</div>
+		<!-- END: .app-wrap -->
+
+
+		<!--
+			**********************
+			**********************
+			Common JS files
+			**********************
+			**********************
+		-->
+
+		<!-- jQuery JS. -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Info: jQuery UI is required for datepicker and date range or any jQuery UI related plugins -->
+		<script src="js/jquery-ui.min.js"></script>
+
+		<!-- Tether Js, then other JS. -->
+		<script src="js/popper.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="vendor/unifyMenu/unifyMenu.js"></script>
+		<script src="vendor/onoffcanvas/onoffcanvas.js"></script>
+		<script src="js/moment.js"></script>
+
+		<!-- News Ticker JS -->
+		<script src="vendor/newsticker/newsTicker.min.js"></script>
+		<script src="vendor/newsticker/custom-newsTicker.js"></script>
+
+		<!-- Slimscroll JS -->
+		<script src="vendor/slimscroll/slimscroll.min.js"></script>
+		<script src="vendor/slimscroll/custom-scrollbar.js"></script>
+
+		<!-- Daterange JS -->
+		<script src="vendor/daterange/daterange.js"></script>
+		<script src="vendor/daterange/custom-daterange.js"></script>
+
+
+		<!--
+			**********************
+			**********************
+			Optional JS files - Plugns
+			**********************
+			**********************
+		-->
+		
+		<!-- Morris Graphs -->
+		<script src="vendor/morris/raphael-min.js"></script>
+		<script src="vendor/morris/morris.min.js"></script>
+		<script src="vendor/morris/custom/areaChart.js"></script>
+		<script src="vendor/morris/custom/line-chart.js"></script>
+		<script src="vendor/morris/custom/multibar.js"></script>
+
+		<!-- Circliful -->
+		<script src="vendor/circliful/circliful.min.js"></script>
+		<script src="vendor/circliful/circliful.custom.js"></script>
+
+		<!-- Peity JS -->
+		<script src="vendor/peity/peity.min.js"></script>
+		<script src="vendor/peity/custom-peity.js"></script>
+
+		<!-- Tag Manager -->
+		<script src="vendor/tags/tagmanager.js"></script>
+		<script src="vendor/tags/tagmanager-custom.js"></script>
+
+		<!-- Common JS -->
+		<script src="js/common.js"></script>
+
+		<script>
+			//Datepicker
+			$(function() {
+				$("#datepicker").datepicker();
+			});
+		</script>
+		
+	</body>
+
+<!-- Mirrored from bootstrap.gallery/kingfisher/light-sidebar/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Oct 2018 13:16:55 GMT -->
+</html>
