@@ -27,48 +27,47 @@ namespace Inventory.View
         private async void Login_Clicked(object sender, EventArgs e)
         {
 
-            if (Username.Text.Equals("") || Password.Text.Equals(""))
-            {
-                await DisplayAlert("Notice", "Please enter username and password", "Okay");
-                Error.Text = "Username and password can't be empty";
-            }
-            else
-            {
-                var dict = new Dictionary<string, string>();
-                dict.Add("username", Username.Text);
-                dict.Add("password", Password.Text);
-                dict.Add("grant_type", "password");
-                var client = new HttpClient();
+            //if (Username.Text.Equals("") || Password.Text.Equals(""))
+            //{
+            //    await DisplayAlert("Notice", "Please enter username and password", "Okay");
+            //    Error.Text = "Username and password can't be empty";
+            //}
+            //else
+            //{
+            //    var dict = new Dictionary<string, string>();
+            //    dict.Add("username", Username.Text);
+            //    dict.Add("password", Password.Text);
+            //    dict.Add("grant_type", "password");
+            //    var client = new HttpClient();
 
-                try
-                {
-                    var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
-                    if (response.IsSuccessStatusCode)
-                    {
-                        var text = response.Content.ReadAsStringAsync();
+            //    try
+            //    {
+            //        var response = await client.PostAsync(Url, new FormUrlEncodedContent(dict));
+            //        if (response.IsSuccessStatusCode)
+            //        {
+            //            var text = response.Content.ReadAsStringAsync();
 
-                        var Token = JsonConvert.DeserializeObject<Token>(text.Result);
+            //            var Token = JsonConvert.DeserializeObject<Token>(text.Result);
 
-                        Application.Current.Properties["Token"] = Token.access_token;
-                        Application.Current.Properties["Name"] = Token.userName;
-                        Application.Current.Properties["Type"] = Token.token_type;
+            //            Application.Current.Properties["Token"] = Token.access_token;
+            //            Application.Current.Properties["Name"] = Token.userName;
+            //            Application.Current.Properties["Type"] = Token.token_type;
 
-                        await Navigation.PushAsync(new MainMenu());
-                    }
-                    else
-                    {
+            //            await Navigation.PushAsync(new MainMenu());
+            //        }
+            //        else
+            //        {
 
-                        Error.Text = "Wrong username or password";
-                    }
-                }
-                catch (System.Net.WebException Err)
-                {
-                   await DisplayAlert("Error", "No connection to server", "Noticed");
-                }
+            //            Error.Text = "Wrong username or password";
+            //        }
+            //    }
+            //    catch (System.Net.WebException Err)
+            //    {
+            //       await DisplayAlert("Error", "No connection to server", "Noticed");
+            //    }
+            //}
 
-
-
-            }
+            await Navigation.PushAsync(new MainMenu());
         }
 
         protected override void OnAppearing()

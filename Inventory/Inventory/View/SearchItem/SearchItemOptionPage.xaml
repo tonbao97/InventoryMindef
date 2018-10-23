@@ -25,40 +25,81 @@
     </ContentPage>
 
     <ContentPage Title="User">
-        <StackLayout>
-            <!-- havent set event changed handler yet !-->
-            <ListView x:Name="userListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding SearchCategory}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
-                                <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
-                                <Label Text="(3)" VerticalOptions="Center"/>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            <Button Text="Show All" />
+        <StackLayout Padding="5,0,5,0" Orientation="Vertical">
+            
+            <AbsoluteLayout VerticalOptions="Start">
+                <TableView Intent="Form" AbsoluteLayout.LayoutBounds="1,0,1,0.7" AbsoluteLayout.LayoutFlags="All">
+                    <TableRoot>
+                        <TableSection Title="Please known user details">
+
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
+                                    <Label Text="User Name :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                    <Entry Keyboard="Default" 
+                                            Placeholder="'username'" 
+                                            PlaceholderColor="Gray" 
+                                            FontSize="Small" 
+                                            VerticalOptions="Center"
+                                    />
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
+                                    <Label Text="User ID :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                    <Entry Keyboard="Default" 
+                                            Placeholder="'id format example'" 
+                                            PlaceholderColor="Gray" 
+                                            FontSize="Small" 
+                                            VerticalOptions="Center"
+                                    />
+                                </StackLayout>
+                            </ViewCell>
+
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
+                                    <Label Text="Unit :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                                    <Entry Keyboard="Default" 
+                                            Placeholder="'drop down'" 
+                                            PlaceholderColor="Gray" 
+                                            FontSize="Small" 
+                                            VerticalOptions="Center"
+                                    />
+                                </StackLayout>
+                            </ViewCell>
+
+                        </TableSection>
+
+                    </TableRoot>
+                </TableView>
+
+            </AbsoluteLayout>
+            
+            <StackLayout BackgroundColor="Transparent" Margin="0,0,0,5">
+                <Image HeightRequest="200" WidthRequest="200" BackgroundColor="Gray" HorizontalOptions="Center" VerticalOptions="Start"/>
+                <Button Text="Search"/>
+            </StackLayout>
+            
         </StackLayout>
     </ContentPage>
 
     <ContentPage Title="Item">
         <StackLayout>
-            <!-- havent set event changed handler yet !-->
-            <ListView x:Name="itemListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding SearchCategory}">
+            <ListView x:Name="itemListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding SearchCategory}" ItemTapped="itemListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
+                        
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0" IsClippedToBounds="True">
                                 <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
                                 <Label Text="(3)" VerticalOptions="Center"/>
                             </StackLayout>
                         </ViewCell>
+                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Show All" />
+            <Button Text="Show All" Clicked="ShowButton_Clicked"/>
         </StackLayout>
     </ContentPage>
 
