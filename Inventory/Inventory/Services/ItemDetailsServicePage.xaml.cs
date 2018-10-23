@@ -33,11 +33,13 @@ namespace Inventory.Services
                 var GetItem = await client.GetStringAsync(Url);
                 var Item = JsonConvert.DeserializeObject<ItemDetail>(GetItem);
                 ItemPic.Source = ImageSource.FromUri(new Uri(Item.Picture));
+                EquipID.Text = id;
                 SerialNum.Text = Item.SerialNo;
                 CateGory.Text = Item.Category;
                 EType.Text = Item.EquipmentType;
                 ItemBrand.Text = Item.Brand;
                 ItemModel.Text = Item.Model;
+
                 ItemStatusSection.Title = "Item Status: " + Item.Status;
                 issuedUser.Text = Item.StaffName;
                 issuedUserUnit.Text = Item.Unit;

@@ -17,7 +17,7 @@
                         <ViewCell >
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Equipment ID: " HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'equipmentId'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'equipmentId'" VerticalOptions="Center" FontSize="Small" x:Name="EquipID"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
