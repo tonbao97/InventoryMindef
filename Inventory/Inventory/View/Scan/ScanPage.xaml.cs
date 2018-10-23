@@ -19,7 +19,9 @@ namespace Inventory.View.Scan
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScanPage : ContentPage
     {
-        bool Scanned = false;
+        string id;
+        bool Scanned=false;
+        bool showed = false;
         public ScanPage()
         {
             InitializeComponent();
@@ -29,32 +31,54 @@ namespace Inventory.View.Scan
         {
             base.OnAppearing();
             ScanQr();
-            PictureTaken.Source = ImageSource.FromUri(new Uri("https://firebasestorage.googleapis.com/v0/b/fir-7f783.appspot.com/o/Pic%2Fimage.jpg?alt=media&token=6ecba52d-f686-49d7-a288-7145b7baa5e3"));
+            //PictureTaken.Source = ImageSource.FromUri(new Uri("https://firebasestorage.googleapis.com/v0/b/fir-7f783.appspot.com/o/Pic%2Fimage.jpg?alt=media&token=6ecba52d-f686-49d7-a288-7145b7baa5e3"));
         }
 
         private void ScanQr() {
-            //if (!Scanned)
-            //{
-            //    var scan = new ZXingScannerPage();
-            //    Navigation.PushAsync(scan);
-            //    scan.OnScanResult += (result) =>
-            //    {
-            //        Device.BeginInvokeOnMainThread(async () =>
-            //        {
-            //            ScannedCode.Text = result.Text;
-            //            Scanned = true;
-            //            await Navigation.PopAsync();
-            //        });
-            //    };
-            //}
+
+            if (showed)
+            {
+                Navigation.PopAsync();
+            }
+            else
+            {
+                if (Scanned)
+                {
+                    switch (id)
+                    {
+                        case null:
+                            Navigation.PopAsync();
+                            break;
+                        default:
+                            Navigation.PushAsync(new ItemDetailsServicePage(id));
+                            showed = true;
+                            break;
+                    }  
+                }
+                else
+                {
+                    Scanned = true;
+                    var scan = new ZXingScannerPage();
+                    Navigation.PushAsync(scan);
+                    scan.OnScanResult += (result) =>
+                    {
+                        Device.BeginInvokeOnMainThread(async () =>
+                        {
+                            id = result.Text;
+                            await Navigation.PopAsync();
+                        });
+                    };
+                }
+            }
+           
+
+          
         }
 
         async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ItemDetailsServicePage());
+            //await Navigation.PushAsync(new ItemDetailsServicePage());
         }
-
-
         private  async void ScanButton_Clicked(object sender, EventArgs e)
         {
             var scan = new ZXingScannerPage();

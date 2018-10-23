@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace Inventory.View
 {
@@ -44,5 +46,6 @@ namespace Inventory.View
             Application.Current.Properties["Type"] = null;
             Navigation.PopAsync();
         }
+
     }
 }

@@ -29,7 +29,7 @@ namespace Inventory.View.AddNew
         ObservableCollection<Category> Category { get; set; } = new ObservableCollection<Category>();
         private MediaFile file;
 
-        private const string Url = "http://192.168.1.103:12345";
+        private const string Url = "http://202.160.1.102:8083";
         private const string UrlSuppliers = Url + "/api/GetSuppliers";
         private const string UrlAdd = Url + "/api/Equipments/AddEquipment";
         private const string UrlBrands = Url + "/api/Equipments/GetBrands";
@@ -161,44 +161,52 @@ namespace Inventory.View.AddNew
         {
             base.OnAppearing();
 
-            var Supplier = await client.GetStringAsync(UrlSuppliers);
-            var listSupplier = JsonConvert.DeserializeObject<List<Supplier>>(Supplier);
-            SupplierList = new ObservableCollection<Supplier>(listSupplier);
+            try
+            {
+                var Supplier = await client.GetStringAsync(UrlSuppliers);
+                var listSupplier = JsonConvert.DeserializeObject<List<Supplier>>(Supplier);
+                SupplierList = new ObservableCollection<Supplier>(listSupplier);
 
-            SupplierPicker.ItemsSource = SupplierList;
-            SupplierPicker.ItemDisplayBinding = new Binding("Name");
-
-
-            var Brand = await client.GetStringAsync(UrlBrands);
-            var listBrand = JsonConvert.DeserializeObject<List<Brand>>(Brand);
-            Brands = new ObservableCollection<Brand>(listBrand);
+                SupplierPicker.ItemsSource = SupplierList;
+                SupplierPicker.ItemDisplayBinding = new Binding("Name");
 
 
-            itemBrand.ItemsSource = Brands;
-            itemBrand.ItemDisplayBinding = new Binding("Name");
-
-            var Equipmenttype = await client.GetStringAsync(UrlEquipmenttypes);
-            var listEquipmenttypes = JsonConvert.DeserializeObject<List<EquipmentTypes>>(Equipmenttype);
-            Equipmenttypes = new ObservableCollection<EquipmentTypes>(listEquipmenttypes);
+                var Brand = await client.GetStringAsync(UrlBrands);
+                var listBrand = JsonConvert.DeserializeObject<List<Brand>>(Brand);
+                Brands = new ObservableCollection<Brand>(listBrand);
 
 
-            EquipmentTypePicker.ItemsSource = Equipmenttypes;
-            EquipmentTypePicker.ItemDisplayBinding = new Binding("Name");
+                itemBrand.ItemsSource = Brands;
+                itemBrand.ItemDisplayBinding = new Binding("Name");
+
+                var Equipmenttype = await client.GetStringAsync(UrlEquipmenttypes);
+                var listEquipmenttypes = JsonConvert.DeserializeObject<List<EquipmentTypes>>(Equipmenttype);
+                Equipmenttypes = new ObservableCollection<EquipmentTypes>(listEquipmenttypes);
 
 
-            var Categories = await client.GetStringAsync(UrlCategories);
-            var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
-            Category = new ObservableCollection<Category>(listCategory);
+                EquipmentTypePicker.ItemsSource = Equipmenttypes;
+                EquipmentTypePicker.ItemDisplayBinding = new Binding("Name");
 
 
-            CategoryPicker.ItemsSource = Category;
-            CategoryPicker.ItemDisplayBinding = new Binding("Name");
+                var Categories = await client.GetStringAsync(UrlCategories);
+                var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
+                Category = new ObservableCollection<Category>(listCategory);
 
 
-            SupplierPicker.SelectedIndex = 0;
-            itemBrand.SelectedIndex = 0;
-            CategoryPicker.SelectedIndex = 0;
-            EquipmentTypePicker.SelectedIndex = 0;
+                CategoryPicker.ItemsSource = Category;
+                CategoryPicker.ItemDisplayBinding = new Binding("Name");
+
+
+                SupplierPicker.SelectedIndex = 0;
+                itemBrand.SelectedIndex = 0;
+                CategoryPicker.SelectedIndex = 0;
+                EquipmentTypePicker.SelectedIndex = 0;
+            }
+            catch (System.Net.WebException Err)
+            {
+                await DisplayAlert("Error", "No connection to server", "Noticed");
+                await Navigation.PopAsync();
+            }
         }
 
     }

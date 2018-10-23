@@ -7,6 +7,8 @@
     <ContentPage.Content>
         
         <StackLayout>
+
+            <Image HorizontalOptions="Center" x:Name="ItemPic" WidthRequest="200" HeightRequest="200"/>
             <TableView Intent="Data">
                 <TableRoot >
 
@@ -21,63 +23,63 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Serial No. : " HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
-                                <Label Text="'serialNo" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'serialNo" VerticalOptions="Center" FontSize="Small" x:Name="SerialNum"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Item Category :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'itemCategory'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'itemCategory'" VerticalOptions="Center" FontSize="Small" x:Name="CateGory"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Item Type :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'itemType'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'itemType'" VerticalOptions="Center" FontSize="Small" x:Name="EType"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Brand :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'brand'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'brand'" VerticalOptions="Center" FontSize="Small" x:Name="ItemBrand"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Model :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'model'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'model'" VerticalOptions="Center" FontSize="Small" x:Name="ItemModel"/>
                             </StackLayout>
                         </ViewCell>
                         
                     </TableSection>
 
-                    <TableSection Title="Item Status">
+                    <TableSection x:Name="ItemStatusSection">
                         
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Currently Issued To :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'issuedUserName'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'issuedUserName'" VerticalOptions="Center" FontSize="Small" x:Name="issuedUser"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Unit :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'issuedUserUnit'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'issuedUserUnit'" VerticalOptions="Center" FontSize="Small" x:Name="issuedUserUnit" />
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Contact No. :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'issuedUserContactNo'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'issuedUserContactNo'" VerticalOptions="Center" FontSize="Small" x:Name="issuedUserContactNo"/>
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Location :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
-                                <Label Text="'location'" VerticalOptions="Center" FontSize="Small"/>
+                                <Label Text="'location'" VerticalOptions="Center" FontSize="Small" x:Name="Location"/>
                             </StackLayout>
                         </ViewCell>
-                        <ViewCell>
+                        <!--<ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Delivery Order No. :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Label Text="'deliveryOrderNo'" VerticalOptions="Center" FontSize="Small"/>
@@ -88,12 +90,12 @@
                                 <Label Text="Delivery Date :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Label Text="'deliveryDate'" VerticalOptions="Center" FontSize="Small"/>
                             </StackLayout>
-                        </ViewCell>
-                        <ViewCell>
+                        </ViewCell>-->
+                        <!--<ViewCell>
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Years in use :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Label Text="'DateSpan of deliveryDate to TodayDate'" VerticalOptions="Center" FontSize="Small"/>
-                                <!-- Wanted to include a datespan so that user knows the years the item has been in use -->
+                                --><!-- Wanted to include a datespan so that user knows the years the item has been in use --><!--
                             </StackLayout>
                         </ViewCell>
                         <ViewCell>
@@ -107,7 +109,7 @@
                                 <Label Text="Supplier :" HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
                                 <Label Text="'supplierName'" VerticalOptions="Center" FontSize="Small"/>
                             </StackLayout>
-                        </ViewCell>
+                        </ViewCell>-->
                         <!-- Did not include quantity because does each QR code have multiple items? shouldnt it be each item have onl 1 unique ID? -->
 
                     </TableSection>
