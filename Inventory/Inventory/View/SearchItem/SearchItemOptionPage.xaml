@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="Inventory.View.SearchItem.SearchItemOptionPage"
+            Title="Search By">
+    
+    <ContentPage Title="Location">
+        <StackLayout>
+            <!-- havent set event changed handler yet !-->
+            <ListView x:Name="locationListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding SearchCategory}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
+                                <Label Text="(3)" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Show All" Clicked="ShowButton_Clicked"/>
+            <!--Button element does not want to be entered in a ViewCell if its in a list; consider alternative UI other than ListView if issue-->
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="User">
+        <StackLayout>
+            <!-- havent set event changed handler yet !-->
+            <ListView x:Name="userListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding SearchCategory}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
+                                <Label Text="(3)" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Show All" />
+        </StackLayout>
+    </ContentPage>
+
+    <ContentPage Title="Item">
+        <StackLayout>
+            <!-- havent set event changed handler yet !-->
+            <ListView x:Name="itemListView" IsGroupingEnabled="True" GroupDisplayBinding="{Binding SearchCategory}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="20,0,0,0">
+                                <Label Text="{Binding ItemType}" TextColor="Black" VerticalOptions="Center"/>
+                                <Label Text="(3)" VerticalOptions="Center"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Show All" />
+        </StackLayout>
+    </ContentPage>
+
+</TabbedPage>

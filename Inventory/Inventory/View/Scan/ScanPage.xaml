@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage 
+             NavigationPage.HasNavigationBar="False"
+             xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Inventory.View.Scan.ScanPage">
+             x:Class="Inventory.View.Scan.ScanPage"
+             BindingContext="{x:Binding ScanMessage,Mode=OneWay}">
 
     <ContentPage.Content>
         <StackLayout>
@@ -22,11 +25,47 @@
             </StackLayout>-->
 
 
-            <!--<StackLayout Padding="30,10,30,10">
-                <Button Text="New Scan" Clicked="ScanButton_Clicked"/>
-                <Label Text="Please scan the item barcode/QR code or enter the serial number" TextColor="Black" HorizontalOptions="Center" FontSize="Medium" HorizontalTextAlignment="Center"/>
+            <!--<AbsoluteLayout Padding="10,10,10,10">
+                <Image
+                        BackgroundColor="Gray"
+                        AbsoluteLayout.LayoutBounds="0.5,0.1,200,200"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"
+                        x:Name="PictureTaken"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                />
+                -->
+            <!-- I want the picture here to show the picture taken of the item, the picture should be a bindable image--><!--
+            </AbsoluteLayout>
+
+            <Label Text="" x:Name="ScannedCode" TextColor="Red" HorizontalOptions="Center"/>
+            
+            <StackLayout Padding="30,10,30,10" >
+                <Button Text="New Scan" Clicked="ScanButton_Clicked" />
+                <Label Text="{Binding ScanMessage}" 
+                       TextColor="Black" 
+                       HorizontalOptions="Center" 
+                       FontSize="Medium" 
+                       HorizontalTextAlignment="Center"
+                />
+                --><!-- This label should be made so that the basic details of the item are returned after the scan. To be made bindable --><!--
+            </StackLayout>
+
+            <StackLayout HorizontalOptions="End" Padding="0,0,30,0">
+                <Button Text="View Item Details"
+                        x:Name="ItemDetailsButton" 
+                        Clicked="ViewItemDetailsButton_Clicked" 
+                        IsEnabled="False"
+                        IsVisible="False"
+                />
+                --><!-- I also want this view option to popup only after a scan has been inputted -->
+                <!-- The button should open up the ItemDetailsPage which should apply the scanned ID to return that item's details -->
+                <!-- This label should be made so that the basic details of the item are returned after the scan. To be made bindable --><!--
             </StackLayout>-->
+
+
         </StackLayout>
+
     </ContentPage.Content>
 
 </ContentPage>

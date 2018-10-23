@@ -19,9 +19,11 @@ namespace Inventory.View.Scan
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ScanPage : ContentPage
     {
+
         string id;
         bool Scanned=false;
         bool showed = false;
+
         public ScanPage()
         {
             InitializeComponent();
@@ -79,19 +81,6 @@ namespace Inventory.View.Scan
         {
             //await Navigation.PushAsync(new ItemDetailsServicePage());
         }
-        private  async void ScanButton_Clicked(object sender, EventArgs e)
-        {
-            var scan = new ZXingScannerPage();
-            await Navigation.PushAsync(scan);
-            scan.OnScanResult += (result) =>
-            {
-                    Device.BeginInvokeOnMainThread(async () =>
-                    {
-                        await Navigation.PopAsync();
-                        // scannedCode.Text = result.Text;
-                    });
-            };
-        
-        }
+
     }
 }

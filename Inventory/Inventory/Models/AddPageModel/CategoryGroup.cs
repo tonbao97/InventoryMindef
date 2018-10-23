@@ -6,12 +6,12 @@ namespace Inventory.Models
 {
     class CategoryGroup : List<Equipment>
     {
-        public string EquipmentCategory { get; set; }
+        public string SearchCategory { get; set; }
         public string IndexTitle { get; set; }
 
-        public CategoryGroup(string category, string indexTitle)
+        public CategoryGroup(string searchCategory, string indexTitle) // Consider changing this category to abstract so that we can apply location/user/item option automatically
         {
-            EquipmentCategory = category;
+            SearchCategory = searchCategory;
             IndexTitle = indexTitle;
         }
     }
