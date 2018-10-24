@@ -77,10 +77,10 @@ namespace Inventory.View.Scan
           
         }
 
-        async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)
-        {
-            //await Navigation.PushAsync(new ItemDetailsServicePage());
-        }
+        //async void ViewItemDetailsButton_Clicked(object sender, EventArgs e)
+        //{
+        //    await Navigation.PushAsync(new ItemDetailsServicePage());
+        //}
 
     }
 }
