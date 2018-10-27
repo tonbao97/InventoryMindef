@@ -27,6 +27,7 @@ namespace Inventory.Services
             try
             {
                 Url = Url + id;
+                Loading.IsVisible = true;
                 HttpClient client = new HttpClient();
                 string token = Application.Current.Properties["Token"].ToString();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
@@ -39,12 +40,16 @@ namespace Inventory.Services
                 EType.Text = Item.EquipmentType;
                 ItemBrand.Text = Item.Brand;
                 ItemModel.Text = Item.Model;
-
+                ItemProcessor.Text = Item.Processor;
+                ItemRam.Text = Item.RAM;
+                ItemHDD.Text = Item.HDD;
+                ItemVGA.Text = Item.VGA;
                 ItemStatusSection.Title = "Item Status: " + Item.Status;
                 issuedUser.Text = Item.StaffName;
                 issuedUserUnit.Text = Item.Unit;
                 issuedUserContactNo.Text = Item.ContactNo;
                 Location.Text = Item.MainUnit + "-" + Item.Unit + "-" + Item.SubUnit + "-" + Item.Department;
+                Loading.IsVisible = false;
             }
             catch (System.Net.WebException Err) {
                 await DisplayAlert("Error","No connection to Server","Noticed");

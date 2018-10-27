@@ -24,7 +24,6 @@ namespace Inventory.View.AddNew
 
          ObservableCollection<Supplier> SupplierList { get; set; } = new ObservableCollection<Supplier>();
          ObservableCollection<Brand> Brands { get; set; } = new ObservableCollection<Brand>();
-        // Add this to ^^^ for hardcode info test { "Acer", "Dell", "Apple", "Mac", "Lenovo", "Samsung", "Lexmark", "Toshiba", "Kyocera", "Hitachi", "Transcend", "APC", "EPSON", "INFOCUS", "CANON", "Fujitsu", "HP", "Sony", "Western Digital", "Kingston", "Alcatel", "BENQ", "MT", "FENGJIE" }
         ObservableCollection<EquipmentTypes> Equipmenttypes { get; set; } = new ObservableCollection<EquipmentTypes>();
         ObservableCollection<Category> Category { get; set; } = new ObservableCollection<Category>();
         private MediaFile file;
@@ -138,6 +137,7 @@ namespace Inventory.View.AddNew
 
         private async void SendInfoToDatabse() {
 
+            Loading.IsVisible = true;
             DateTime day = Date.Date;
             var DayChoose = String.Format("{0:yyyy/MM/dd}", day);
 
@@ -153,7 +153,15 @@ namespace Inventory.View.AddNew
 
             var content = JsonConvert.SerializeObject(newItem);
             var res = client.PostAsync(UrlAdd, new StringContent(content, Encoding.UTF8, "application/json"));
-            await DisplayAlert("Check", res.Result.ToString(), "OK");
+            Loading.IsVisible = false;
+            if (res.IsCompleted)
+            {
+                await DisplayAlert("Check", "Sending process is successful", "OK");
+            }
+            else
+            {
+                await DisplayAlert("Check", "Sending process is Failed", "OK");
+            }
         }
 
 
@@ -163,6 +171,7 @@ namespace Inventory.View.AddNew
 
             try
             {
+                Loading.IsVisible = true;
                 var Supplier = await client.GetStringAsync(UrlSuppliers);
                 var listSupplier = JsonConvert.DeserializeObject<List<Supplier>>(Supplier);
                 SupplierList = new ObservableCollection<Supplier>(listSupplier);
@@ -201,9 +210,11 @@ namespace Inventory.View.AddNew
                 itemBrand.SelectedIndex = 0;
                 CategoryPicker.SelectedIndex = 0;
                 EquipmentTypePicker.SelectedIndex = 0;
+                Loading.IsVisible = false;
             }
             catch (System.Net.WebException Err)
             {
+                Loading.IsVisible = false;
                 await DisplayAlert("Error", "No connection to server", "Noticed");
                 await Navigation.PopAsync();
             }

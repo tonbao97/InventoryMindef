@@ -19,6 +19,13 @@
                         x:Name="TakenPicture"
                         HorizontalOptions="FillAndExpand"
                         VerticalOptions="FillAndExpand"/>
+                <Frame
+                x:Name="Loading"
+                IsVisible="False"
+                AbsoluteLayout.LayoutBounds="0.5,0.5,1,0.5"        
+                AbsoluteLayout.LayoutFlags="All">
+                <ActivityIndicator IsRunning="True"/>
+                </Frame>
             </AbsoluteLayout>
 
 
