@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventory.View.SearchItem.UserSearch">
+
+    <StackLayout Padding="5,0,5,0" Orientation="Vertical">
+
+        <TableView Intent="Form">
+            <TableRoot>
+                <TableSection Title="Please known user details">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
+                            <Label Text="Staff Name :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                            <Entry Keyboard="Default" 
+                                            WidthRequest="200"
+                                            Placeholder="'Staff Name'" 
+                                            x:Name="Name"
+                                            PlaceholderColor="Gray" 
+                                            FontSize="Small" 
+                                            VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
+                            <Label Text="Staff ID :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                            <Entry Keyboard="Default" 
+                                            WidthRequest="200"
+                                            Placeholder="'Staff Id" 
+                                            x:Name="Id"
+                                            PlaceholderColor="Gray" 
+                                            FontSize="Small" 
+                                            VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5,0,5,0">
+                            <Label Text="Unit :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
+                            <Picker x:Name="UnitPicker" Title="Choose Unit" FontSize="Small" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </ViewCell>
+                    <ViewCell>
+                        <Button Text="Search" Clicked="Search"/>
+                    </ViewCell>
+                </TableSection>
+
+            </TableRoot>
+        </TableView>
+        <ListView x:Name="UserList" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Fullname}"/>
+                            <ListView ItemsSource="{Binding IssuedItems}" ItemSelected="ItemSelected">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <ViewCell>
+                                            <StackLayout>
+                                                <Label Text="{Binding Detail}"/>
+                                            </StackLayout>
+                                        </ViewCell>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        
+    </StackLayout>
+    
+    
+    
+    </ContentPage>
+
+

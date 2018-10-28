@@ -10,20 +10,18 @@
     <AbsoluteLayout>
         <!-- Place new controls here -->
 
+        <ic:CircleImage 
+            x:Name="Logo"
+           AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        
+           AbsoluteLayout.LayoutFlags="PositionProportional"
+           Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"/>
+
         <Image
             x:Name="Background"
               AbsoluteLayout.LayoutBounds="0,0,1,1"        
            AbsoluteLayout.LayoutFlags="All"
            Aspect="AspectFill" />
-
-        <ic:CircleImage 
-            x:Name="Logo"
-           AbsoluteLayout.LayoutBounds="0.5,0.2,150,150"        
-           AbsoluteLayout.LayoutFlags="PositionProportional"
-           Aspect="AspectFill"
-           HorizontalOptions="Center"
-           Source="http://www.hubert-herald.nl/Brunei_bestanden/image024.jpg"/>
-
+        
         <Frame
         BackgroundColor="White"
         Opacity="0.5"

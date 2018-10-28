@@ -152,9 +152,9 @@ namespace Inventory.View.AddNew
 
 
             var content = JsonConvert.SerializeObject(newItem);
-            var res = client.PostAsync(UrlAdd, new StringContent(content, Encoding.UTF8, "application/json"));
+            var res = await client.PostAsync(UrlAdd, new StringContent(content, Encoding.UTF8, "application/json"));
             Loading.IsVisible = false;
-            if (res.IsCompleted)
+            if (res.IsSuccessStatusCode)
             {
                 await DisplayAlert("Check", "Sending process is successful", "OK");
             }
