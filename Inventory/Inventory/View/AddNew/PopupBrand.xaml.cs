@@ -23,10 +23,17 @@ namespace Inventory.View.AddNew
 
         private void Add_Clicked(object sender, EventArgs e)
         {
-            var Brands = (ObservableCollection<Brand>)BindingContext;
-            Brand NewBrand = new Brand(Brand.Text,null,null,null,null,true,Brands.Count+1);
-            Brands.Add(NewBrand);
-            PopupNavigation.Instance.PopAsync(true);
+            if (!Brand.Text.Equals(""))
+            {
+                var Brands = (ObservableCollection<Brand>)BindingContext;
+                Brand NewBrand = new Brand(Brand.Text, null, null, null, null, true, Brands.Count + 1);
+                Brands.Add(NewBrand);
+                PopupNavigation.Instance.PopAsync(true);
+            }
+            else
+            {
+                DisplayAlert("Notice", "Please input brand", "ok");
+            }
         }
     }
 }

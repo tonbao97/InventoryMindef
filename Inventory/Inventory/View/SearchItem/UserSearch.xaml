@@ -5,7 +5,7 @@
 
     <StackLayout Padding="5,0,5,0" Orientation="Vertical">
 
-        <TableView Intent="Form">
+        <TableView Intent="Form" HeightRequest="200">
             <TableRoot>
                 <TableSection Title="Please known user details">
                     <ViewCell>
@@ -47,13 +47,15 @@
 
             </TableRoot>
         </TableView>
+        
+        
         <ListView x:Name="UserList" HasUnevenRows="True" VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Vertical">
                             <Label Text="{Binding Fullname}"/>
-                            <ListView ItemsSource="{Binding IssuedItems}" ItemSelected="ItemSelected">
+                            <ListView ItemsSource="{Binding IssuedItems}" ItemTapped="ListView_ItemTapped">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <ViewCell>

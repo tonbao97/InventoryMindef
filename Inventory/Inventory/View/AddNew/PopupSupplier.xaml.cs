@@ -23,10 +23,17 @@ namespace Inventory.View.AddNew
 
         private void Add_Clicked(object sender, EventArgs e)
         {
-            var SupplierList = (ObservableCollection<Supplier>)BindingContext;
-            Supplier newSupplier = new Supplier(Supplier.Text,null, null, null, null, null, null, null, null, null, null,true,SupplierList.Count + 1);
-            SupplierList.Add(newSupplier);
-            PopupNavigation.Instance.PopAsync(true);
+            if (!Supplier.Text.Equals(""))
+            {
+                var SupplierList = (ObservableCollection<Supplier>)BindingContext;
+                Supplier newSupplier = new Supplier(Supplier.Text, null, null, null, null, null, null, null, null, null, null, true, SupplierList.Count + 1);
+                SupplierList.Add(newSupplier);
+                PopupNavigation.Instance.PopAsync(true);
+            }
+            else
+            {
+                DisplayAlert("Notice","Please input supplier","ok");
+            }
         }
     }
 }

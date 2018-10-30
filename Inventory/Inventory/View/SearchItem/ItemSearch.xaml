@@ -4,32 +4,32 @@
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
              x:Class="Inventory.View.SearchItem.ItemSearch">
   <StackLayout Padding="5,0,5,0">
-    <TableView>
-      <TableRoot>
-        <TableSection Title="Please Narrow Down Your Search Criteria">
-          <ViewCell>
-            <StackLayout Orientation="Horizontal">
-              <Label Text="Choose Item Category :" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
-              <Picker Title="Category" VerticalOptions="Center" FontSize="Small">
-                <Picker.Items>
-                  <x:String>Computer</x:String>
-                  <x:String>Accessories</x:String>
-                  <x:String>Other Devices</x:String>
-                </Picker.Items>
-              </Picker>
-            </StackLayout>
-          </ViewCell>
-          <ViewCell>
+        <TableView>
+            <TableRoot>
+                <TableSection Title="Please Narrow Down Your Search Criteria">
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Choose Item Type :" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
+                            <Picker x:Name="TypePicker" Title="Item Type" VerticalOptions="Center" FontSize="Small">
+                            </Picker>
+                        </StackLayout>
+                    </ViewCell>
+
+                    <!--<ViewCell>
             <StackLayout Orientation="Horizontal">
               <Label Text="Choose Item :" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand"/>
               <Picker Title="Item" VerticalOptions="Center" FontSize="Small">
                 <Picker.Items>
-                  <!--If Category Computer-->
+                  -->
+                    <!--If Category Computer-->
+                    <!--
                   <x:String>Desktop</x:String>
                   <x:String>Notebook</x:String>
                   <x:String>Tablet</x:String>
                   <x:String>Toughbook</x:String>
-                  <!--If Category Accessories/Parts-->
+                  -->
+                    <!--If Category Accessories/Parts-->
+                    <!--
                   <x:String>CMOS Battery</x:String>
                   <x:String>FDFSD</x:String>
                   <x:String>Hard Case Kit</x:String>
@@ -56,7 +56,9 @@
                   <x:String>VGA Cable - 10m</x:String>
                   <x:String>Battery</x:String>
                   <x:String>Interface Card</x:String>
-                  <!--If Category Others-->
+                  -->
+                    <!--If Category Others-->
+                    <!--
                   <x:String>Printer</x:String>
                   <x:String>Scanner</x:String>
                   <x:String>Projector</x:String>
@@ -129,16 +131,18 @@
                               FontSize="Small"
                               TextColor="Gray"
                               VerticalOptions="Center"
-                              x:Name="EndDate"
-                                        />
+                              x:Name="EndDate"/>
                 </StackLayout>
               </StackLayout>
             </StackLayout>
-          </ViewCell>
-
-        </TableSection>
-      </TableRoot>
-    </TableView>
-    <Button Text="Search" Clicked="SearchButton_Clicked"/>
-  </StackLayout>
+          </ViewCell>-->
+                    <ViewCell>
+                        <StackLayout>
+                            <Button Text="Search" Clicked="SearchButton_Clicked"/>
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
 </ContentPage>

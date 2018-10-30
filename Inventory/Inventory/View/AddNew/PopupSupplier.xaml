@@ -19,6 +19,7 @@
         <Label Text="Add new Supplier"/>
         <local:ImageEntry TextColor="Black" 
          Placeholder="Add supplier"
+         Text=""
          x:Name="Supplier"/>
         <Button Text="Add"
            BackgroundColor="White"

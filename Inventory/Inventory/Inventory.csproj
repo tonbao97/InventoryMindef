@@ -69,10 +69,13 @@
     <EmbeddedResource Update="View\SearchItem\ItemSearch.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="View\SearchItem\LocationSearch.xaml">
+    <EmbeddedResource Update="View\SearchItem\LocationSearchPopUp\PopupListitem.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\SearchItem\SearchItemOptionPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\SearchItem\SearchLocation.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\SearchItem\UserSearch.xaml">

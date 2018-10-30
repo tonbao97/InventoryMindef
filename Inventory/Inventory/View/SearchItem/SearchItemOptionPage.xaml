@@ -4,10 +4,8 @@
             x:Class="Inventory.View.SearchItem.SearchItemOptionPage"
             xmlns:local="clr-namespace:Inventory.View.SearchItem"
             Title="Search By">
-    <local:LocationSearch Title="Location"/>
+    <local:SearchLocation Title="By Location"/>
 
-    <local:UserSearch Title="User"/>
-
-    <local:ItemSearch Title="Item"/>
+    <local:UserSearch Title="By User"/>
 
 </TabbedPage>

@@ -27,12 +27,13 @@ namespace Inventory.View.SearchItem
             InitializeComponent();
             string token = Application.Current.Properties["Token"].ToString();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
-
+            Id.Text = "";
+            Name.Text = "";
         }
 
         public async void loadInfo() {
-            var Supplier = await client.GetStringAsync(UrlUnits);
-            var listUnit = JsonConvert.DeserializeObject<List<Unit>>(Supplier);
+            var Units = await client.GetStringAsync(UrlUnits);
+            var listUnit = JsonConvert.DeserializeObject<List<Unit>>(Units);
             UnitList = new List<Unit>(listUnit);
             UnitPicker.ItemsSource = UnitList;
             UnitPicker.ItemDisplayBinding = new Binding("Name");
@@ -47,25 +48,35 @@ namespace Inventory.View.SearchItem
 
         private async void Search(object sender, EventArgs e)
         {
-            if (Name.Text == null || Id.Text == null )
+            if (Name.Text.Equals(""))
             {
-                await DisplayAlert("NOtice","Please enter Staff Name and ID","Ok");
+                await DisplayAlert("Notice","Please enter Staff Name","Ok");
             }
             else
             {
-                var res = await client.PostAsync(UrlSearch+Name.Text, null);
+                var res = await client.PostAsync(UrlSearch + Name.Text, null);
                 if (res.IsSuccessStatusCode)
                 {
                     var text = res.Content.ReadAsStringAsync();
                     var UserFound = JsonConvert.DeserializeObject<List<User>>(text.Result);
                     foreach (var item in UserFound.ToList())
                     {
-                        if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]) || !item.IdentityNo.Equals(Id.Text))
+                        if (!Id.Text.Equals(""))
                         {
-                            UserFound.Remove(item);
+                            if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]) || !item.IdentityNo.Equals(Id.Text))
+                            {
+                                UserFound.Remove(item);
+                            }
+                        }
+                        else
+                        {
+                            if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]))
+                            {
+                                UserFound.Remove(item);
+                            }
                         }
                     }
-                    if (UserFound.Count>0)
+                    if (UserFound.Count > 0)
                     {
                         UserList.ItemsSource = UserFound;
                     }
@@ -77,14 +88,17 @@ namespace Inventory.View.SearchItem
                 }
                 else
                 {
-                    await DisplayAlert("A", "ERROR", "ok");
+                    await DisplayAlert("Notice", "ERROR", "Ok");
                 }
             }
+
+
         }
 
-        private void ItemSelected(object sender, SelectedItemChangedEventArgs e)
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var item = (IssuedItem)e.SelectedItem;           
+            var item = (IssuedItem)e.Item;
             Navigation.PushAsync(new ItemDetailsServicePage(item.Id.ToString()));
         }
     }

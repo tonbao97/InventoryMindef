@@ -29,11 +29,12 @@ namespace Inventory.View.AddNew
         private MediaFile file;
 
         private const string Url = "http://202.160.1.102:8083";
+        private const string UrlCategories = Url + "/api/Equipments/GetCategories";
         private const string UrlSuppliers = Url + "/api/GetSuppliers";
         private const string UrlAdd = Url + "/api/Equipments/AddEquipment";
         private const string UrlBrands = Url + "/api/Equipments/GetBrands";
         private const string UrlEquipmenttypes = Url + "/api/GetEquipmenttypes";
-        private const string UrlCategories = Url + "/api/Equipments/GetCategories";
+       
         int SupIndex;
         int EquipmentTypeIndex;
         int CategoryIndex;
