@@ -48,7 +48,7 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding EquipmentType}"/>
+                                    <Label Text="{Binding EquipmentType}" TextColor="Red" FontSize="Medium"/>
                                     <ListView ItemsSource="{Binding List}" ItemTapped="ListView_ItemTapped">
                                         <ListView.ItemTemplate>
                                             <DataTemplate>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Inventory.Models.UserSearch
 {
-    class IssuedItem
+    public class IssuedItem
     {
 
 
@@ -17,7 +17,7 @@ namespace Inventory.Models.UserSearch
             Id = id;
             Brand = brand;
             Model = model;
-            Detail = id.ToString() + "- " + brand + "- " + model;
+            Detail = "Id:" + id.ToString() + "- Brand:" + brand + "- Model:" + model;
         }
     }
 }

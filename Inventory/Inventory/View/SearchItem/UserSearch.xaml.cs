@@ -1,6 +1,7 @@
 ﻿using Inventory.Models.UserSearch;
 using Inventory.Services;
 using Newtonsoft.Json;
+using Rg.Plugins.Popup.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,58 +49,103 @@ namespace Inventory.View.SearchItem
 
         private async void Search(object sender, EventArgs e)
         {
-            if (Name.Text.Equals(""))
-            {
-                await DisplayAlert("Notice","Please enter Staff Name","Ok");
-            }
-            else
-            {
-                var res = await client.PostAsync(UrlSearch + Name.Text, null);
-                if (res.IsSuccessStatusCode)
+                if (Name.Text.Equals("") && Id.Text.Equals(""))
                 {
-                    var text = res.Content.ReadAsStringAsync();
-                    var UserFound = JsonConvert.DeserializeObject<List<User>>(text.Result);
-                    foreach (var item in UserFound.ToList())
-                    {
-                        if (!Id.Text.Equals(""))
-                        {
-                            if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]) || !item.IdentityNo.Equals(Id.Text))
-                            {
-                                UserFound.Remove(item);
-                            }
-                        }
-                        else
-                        {
-                            if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]))
-                            {
-                                UserFound.Remove(item);
-                            }
-                        }
-                    }
-                    if (UserFound.Count > 0)
-                    {
-                        UserList.ItemsSource = UserFound;
-                    }
-                    else
-                    {
-                        await DisplayAlert("Notice", "No record found!", "Ok");
-                        UserList.ItemsSource = UserFound;
-                    }
+                   await DisplayAlert("Notice","Please input Staff Name or Staff Id","Ok");
+                }
+                else if (!Name.Text.Equals("") && Id.Text.Equals(""))
+                {
+                    SearchbyName();
                 }
                 else
                 {
-                    await DisplayAlert("Notice", "ERROR", "Ok");
+                    SearchById();
                 }
-            }
-
-
         }
 
 
+        public async void SearchbyName() {
+            var res = await client.GetAsync(UrlSearch + "?keyword=" + Name.Text);
+            if (res.IsSuccessStatusCode)
+            {
+                var text = res.Content.ReadAsStringAsync();
+                var UserFound = JsonConvert.DeserializeObject<List<User>>(text.Result);
+                foreach (var item in UserFound.ToList())
+                {
+                    if (!item.IssuedItems.Any())
+                    {
+                        UserFound.Remove(item);
+                    }
+                    if (!Id.Text.Equals(""))
+                    {
+                        if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]) || !item.IdentityNo.Equals(Id.Text))
+                        {
+                            UserFound.Remove(item);
+                        }
+                    }
+                    else
+                    {
+                        if (!item.Unit.Equals(UnitPicker.Items[UnitPicker.SelectedIndex]))
+                        {
+                            UserFound.Remove(item);
+                        }
+                    }
+                }
+                if (UserFound.Count > 0)
+                {
+                    UserList.ItemsSource = UserFound;
+                }
+                else
+                {
+                    await DisplayAlert("Notice", "No record found!", "Ok");
+                    UserList.ItemsSource = UserFound;
+                }
+            }
+            else
+            {
+                await DisplayAlert("Notice", "ERROR", "Ok");
+            }
+        }
+    
+
+        public async void SearchById() {
+            var res = await client.GetAsync(UrlSearch);
+            if (res.IsSuccessStatusCode)
+            {
+                var text = res.Content.ReadAsStringAsync();
+                var UserFound = JsonConvert.DeserializeObject<List<User>>(text.Result);
+                foreach (var item in UserFound.ToList())
+                {
+                    if (!item.IssuedItems.Any())
+                    {
+                        UserFound.Remove(item);
+                    }
+                    if (!item.IdentityNo.Equals(Id.Text))
+                        {
+                            UserFound.Remove(item);
+                        }      
+                }
+                if (UserFound.Count > 0)
+                {
+                    UserList.ItemsSource = UserFound;
+                }
+                else
+                {
+                    await DisplayAlert("Notice", "No record found!", "Ok");
+                    UserList.ItemsSource = UserFound;
+                }
+            }
+            else
+            {
+                await DisplayAlert("Notice", "ERROR", "Ok");
+            }
+        }
+
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            var item = (IssuedItem)e.Item;
-            Navigation.PushAsync(new ItemDetailsServicePage(item.Id.ToString()));
+            var itemList = (Models.UserSearch.User)e.Item;
+            var ItemsList = new SearchItem.UserSearchPopup.PopupUserIssuedList(itemList.IssuedItems);
+            PopupNavigation.Instance.PushAsync(ItemsList);
         }
     }
 }

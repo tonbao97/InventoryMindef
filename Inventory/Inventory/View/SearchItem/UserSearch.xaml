@@ -26,7 +26,7 @@
                             <Label Text="Staff ID :" HorizontalOptions="StartAndExpand" VerticalTextAlignment="Center"/>
                             <Entry Keyboard="Default" 
                                             WidthRequest="200"
-                                            Placeholder="'Staff Id" 
+                                            Placeholder="'Staff Id'" 
                                             x:Name="Id"
                                             PlaceholderColor="Gray" 
                                             FontSize="Small" 
@@ -47,25 +47,14 @@
 
             </TableRoot>
         </TableView>
-        
-        
-        <ListView x:Name="UserList" HasUnevenRows="True" VerticalOptions="FillAndExpand">
+
+   
+        <ListView x:Name="UserList" VerticalOptions="Fill" ItemTapped="ListView_ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <StackLayout Orientation="Vertical">
-                            <Label Text="{Binding Fullname}"/>
-                            <ListView ItemsSource="{Binding IssuedItems}" ItemTapped="ListView_ItemTapped">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout>
-                                                <Label Text="{Binding Detail}"/>
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                            <Label Text="{Binding Detail}"/>
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

@@ -77,7 +77,6 @@ namespace Inventory.View.SearchItem
             string UrlGet = Url + "/api/searchbylocation?MainUnitId=" + (MainUnitPicker.SelectedIndex + 1) +
                 "&UnitId=" + (UnitPicker.SelectedIndex + 1) + "&SubUnitId=" + (SubUnitPicker.SelectedIndex + 1) +
                 "&DepartmentId=" + (DeparmentPicker.SelectedIndex + 1);
-            await DisplayAlert("Check", UrlGet, "ok");
             var Items = await client.GetStringAsync(UrlGet);
             var ItemTypeList = JsonConvert.DeserializeObject<List<Models.LocationSearch.Type>>(Items);
             TypeList = new List<Models.LocationSearch.Type>(ItemTypeList);

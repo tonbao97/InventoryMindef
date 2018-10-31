@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Inventory.Models.UserSearch
 {
-    class User
+    public class User
     {
         public int StaffId { get; set; }
         public string Fullname { get; set; }
@@ -17,6 +17,10 @@ namespace Inventory.Models.UserSearch
         public string MobileNumber { get; set; }
         public string TelephoneNumber { get; set; }
         public string Email { get; set; }
+        public string Detail {
+            get { return Fullname + " (" + IssuedItems.Count + ")"; }
+            set { }
+        }
         public List<IssuedItem> IssuedItems { get; set; }
     }
 }

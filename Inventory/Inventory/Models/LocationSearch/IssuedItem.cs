@@ -18,7 +18,7 @@ namespace Inventory.Models.LocationSearch
             Brand = brand;
             Model = model;
             IssuedDate = issuedDate;
-            Detail = id + "-" + model;
+            Detail = "Id:" + id.ToString() + "- Brand:" + brand + "- Model:" + model;
         }
 
         public int Id { get; set; }
