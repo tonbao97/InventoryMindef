@@ -36,39 +36,52 @@ namespace Inventory.View.SearchItem
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
-            loadInfo();
+           
+                base.OnAppearing();
+                loadInfo();
         }
 
         public async void loadInfo()
         {
-            var MainUnits = await client.GetStringAsync(UrlMainUnits);
-            var listMainUnit = JsonConvert.DeserializeObject<List<MainUnit>>(MainUnits);
-            MainUnitList = new List<MainUnit>(listMainUnit);
-            MainUnitPicker.ItemsSource = MainUnitList;
-            MainUnitPicker.ItemDisplayBinding = new Binding("Name");
-            MainUnitPicker.SelectedIndex = 0;
+            try
+            {
+                Loading.IsVisible = true;
+                var MainUnits = await client.GetStringAsync(UrlMainUnits);
+                var listMainUnit = JsonConvert.DeserializeObject<List<MainUnit>>(MainUnits);
+                MainUnitList = new List<MainUnit>(listMainUnit);
+                MainUnitPicker.ItemsSource = MainUnitList;
+                MainUnitPicker.ItemDisplayBinding = new Binding("Name");
+                MainUnitPicker.SelectedIndex = 0;
 
-            var Units = await client.GetStringAsync(UrlUnits);
-            var listUnit = JsonConvert.DeserializeObject<List<Unit>>(Units);
-            UnitList = new List<Unit>(listUnit);
-            UnitPicker.ItemsSource = UnitList;
-            UnitPicker.ItemDisplayBinding = new Binding("Name");
-            UnitPicker.SelectedIndex = 0;
+                var Units = await client.GetStringAsync(UrlUnits);
+                var listUnit = JsonConvert.DeserializeObject<List<Unit>>(Units);
+                UnitList = new List<Unit>(listUnit);
+                UnitPicker.ItemsSource = UnitList;
+                UnitPicker.ItemDisplayBinding = new Binding("Name");
+                UnitPicker.SelectedIndex = 0;
 
-            var SubUnits = await client.GetStringAsync(UrlSubUnit);
-            var listSubUnit = JsonConvert.DeserializeObject<List<SubUnit>>(SubUnits);
-            SubUnitList = new List<SubUnit>(listSubUnit);
-            SubUnitPicker.ItemsSource = SubUnitList;
-            SubUnitPicker.ItemDisplayBinding = new Binding("Name");
-            SubUnitPicker.SelectedIndex = 0;
+                var SubUnits = await client.GetStringAsync(UrlSubUnit);
+                var listSubUnit = JsonConvert.DeserializeObject<List<SubUnit>>(SubUnits);
+                SubUnitList = new List<SubUnit>(listSubUnit);
+                SubUnitPicker.ItemsSource = SubUnitList;
+                SubUnitPicker.ItemDisplayBinding = new Binding("Name");
+                SubUnitPicker.SelectedIndex = 0;
 
-            var Department = await client.GetStringAsync(UrlDepartment);
-            var listDepartment = JsonConvert.DeserializeObject<List<Department>>(Department);
-            DepartmentList = new List<Department>(listDepartment);
-            DeparmentPicker.ItemsSource = DepartmentList;
-            DeparmentPicker.ItemDisplayBinding = new Binding("Name");
-            DeparmentPicker.SelectedIndex = 0;
+                var Department = await client.GetStringAsync(UrlDepartment);
+                var listDepartment = JsonConvert.DeserializeObject<List<Department>>(Department);
+                DepartmentList = new List<Department>(listDepartment);
+                DeparmentPicker.ItemsSource = DepartmentList;
+                DeparmentPicker.ItemDisplayBinding = new Binding("Name");
+                DeparmentPicker.SelectedIndex = 0;
+                Loading.IsVisible = false;
+            }
+            catch (System.Net.WebException Err)
+            {
+                Loading.IsVisible = false;
+               await DisplayAlert("Error", "No connection to server", "Noticed");
+               await Navigation.PopAsync();
+            }
+            
 
         }
 
@@ -80,7 +93,15 @@ namespace Inventory.View.SearchItem
             var Items = await client.GetStringAsync(UrlGet);
             var ItemTypeList = JsonConvert.DeserializeObject<List<Models.LocationSearch.Type>>(Items);
             TypeList = new List<Models.LocationSearch.Type>(ItemTypeList);
-            TypeListView.ItemsSource = TypeList;
+            if (TypeList.Count>0)
+            {
+                TypeListView.ItemsSource = TypeList;
+            }
+            else
+            {
+                TypeListView.ItemsSource = TypeList;
+                await DisplayAlert("Notice","No Result Found","Ok");
+            }
         }
 
 

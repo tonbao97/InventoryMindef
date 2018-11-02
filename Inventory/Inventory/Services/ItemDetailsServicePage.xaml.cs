@@ -33,6 +33,7 @@ namespace Inventory.Services
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
                 var GetItem = await client.GetStringAsync(Url);
                 var Item = JsonConvert.DeserializeObject<ItemDetail>(GetItem);
+
                 ItemPic.Source = ImageSource.FromUri(new Uri(Item.Picture));
                 EquipID.Text = id;
                 SerialNum.Text = Item.SerialNo;
@@ -51,9 +52,19 @@ namespace Inventory.Services
                 Location.Text = Item.MainUnit + "-" + Item.Unit + "-" + Item.SubUnit + "-" + Item.Department;
                 Loading.IsVisible = false;
             }
-            catch (System.Net.WebException Err) {
-                await DisplayAlert("Error","No connection to Server","Noticed");
-                await Navigation.PopAsync();
+            catch (Exception Err)
+            {
+                if (Err.ToString().Contains("404"))
+                {
+                    await DisplayAlert("Error", "Item Not Found", "Noticed");
+                    await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Error", "No connection to server", "Noticed");
+                    await Navigation.PopAsync();
+                }
+                
             }
                
         }
