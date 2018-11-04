@@ -10,11 +10,11 @@ namespace Data.Models
     public class ComputerDetails: BaseEntity
     {
         public int ComputerID { get; set; }
-        public int RamOptionID { get; set; }
-        public int CPUOptionID { get; set; }
-        public int HDDOptionID { get; set; }
-        public int OSOptionID { get; set; }
-        public int VGAOptionID { get; set; }
+        public int? RamOptionID { get; set; }
+        public int? CPUOptionID { get; set; }
+        public int? HDDOptionID { get; set; }
+        public int? OSOptionID { get; set; }
+        public int? VGAOptionID { get; set; }
 
         public virtual RamOption Ram { get; set; }
         public virtual CPUOption CPU { get; set; }

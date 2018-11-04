@@ -53,6 +53,7 @@
     <Compile Include="IssueServices.cs" />
     <Compile Include="IssueTypeServices.cs" />
     <Compile Include="ItemServices.cs" />
+    <Compile Include="LoggingServices.cs" />
     <Compile Include="MainUnitServices.cs" />
     <Compile Include="MovementLogServices.cs" />
     <Compile Include="OSOptionServices.cs" />

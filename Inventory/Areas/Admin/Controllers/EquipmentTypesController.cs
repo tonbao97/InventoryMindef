@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
+using Inventory.CustomFilter;
 using Service;
 
 namespace Inventory.Areas.Admin.Controllers
@@ -26,12 +27,14 @@ namespace Inventory.Areas.Admin.Controllers
 
 
         // GET: Admin/EquipmentTypes
+        [CustomFilters]
         public ActionResult Index()
         {
             return View(equipmentTypeService.GetEquipmentTypes().ToList());
         }
 
         // GET: Admin/EquipmentTypes/Details/5
+        [CustomFilters]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -55,6 +58,7 @@ namespace Inventory.Areas.Admin.Controllers
         // POST: Admin/EquipmentTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [CustomFilters]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Description,Note,IsActive")] EquipmentType equipmentType)
@@ -86,6 +90,7 @@ namespace Inventory.Areas.Admin.Controllers
         // POST: Admin/EquipmentTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [CustomFilters]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,Note,IsActive")] EquipmentType equipmentType)
@@ -114,6 +119,7 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // POST: Admin/EquipmentTypes/Delete/5
+        [CustomFilters]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

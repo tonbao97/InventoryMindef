@@ -1,20 +1,51 @@
-﻿@model Data.Models.Equipment
+﻿@model Inventory.Areas.Admin.Models.EditEquipmentModel
 
 @{
-    ViewBag.Title = "Edit";
 }
 
-<h2>Edit</h2>
+<!DOCTYPE html>
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
     <div class="form-horizontal">
-        <h4>Equipment</h4>
+        <h4>@ViewBag.EquipmentType.Name</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+        <input type="hidden" name="EquipmentTypeId" value="@ViewBag.EquipmentType.Id" />
+        <input type="hidden" name="Id" value="@Model.Id" />
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DeliveryPackageID, "DeliveryPackageID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("DeliveryPackageID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DeliveryPackageID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CategoryID, "CategoryID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("CategoryID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CategoryID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BrandID, "BrandID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("BrandID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.BrandID, "", new { @class = "text-danger" })
+            </div>
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -24,11 +55,130 @@
             </div>
         </div>
 
+        @if (ViewBag.EquipmentType.Name.Equals("Computer"))
+        {
+            <div class="form-group" id="CPUOptionID">
+                @*@Html.LabelFor(model => model.computerDetails.CPUOptionID, "CPUOptionID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("CPUOptionID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.computerDetails.CPUOptionID, "", new { @class = "text-danger" })
+                </div>*@
+                @Html.Action("CPUOption", "Equipments", new {Id = Model.CPUOptionID })
+            </div>
+            <div class="form-group" id="RamOptionID">
+                @*@Html.LabelFor(model => model.computerDetails.RamOptionID, "RamOptionID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("RamOptionID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.computerDetails.RamOptionID, "", new { @class = "text-danger" })
+                </div>*@
+                @Html.Action("RamOption", "Equipments", new { Id = Model.RamOptionID })
+            </div>
+            <div class="form-group" id="HDDOptionID">
+                @*@Html.LabelFor(model => model.computerDetails.HDDOptionID, "HDDOptionID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("HDDOptionID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.computerDetails.HDDOptionID, "", new { @class = "text-danger" })
+                </div>*@
+                @Html.Action("HDDOption", "Equipments", new { Id = Model.HDDOptionID })
+            </div>
+            <div class="form-group" id="VGAOptionID">
+                @*@Html.LabelFor(model => model.computerDetails.VGAOptionID, "VGAOptionID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("VGAOptionID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.computerDetails.VGAOptionID, "", new { @class = "text-danger" })
+                </div>*@
+                @Html.Action("VGAOption", "Equipments", new { Id = Model.VGAOptionID })
+            </div>
+            <div class="form-group" id="OSOptionID">
+                @*@Html.LabelFor(model => model.computerDetails.OSOptionID, "OSOptionID", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("OSOptionID", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.computerDetails.OSOptionID, "", new { @class = "text-danger" })
+                </div>*@
+                @Html.Action("OSOption", "Equipments", new { Id = Model.OSOptionID })
+
+            </div>
+        }
+
         <div class="form-group">
-            @Html.LabelFor(model => model.CreatedDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Quantity, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CreatedDate, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CreatedDate, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PictureID, "PictureID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PictureID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PictureID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsConfirmed, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsConfirmed)
+                    @Html.ValidationMessageFor(model => model.IsConfirmed, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IsActive, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive)
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+        @*<h4>Equipment</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -61,6 +211,14 @@
             <div class="col-md-10">
                 @Html.DropDownList("DeliveryPackageID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.DeliveryPackageID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PictureID, "PictureID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("PictureID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.PictureID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -112,10 +270,86 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Save" class="btn btn-default" />
             </div>
-        </div>
+        </div>*@
     </div>
-}
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
+<script>
+    $(document).ready(function () {
+        $('#AddOSOption').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Admin/Equipments/AddOSOption',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    OSOptionName: $('#NewOSOptionName').val()
+                }
+            }).done(function (ketqua) {
+                $('#OSOptionID').html(ketqua);
+            });
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+        });
+        $('#AddHDDOption').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Admin/Equipments/AddHDDOption',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    HDDOptionName: $('#NewHDDOptionName').val()
+                }
+            }).done(function (ketqua) {
+                $('#HDDOptionID').html(ketqua);
+            });
+
+        });
+        $('#AddCPUOption').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Admin/Equipments/AddCPUOption',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    CPUOptionName: $('#NewCPUOptionName').val()
+                }
+            }).done(function (ketqua) {
+                $('#CPUOptionID').html(ketqua);
+            });
+
+        });
+        $('#AddVGAOption').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Admin/Equipments/AddVGAOption',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    VGAOptionName: $('#NewVGAOptionName').val()
+                }
+            }).done(function (ketqua) {
+                $('#VGAOptionID').html(ketqua);
+            });
+
+        });
+        $('#AddRamOption').click(function (e) {
+            e.preventDefault();
+            $.ajax({
+                url: '/Admin/Equipments/AddRamOption',
+                type: 'POST',
+                dataType: 'html',
+                data: {
+                    RamOptionName: $('#NewRamOptionName').val()
+                }
+            }).done(function (ketqua) {
+                $('#RamOptionID').html(ketqua);
+            });
+
+        });
+    });
+</script>

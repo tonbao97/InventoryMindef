@@ -106,6 +106,7 @@
     <Compile Include="Models\Issue.cs" />
     <Compile Include="Models\IssueType.cs" />
     <Compile Include="Models\Item.cs" />
+    <Compile Include="Models\Logging.cs" />
     <Compile Include="Models\MainUnit.cs" />
     <Compile Include="Models\MovementLog.cs" />
     <Compile Include="Models\OSOption.cs" />
@@ -133,6 +134,7 @@
     <Compile Include="Repository\IssueRepository.cs" />
     <Compile Include="Repository\IssueTypeRepository.cs" />
     <Compile Include="Repository\ItemRepository.cs" />
+    <Compile Include="Repository\LoggingRepository.cs" />
     <Compile Include="Repository\MainUnitRepository.cs" />
     <Compile Include="Repository\MovementLogRepository.cs" />
     <Compile Include="Repository\OSOptionRepository.cs" />

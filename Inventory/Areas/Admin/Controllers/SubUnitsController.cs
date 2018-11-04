@@ -8,10 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
+using Inventory.CustomFilter;
 using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
+    [Authorize]
     public class SubUnitsController : Controller
     {
         private ISubUnitService SubUnitService;
@@ -22,12 +24,14 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // GET: Admin/SubUnits
+        [CustomFilters]
         public ActionResult Index()
         {
             return View(SubUnitService.GetSubUnits().ToList());
         }
 
         // GET: Admin/SubUnits/Details/5
+        [CustomFilters]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -53,6 +57,7 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomFilters]
         public ActionResult Create([Bind(Include = "Id,Name,Description,Note,IsActive")] SubUnit SubUnit)
         {
             if (ModelState.IsValid)
@@ -82,6 +87,7 @@ namespace Inventory.Areas.Admin.Controllers
         // POST: Admin/SubUnits/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [CustomFilters]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,Note,IsActive")] SubUnit SubUnit)
@@ -110,6 +116,7 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // POST: Admin/SubUnits/Delete/5
+        [CustomFilters]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

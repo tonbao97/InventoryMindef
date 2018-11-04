@@ -11,6 +11,11 @@ namespace Core.Common
 
         public static String ConvertShortName(String strVietNamese)
         {
+            strVietNamese = strVietNamese.Trim();
+            while (strVietNamese.IndexOf("  ") >= 0)
+            {
+                strVietNamese = strVietNamese.Replace("  ", " ");
+            }
             //Loại bỏ dấu ':'
             char[] delimiter = { ':', '?', '"', '/', '!', ',', '-', '=', '%', '$', '&', '*', '.', '@', '\\', '#' };
             String[] subString = strVietNamese.Split(delimiter);

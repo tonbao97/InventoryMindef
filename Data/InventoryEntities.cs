@@ -50,6 +50,8 @@ namespace Data
         public DbSet<Unit> Units { get; set; }
         public DbSet<VGAOption> VGAOptions { get; set; }
         public DbSet<WebsiteAttribute> WebsiteAttributes { get; set; }
+        public DbSet<Logging> Loggings { get; set; }
+
 
 
         public static InventoryEntities Create()

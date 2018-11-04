@@ -1,51 +1,204 @@
-﻿@model IEnumerable<Data.Models.Item>
+﻿@model IEnumerable<Inventory.Areas.Admin.Models.ItemsModel>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+
+<style>
+    .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+        .popup .show {
+            visibility: visible;
+            -webkit-animation: fadeIn 1s;
+            animation: fadeIn 1s;
+        }
+        /* The actual popup */
+        .popup .popuptext {
+            visibility: hidden;
+            padding: 8px 0;
+            position: absolute;
+            z-index: 1;
+        }
+
+            /* Popup arrow */
+            .popup .popuptext::after {
+                content: "";
+                position: absolute;
+            }
+</style>
+
+@*<link href="~/Content/css/QR/main.css" rel="stylesheet" />
+    <link href="~/Content/css/QR/nav.css" rel="stylesheet" />
+    <link href="~/Content/css/QR/style.css" rel="stylesheet" />
+    <link href="~/Content/css/QR/util.css" rel="stylesheet" />*@
+<script type="text/javascript" src="~/Content/js/QR/qrcode.js"></script>
+<script type="text/javascript" src="~/Content/js/QR/html5-qrcode.js"></script>
+
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Equipment.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QRCode)
-        </th>
-        <th></th>
-    </tr>
+</p>*@
+<div class="popup">
+    <div id="qrcode"></div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Equipment.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QRCode)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
 
-</table>
+</div>
+@*<input onchange='updateQRCode(this.value)' type="text" hidden id="qrfield"/>*@
+
+
+<div class="row gutters">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card custom-bdr">
+            <div class="card-header">Items</div>
+            <div class="card-body">
+                <table id="fixedHeader" class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Category)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Brand)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Model)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.SerialNo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Status)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.IssuedTo)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Unit)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.CreatedDate)
+                            </th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Category)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Brand)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Model)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.SerialNo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Status)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.IssuedTo)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Unit)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                                </td>
+                                <td>
+                                    @Html.ActionLink("Edit Item", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                                    <button onmouseup="updateQRCode(@item.Id)">Get QRcode</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Equipment.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.QRCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SerialNo)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Equipment.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QRCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SerialNo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            </td>
+        </tr>
+    }
+
+    </table>*@
+<script type="text/javascript">
+    function updateQRCode(text) {
+        /*("qrcode").html("tin");*/
+        debugger;
+        var element = document.getElementById("qrcode");
+        element.innerHTML = "";
+        var bodyElement = document.body;
+        if (element.lastChild) {
+            element.replaceChild(showQRCode(text), element.lastChild);
+        }
+        else {
+            element.appendChild(showQRCode(text));
+        }
+        //var popup = document.getElementById("qrcode");
+        //popup.classList.toggle("show");
+    }
+    //updateQRCode('Enter Serial Number Here');
+
+    //function popup() {
+    //    var popup = document.getElementById("qrcode");
+    //    popup.classList.toggle("show");
+    //}
+</script>

@@ -10,14 +10,12 @@ namespace Inventory.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
-
-            return View();
+            return Redirect("/Admin");
         }
 
-        public ActionResult Register()
-        {
-            return View();
-        }
+        //public ActionResult Register()
+        //{
+        //    return View();
+        //}
     }
 }

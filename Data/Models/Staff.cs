@@ -16,6 +16,7 @@ namespace Data.Models
         public string Designation { get; set; }
         public string MobileNumber { get; set; }
         public string TelephoneNumber { get; set; }
+        public string Email { get; set; }
         public int DepartmentID { get; set; }
         public int SubUnitID { get; set; }
         public int UnitID { get; set; }

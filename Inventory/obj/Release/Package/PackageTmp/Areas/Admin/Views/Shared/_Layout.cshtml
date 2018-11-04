@@ -1,63 +1,684 @@
 ﻿@using Microsoft.AspNet.Identity
 
-<!DOCTYPE html>
-<html>
+
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--
+        **********************
+        **********************
+        Common CSS files
+        **********************
+        **********************
+    -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+
+
+    <!-- Icomoon Icons CSS -->
+    <link rel="stylesheet" href="~/Content/fonts/icomoon/icomoon.css" />
+
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+
+    <!-- Daterange CSS -->
+    <link rel="stylesheet" href="~/Content/vendor/daterange/daterange.css" />
+
+
+    <!--
+        **********************
+        **********************
+        Optional CSS files
+        **********************
+        **********************
+    -->
+    <!-- jQueryUI CSS -->
+    <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+
+    <!-- Datepickers CSS -->
+    <link rel="stylesheet" href="~/Content/css/datepicker.css" />
+
+    <!-- Morris CSS -->
+    <link rel="stylesheet" href="~/Content/vendor/morris/morris.css" />
+
+    <!-- Circliful CSS -->
+    <link rel="stylesheet" href="~/Content/vendor/circliful/circliful.css" />
+
+    <!-- Tags CSS -->
+    <link href="~/Content/vendor/tags/tagmanager.css" rel="stylesheet" />
+
+    <!-- Data Tables CSS -->
+    <link rel="stylesheet" href="vendor/datatables/dataTables.bs4.css" />
+    <link rel="stylesheet" href="vendor/datatables/dataTables.bs4-custom.css" />
+
+    <!-- Bootstrap Select CSS -->
+    <link rel="stylesheet" href="vendor/bs-select/bs-select.css" />
+
+    <script src="~/Content/js/jquery.js"></script>
+    @*<script>
+
+                $(function(){
+                  $("#includedContent").load("aside_nav.html");
+                });
+        </script>*@
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav"></ul>
-               
-            </div>
-             @if (Request.IsAuthenticated)
-                {
-                    using (Html.BeginForm("LogOff", "UserManage", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-                    {
-                        @Html.AntiForgeryToken()
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li>
-                                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+    <!-- Loading start -->
+    <div id="loading-wrapper">
+        <div id="loader"></div>
+    </div>
+    <!-- Loading end -->
+    <!-- BEGIN .app-wrap -->
+    <div class="app-wrap">
+
+        <!-- BEGIN .app-heading -->
+        <header class="app-header">
+            <div class="container-fluid">
+                <!-- Row start -->
+                <div class="row gutters">
+                    <div class="col-xl-7 col-lg-7 col-md-6 col-sm-7 col-7">
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-6 col-sm-5 col-5">
+                        <!-- Header actions start -->
+                        <ul class="header-actions">
+                            <li class="dropdown">
+                                <a href="#" id="userSettings" class="user-settings" data-toggle="dropdown" aria-haspopup="true">
+                                    <span class="user-name">@User.Identity.Name</span>
+                                    <i class="icon-chevron-small-down downarrow"></i>
+                                </a>
+                                @*<div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+                                        <div class="admin-settings">
+                                            <div class="actions">
+                                                <a href="login.html" class="btn btn-primary">Logout</a>
+                                            </div>
+                                        </div>
+                                    </div>*@
+
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    using (Html.BeginForm("LogOff", "UserManage", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                                    {
+                                        @Html.AntiForgeryToken()
+                                        <ul>
+
+                                            <li>
+                                                <div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+                                                    <div class="admin-settings">
+                                                        <div class="actions">
+                                                            <a href="/UserManage/SignOut">Log off</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+
+
+
+                                    }
+                                }
+                                else
+                                {
+                                    <ul>
+                                        <li>
+                                            <div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+                                                <div class="admin-settings">
+                                                    <div class="actions">
+                                                        @Html.ActionLink("Register", "Register", "UserManage", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="dropdown-menu lg dropdown-menu-right" aria-labelledby="userSettings">
+                                                <div class="admin-settings">
+                                                    <div class="actions">
+                                                        @Html.ActionLink("Log in", "Login", "UserManage", routeValues: null, htmlAttributes: new { id = "loginLink" })
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+
+
+
+                                }
                             </li>
-                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
                         </ul>
-                    }
-                }
-                else
-                {
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>@Html.ActionLink("Register", "Register", "UserManage", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-                        <li>@Html.ActionLink("Log in", "Login", "UserManage", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-                    </ul>
-                }
+                        <!-- Header actions end -->
+                    </div>
+                </div>
+                <!-- Row start -->
+            </div>
+        </header>
+        <!-- END: .app-heading -->
+        <!-- BEGIN .app-container -->
+        <div class="app-container">
+
+            <!-- BEGIN .app-side -->
+            <div id="includedContent">
+
+                <!--
+                    **********************
+                    **********************
+                    Common CSS files
+                    **********************
+                    **********************
+                -->
+                <!-- Bootstrap CSS -->
+                <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
+
+                <!-- Icomoon Icons CSS -->
+                <link rel="stylesheet" href="~/Content/fonts/icomoon/icomoon.css" />
+
+                <!-- Master CSS -->
+                <link rel="stylesheet" href="~/Content/css/main.css" />
+
+                <!-- Daterange CSS -->
+                <link rel="stylesheet" href="~/Content/vendor/daterange/daterange.css" />
+
+
+                <!--
+                    **********************
+                    **********************
+                    Optional CSS files
+                    **********************
+                    **********************
+                -->
+                <!-- jQueryUI CSS -->
+                <link rel="stylesheet" href="~/Content/css/jquery-ui.css" />
+
+                <!-- Datepickers CSS -->
+                <link rel="stylesheet" href="~/Content/css/datepicker.css" />
+
+                <!-- Morris CSS -->
+                <link rel="stylesheet" href="~/Content/vendor/morris/morris.css" />
+
+                <!-- Circliful CSS -->
+                <link rel="stylesheet" href="~/Content/vendor/circliful/circliful.css" />
+
+                <!-- Tags CSS -->
+                <link href="~/Content/vendor/tags/tagmanager.css" rel="stylesheet" />
+
+                <aside class="app-side fixed" id="app-side">
+
+                    <!-- BEGIN .side-content -->
+                    <div class="side-content ">
+                        <!-- Nav scroll start -->
+                        <div class="sidebarNavScroll">
+
+                            <!-- BEGIN .side-nav -->
+                            <nav class="side-nav">
+
+                                <!-- BEGIN: side-nav-content -->
+                                <ul class="unifyMenu" id="unifyMenu">
+                                    <li>
+                                        <a href="/Admin">
+                                            <span class="has-icon">
+                                                <i class="icon-assignment"></i>
+                                            </span>
+                                            <span class="nav-title">Main</span>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-beaker"></i>
+                                            </span>
+                                            <span class="nav-title">Equipment Types</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href='/Admin/EquipmentTypes'>View</a>
+                                            </li>
+                                            <li>
+                                                <a href='/Admin/EquipmentTypes/Create'>Add</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-beaker"></i>
+                                            </span>
+                                            <span class="nav-title">Categories</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href='/Admin/Categories'>View</a>
+                                            </li>
+                                            <li>
+                                                <a href='/Admin/Categories/Create'>Add</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-beaker"></i>
+                                            </span>
+                                            <span class="nav-title">Equipments</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href='/Admin/Equipments'>View</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-assignment"></i>
+                                            </span>
+                                            <span class="nav-title">Manage Issued Assets</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href='#' class="has-arrow" aria-expanded="false">
+                                                    <span class="nav-title">Issued Asset</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='users.html'>View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='new_user.html'>Add</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href='#'>
+                                                    <span class="nav-title">Available Asset</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-view_day"></i>
+                                            </span>
+                                            <span class="nav-title">Advance</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href="#" class="has-arrow" aria-expanded="false">
+                                                    <span class="has-icon">
+                                                        <i class="icon-assignment"></i>
+                                                    </span>
+                                                    <span class="nav-title">Location</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='#' class="has-arrow" aria-expanded="false">
+                                                            <span class="nav-title">Main Units</span>
+                                                        </a>
+                                                        <ul aria-expanded="false">
+                                                            <li>
+                                                                <a href='/Admin/MainUnits'>View</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href='/Admin/MainUnits/Create'>Add</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href='#' class="has-arrow" aria-expanded="false">
+                                                            <span class="nav-title">Units</span>
+                                                        </a>
+                                                        <ul aria-expanded="false">
+                                                            <li>
+                                                                <a href='/Admin/Units'>View</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href='/Admin/Units/Create'>Add</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href='#' class="has-arrow" aria-expanded="false">
+                                                            <span class="nav-title">Sub Units</span>
+                                                        </a>
+                                                        <ul aria-expanded="false">
+                                                            <li>
+                                                                <a href='/Admin/SubUnits'>View</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href='/Admin/SubUnits/Create'>Add</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>
+                                                        <a href='#' class="has-arrow" aria-expanded="false">
+                                                            <span class="nav-title">Departments</span>
+                                                        </a>
+                                                        <ul aria-expanded="false">
+                                                            <li>
+                                                                <a href='/Admin/Departments'>View</a>
+                                                            </li>
+                                                            <li>
+                                                                <a href='/Admin/Departments/Create'>Add</a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="has-arrow" aria-expanded="false">
+                                                    <span class="has-icon">
+                                                        <i class="icon-beaker"></i>
+                                                    </span>
+                                                    <span class="nav-title">Suppliers</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='/Admin/Suppliers'>View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='/Admin/Suppliers/Create'>Add</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="has-arrow" aria-expanded="false">
+                                                    <span class="has-icon">
+                                                        <i class="icon-beaker"></i>
+                                                    </span>
+                                                    <span class="nav-title">Brands</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='/Admin/Brands'>View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='/Admin/Brands/Create'>Add</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="has-arrow" aria-expanded="false">
+                                                    <span class="has-icon">
+                                                        <i class="icon-beaker"></i>
+                                                    </span>
+                                                    <span class="nav-title">Status</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='/Admin/Status'>View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='/Admin/Status/Create'>Add</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            @*<li>
+            <a href='#' class="has-arrow" aria-expanded="false">
+                <span class="nav-title">Users</span>
+            </a>
+            <ul aria-expanded="false">
+                <li>
+                    <a href='users.html'>View</a>
+                </li>
+                <li>
+                    <a href='new_user.html'>Add</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href='#' class="has-arrow" aria-expanded="false">
+                <span class="nav-title">Locations</span>
+            </a>
+            <ul aria-expanded="false">
+                <li>
+                    <a href='#'>View</a>
+                </li>
+                <li>
+                    <a href='new_location.html'>Add</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href='#' class="has-arrow" aria-expanded="false">
+                <span class="nav-title">Suppliers</span>
+            </a>
+            <ul aria-expanded="false">
+                <li>
+                    <a href='#'>View</a>
+                </li>
+                <li>
+                    <a href='new_supplier.html'>Add</a>
+                </li>
+            </ul>
+        </li>*@
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <!-- END: side-nav-content -->
+
+                            </nav>
+                            <!-- END: .side-nav -->
+                        </div>
+                        <!-- Nav scroll end -->
+
+                    </div>
+                    <!-- END: .side-content -->
+
+                </aside>
+            </div>
+            <!-- END: .app-side -->
+            <!-- BEGIN .app-main -->
+            <div class="app-main">
+
+                <!-- BEGIN .main-heading -->
+                <header class="main-heading">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                <div class="page-icon">
+                                    <i class="icon-laptop_windows"></i>
+                                </div>
+                                <div class="page-title">
+                                    <h3>Dashboard</h3>
+                                    <h6 class="sub-heading">Admin</h6>
+                                </div>
+                            </div>
+                            <!--
+                                                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                                                <div class="datepicket-container primary">
+                                                                    <div id="datepicker"></div>
+                                                                    <div class="bg-primary"></div>
+                                                                </div>
+                                                            </div>
+                            -->
+                        </div>
+                    </div>
+                </header>
+                <!-- END: .main-heading -->
+                <!-- BEGIN .main-content -->
+                <div class="main-content">
+
+                    <!-- Row start -->
+                    @RenderBody()
+                    <!-- Row end -->
+
+                </div>
+                <!-- END: .main-content -->
+                <!-- BEGIN .main-footer -->
+                <footer class="main-footer"></footer>
+                <!-- END: .main-footer -->
+
+            </div>
+            <!-- END: .app-main -->
+
         </div>
-    </div>
+        <!-- END: .app-container -->
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
     </div>
+    <!-- END: .app-wrap -->
+    <!--
+        **********************
+        **********************
+        Common JS files
+        **********************
+        **********************
+    -->
+    <!-- jQuery JS. -->
+    <script src="~/Content/js/jquery.js"></script>
 
-    @Scripts.Render("~/bundles/jquery")
+    <!-- Info: jQuery UI is required for datepicker and date range or any jQuery UI related plugins -->
+    <script src="~/Content/js/jquery-ui.min.js"></script>
+
+    <!-- Tether Js, then other JS. -->
+    <script src="~/Content/js/popper.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/vendor/unifyMenu/unifyMenu.js"></script>
+    <script src="~/Content/vendor/onoffcanvas/onoffcanvas.js"></script>
+    <script src="~/Content/js/moment.js"></script>
+
+    <!-- News Ticker JS -->
+    <script src="~/Content/vendor/newsticker/newsTicker.min.js"></script>
+    <script src="~/Content/vendor/newsticker/custom-newsTicker.js"></script>
+
+    <!-- Slimscroll JS -->
+    <script src="~/Content/vendor/slimscroll/slimscroll.min.js"></script>
+    <script src="~/Content/vendor/slimscroll/custom-scrollbar.js"></script>
+
+    <!-- Daterange JS -->
+    <script src="~/Content/vendor/daterange/daterange.js"></script>
+    <script src="~/Content/vendor/daterange/custom-daterange.js"></script>
+
+
+    <!--
+        **********************
+        **********************
+        Optional JS files - Plugns
+        **********************
+        **********************
+    -->
+    <!-- Morris Graphs -->
+    <script src="~/Content/vendor/morris/raphael-min.js"></script>
+    <script src="~/Content/vendor/morris/morris.min.js"></script>
+    <script src="~/Content/vendor/morris/custom/areaChart.js"></script>
+    <script src="~/Content/vendor/morris/custom/line-chart.js"></script>
+    <script src="~/Content/vendor/morris/custom/multibar.js"></script>
+
+    <!-- Circliful -->
+    <script src="~/Content/vendor/circliful/circliful.min.js"></script>
+    <script src="~/Content/vendor/circliful/circliful.custom.js"></script>
+
+    <!-- Peity JS -->
+    <script src="~/Content/vendor/peity/peity.min.js"></script>
+    <script src="~/Content/vendor/peity/custom-peity.js"></script>
+
+    <!-- Tag Manager -->
+    <script src="~/Content/vendor/tags/tagmanager.js"></script>
+    <script src="~/Content/vendor/tags/tagmanager-custom.js"></script>
+
+
+
+    <!--
+        **********************
+        **********************
+        Optional JS files - Plugns
+        **********************
+        **********************
+    -->
+    <!-- Data Tables JS -->
+    <script src="~/Content/vendor/datatables/dataTables.min.js"></script>
+    <script src="~/Content/vendor/datatables/dataTables.bootstrap.min.js"></script>
+
+    <!-- Custom Data tables JS -->
+    <script src="~/Content/vendor/datatables/custom/custom-datatables.js"></script>
+    <script src="~/Content/vendor/datatables/custom/fixedHeader.js"></script>
+
+    <!-- Bootstrap Select JS -->
+    <script src="~/Content/vendor/bs-select/bs-select.min.js"></script>
+
+
+    <!-- Common JS -->
+    <script src="~/Content/js/common.js"></script>
+
+
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@
+    @*@Scripts.Render("~/bundles/jquery")*@
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
+
+<!-- Mirrored from bootstrap.gallery/kingfisher/light-sidebar/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 10 Oct 2018 13:16:55 GMT -->
 </html>
+
+
+
+@*<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>@ViewBag.Title - My ASP.NET Application</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav"></ul>
+
+                </div>
+                 @if (Request.IsAuthenticated)
+                    {
+                        using (Html.BeginForm("LogOff", "UserManage", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+                        {
+                            @Html.AntiForgeryToken()
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+                                </li>
+                                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+                            </ul>
+                        }
+                    }
+                    else
+                    {
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Register", "Register", "UserManage", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+                            <li>@Html.ActionLink("Log in", "Login", "UserManage", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                        </ul>
+                    }
+            </div>
+        </div>
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+    </body>
+    </html>*@

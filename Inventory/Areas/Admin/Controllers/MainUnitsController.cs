@@ -8,10 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
+using Inventory.CustomFilter;
 using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
+    [Authorize]
     public class MainUnitsController : Controller
     {
         private IMainUnitService mainUnitService;
@@ -22,12 +24,14 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // GET: Admin/MainUnits
+        [CustomFilters]
         public ActionResult Index()
         {
             return View(mainUnitService.GetMainUnits().ToList());
         }
 
         // GET: Admin/MainUnits/Details/5
+        [CustomFilters]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -53,6 +57,7 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomFilters]
         public ActionResult Create([Bind(Include = "Id,Name,Description,Note,IsActive")] MainUnit mainUnit)
         {
             if (ModelState.IsValid)
@@ -84,6 +89,7 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomFilters]
         public ActionResult Edit([Bind(Include = "Id,Name,Description,Note,IsActive")] MainUnit mainUnit)
         {
             if (ModelState.IsValid)
@@ -112,6 +118,7 @@ namespace Inventory.Areas.Admin.Controllers
         // POST: Admin/MainUnits/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [CustomFilters]
         public ActionResult DeleteConfirmed(int id)
         {
             mainUnitService.DeleteMainUnit(id);

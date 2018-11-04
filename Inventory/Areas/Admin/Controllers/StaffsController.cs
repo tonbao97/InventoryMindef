@@ -8,28 +8,50 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
+using Inventory.CustomFilter;
+using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
+    [Authorize]
     public class StaffsController : Controller
     {
-        private InventoryEntities db = new InventoryEntities();
+        private IStaffService staffService;
+        private IMainUnitService mainUnitService;
+        private IUnitService unitService;
+        private ISubUnitService subUnitService;
+        private IDepartmentService departmentService;
+
+        public StaffsController(IStaffService staffService, IMainUnitService mainUnitService, 
+            IUnitService unitService, ISubUnitService subUnitService, IDepartmentService departmentService)
+        {
+            this.staffService = staffService;
+            this.mainUnitService = mainUnitService;
+            this.unitService = unitService;
+            this.subUnitService = subUnitService;
+            this.departmentService = departmentService;
+        }
+
+
+
 
         // GET: Admin/Staffs
+        [CustomFilters]
         public ActionResult Index()
         {
-            var staffs = db.Staffs.Include(s => s.Department).Include(s => s.MainUnit).Include(s => s.SubUnit).Include(s => s.Unit);
+            var staffs = staffService.GetStaffs().AsQueryable().Include(s => s.Department).Include(s => s.MainUnit).Include(s => s.SubUnit).Include(s => s.Unit);
             return View(staffs.ToList());
         }
 
         // GET: Admin/Staffs/Details/5
+        [CustomFilters]
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Staff staff = db.Staffs.Find(id);
+            Staff staff = staffService.GetStaffById(id.Value);
             if (staff == null)
             {
                 return HttpNotFound();
@@ -40,10 +62,10 @@ namespace Inventory.Areas.Admin.Controllers
         // GET: Admin/Staffs/Create
         public ActionResult Create()
         {
-            ViewBag.DepartmentID = new SelectList(db.Departments, "Id", "Name");
-            ViewBag.MainUnitID = new SelectList(db.MainUnits, "Id", "Name");
-            ViewBag.SubUnitID = new SelectList(db.SubUnits, "Id", "Name");
-            ViewBag.UnitID = new SelectList(db.Units, "Id", "Name");
+            ViewBag.DepartmentID = new SelectList(departmentService.GetDepartments(), "Id", "Name");
+            ViewBag.MainUnitID = new SelectList(mainUnitService.GetMainUnits(), "Id", "Name");
+            ViewBag.SubUnitID = new SelectList(subUnitService.GetSubUnits(), "Id", "Name");
+            ViewBag.UnitID = new SelectList(unitService.GetUnits(), "Id", "Name");
             return View();
         }
 
@@ -52,19 +74,19 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomFilters]
         public ActionResult Create([Bind(Include = "Id,Name,IdentityNo,Designation,MobileNumber,TelephoneNumber,DepartmentID,SubUnitID,UnitID,MainUnitID,Description,Note,IsActive")] Staff staff)
         {
             if (ModelState.IsValid)
             {
-                db.Staffs.Add(staff);
-                db.SaveChanges();
+                staffService.CreateStaff(staff);
                 return RedirectToAction("Index");
             }
 
-            ViewBag.DepartmentID = new SelectList(db.Departments, "Id", "Name", staff.DepartmentID);
-            ViewBag.MainUnitID = new SelectList(db.MainUnits, "Id", "Name", staff.MainUnitID);
-            ViewBag.SubUnitID = new SelectList(db.SubUnits, "Id", "Name", staff.SubUnitID);
-            ViewBag.UnitID = new SelectList(db.Units, "Id", "Name", staff.UnitID);
+            ViewBag.DepartmentID = new SelectList(departmentService.GetDepartments(), "Id", "Name", staff.DepartmentID);
+            ViewBag.MainUnitID = new SelectList(mainUnitService.GetMainUnits(), "Id", "Name", staff.MainUnitID);
+            ViewBag.SubUnitID = new SelectList(subUnitService.GetSubUnits(), "Id", "Name", staff.SubUnitID);
+            ViewBag.UnitID = new SelectList(unitService.GetUnits(), "Id", "Name", staff.UnitID);
             return View(staff);
         }
 
@@ -75,15 +97,15 @@ namespace Inventory.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Staff staff = db.Staffs.Find(id);
+            Staff staff = staffService.GetStaffById(id.Value);
             if (staff == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.DepartmentID = new SelectList(db.Departments, "Id", "Name", staff.DepartmentID);
-            ViewBag.MainUnitID = new SelectList(db.MainUnits, "Id", "Name", staff.MainUnitID);
-            ViewBag.SubUnitID = new SelectList(db.SubUnits, "Id", "Name", staff.SubUnitID);
-            ViewBag.UnitID = new SelectList(db.Units, "Id", "Name", staff.UnitID);
+            ViewBag.DepartmentID = new SelectList(departmentService.GetDepartments(), "Id", "Name", staff.DepartmentID);
+            ViewBag.MainUnitID = new SelectList(mainUnitService.GetMainUnits(), "Id", "Name", staff.MainUnitID);
+            ViewBag.SubUnitID = new SelectList(subUnitService.GetSubUnits(), "Id", "Name", staff.SubUnitID);
+            ViewBag.UnitID = new SelectList(unitService.GetUnits(), "Id", "Name", staff.UnitID);
             return View(staff);
         }
 
@@ -92,18 +114,18 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [CustomFilters]
         public ActionResult Edit([Bind(Include = "Id,Name,IdentityNo,Designation,MobileNumber,TelephoneNumber,DepartmentID,SubUnitID,UnitID,MainUnitID,Description,Note,IsActive")] Staff staff)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(staff).State = EntityState.Modified;
-                db.SaveChanges();
+                staffService.EditStaff(staff);
                 return RedirectToAction("Index");
             }
-            ViewBag.DepartmentID = new SelectList(db.Departments, "Id", "Name", staff.DepartmentID);
-            ViewBag.MainUnitID = new SelectList(db.MainUnits, "Id", "Name", staff.MainUnitID);
-            ViewBag.SubUnitID = new SelectList(db.SubUnits, "Id", "Name", staff.SubUnitID);
-            ViewBag.UnitID = new SelectList(db.Units, "Id", "Name", staff.UnitID);
+            ViewBag.DepartmentID = new SelectList(departmentService.GetDepartments(), "Id", "Name", staff.DepartmentID);
+            ViewBag.MainUnitID = new SelectList(mainUnitService.GetMainUnits(), "Id", "Name", staff.MainUnitID);
+            ViewBag.SubUnitID = new SelectList(subUnitService.GetSubUnits(), "Id", "Name", staff.SubUnitID);
+            ViewBag.UnitID = new SelectList(unitService.GetUnits(), "Id", "Name", staff.UnitID);
             return View(staff);
         }
 
@@ -114,7 +136,7 @@ namespace Inventory.Areas.Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Staff staff = db.Staffs.Find(id);
+            Staff staff = staffService.GetStaffById(id.Value);
             if (staff == null)
             {
                 return HttpNotFound();
@@ -123,23 +145,15 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // POST: Admin/Staffs/Delete/5
+        [CustomFilters]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Staff staff = db.Staffs.Find(id);
-            db.Staffs.Remove(staff);
-            db.SaveChanges();
+            staffService.DeleteStaff(id);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        
     }
 }

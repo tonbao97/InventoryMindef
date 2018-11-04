@@ -8,10 +8,12 @@ using System.Web;
 using System.Web.Mvc;
 using Data;
 using Data.Models;
+using Inventory.CustomFilter;
 using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CategoriesController : BaseController
     {
         private ICategoryService categoryService;
@@ -24,6 +26,7 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // GET: Admin/Categories
+        [CustomFilters]
         public ActionResult Index()
         {
             var categories = categoryService.GetCategorys();
@@ -31,6 +34,7 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // GET: Admin/Categories/Details/5
+        [CustomFilters]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -55,6 +59,7 @@ namespace Inventory.Areas.Admin.Controllers
         // POST: Admin/Categories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [CustomFilters]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,EquipmentTypeID,Name,Description,Note,IsActive")] Category category)
@@ -88,6 +93,7 @@ namespace Inventory.Areas.Admin.Controllers
         // POST: Admin/Categories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [CustomFilters]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,EquipmentTypeID,Name,Description,Note,IsActive")] Category category)
@@ -117,6 +123,7 @@ namespace Inventory.Areas.Admin.Controllers
         }
 
         // POST: Admin/Categories/Delete/5
+        [CustomFilters]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -1,0 +1,11 @@
+﻿@model Inventory.Areas.Admin.Models.AddingEquipmentModel
+@Html.LabelFor(model => model.OSOptionID, "OSOptionID", htmlAttributes: new { @class = "control-label col-md-2" })
+<div class="col-md-10">
+    @Html.DropDownList("OSOptionID", null, "Please select", htmlAttributes: new { @class = "form-control" })
+    @Html.ValidationMessageFor(model => model.OSOptionID, "", new { @class = "text-danger" })    
+</div>
+<div class="col-md-10">
+    <input type="text" id="NewOSOptionName" name="OSOptionName" placeholder="New Option" class="form-control col-md-4" />
+    <button type="submit" id="AddOSOption">Add New</button>
+</div>
+
