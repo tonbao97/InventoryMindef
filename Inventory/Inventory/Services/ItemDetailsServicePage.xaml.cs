@@ -21,6 +21,7 @@ namespace Inventory.Services
 		{
 			InitializeComponent();
             getInfo(id);
+            this.Title = "Item Id " + id + "'s info:";
         }
 
         private async void getInfo(string id) {
