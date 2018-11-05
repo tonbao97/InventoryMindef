@@ -22,6 +22,7 @@ namespace Inventory.View
         {
             InitializeComponent();
             Background.Source = ImageSource.FromResource("Inventory.Image.background.jpg");
+            Logo.Source = ImageSource.FromResource("Inventory.Image.mindef.png");
         }
 
         private async void Login_Clicked(object sender, EventArgs e)

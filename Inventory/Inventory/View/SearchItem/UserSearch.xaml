@@ -41,7 +41,12 @@
                         </StackLayout>
                     </ViewCell>
                     <ViewCell>
-                        <Button Text="Search" Clicked="Search"/>
+                        <Button Text="Search" 
+                                Clicked="Search"
+                                   BorderColor="Black"
+                                     BorderWidth="1"
+                                     BackgroundColor="#166bf4"
+                                     TextColor="White"/>
                     </ViewCell>
                 </TableSection>
 

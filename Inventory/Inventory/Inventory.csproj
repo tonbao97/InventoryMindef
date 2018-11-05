@@ -11,11 +11,13 @@
 
   <ItemGroup>
     <None Remove="Image\background.jpg" />
+    <None Remove="Image\mindef.png" />
     <None Remove="View\AddNew\AddNewPage.xaml.cs~RF4b1b5b.TMP" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Image\background.jpg" />
+    <EmbeddedResource Include="Image\mindef.png" />
   </ItemGroup>
 
   <ItemGroup>
