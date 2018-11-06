@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Data;
 using Data.Models;
 using Inventory.CustomFilter;
 using Inventory.Models;
@@ -18,6 +19,7 @@ namespace Inventory.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private InventoryEntities db = new InventoryEntities();
 
         public UserManageController()
         {
@@ -77,6 +79,12 @@ namespace Inventory.Controllers
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
+            var user = UserManager.FindByEmail(model.Email);
+            if (!user.IsActive || !user.IsConfirmed)
+            {
+                ModelState.AddModelError("", "Inactive user account!");
+                return View(model);
+            }
             var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
             switch (result)
             {
@@ -155,11 +163,20 @@ namespace Inventory.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, IdentityNo = model.IdentityNo };
+                var staff = db.Staffs.Where(p => p.IsActive && p.IdentityNo.ToLower().Equals(user.IdentityNo.ToLower())).FirstOrDefault();
+                if (staff == null)
+                {
+                    AddErrors(new IdentityResult("IdentityNo is not found"));
+                    return View(model);
+                }
+                user.StaffID = staff.Id;
+                user.IsActive = true;
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    //await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    UserManager.AddToRole(user.Id, "User");
 
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -167,13 +184,19 @@ namespace Inventory.Controllers
                     //var callbackUrl = Url.Action("ConfirmEmail", "UserManage", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     //await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("WaitForConfirmation");
                 }
                 AddErrors(result);
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
+        }
+
+        [AllowAnonymous]
+        public ActionResult WaitForConfirmation()
+        {
+            return View();
         }
 
         //
@@ -236,45 +259,45 @@ namespace Inventory.Controllers
 
         //
         // GET: /Account/ResetPassword
-        //[AllowAnonymous]
-        //public ActionResult ResetPassword(string code)
-        //{
-        //    return code == null ? View("Error") : View();
-        //}
+        [AllowAnonymous]
+        public ActionResult ResetPassword(string code)
+        {
+            return code == null ? View("Error") : View();
+        }
 
         ////
         //// POST: /Account/ResetPassword
-        //[HttpPost]
-        //[AllowAnonymous]
-        //[ValidateAntiForgeryToken]
-        //public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return View(model);
-        //    }
-        //    var user = await UserManager.FindByNameAsync(model.Email);
-        //    if (user == null)
-        //    {
-        //        // Don't reveal that the user does not exist
-        //        return RedirectToAction("ResetPasswordConfirmation", "UserManage");
-        //    }
-        //    var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
-        //    if (result.Succeeded)
-        //    {
-        //        return RedirectToAction("ResetPasswordConfirmation", "UserManage");
-        //    }
-        //    AddErrors(result);
-        //    return View();
-        //}
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            var user = await UserManager.FindByNameAsync(model.Email);
+            if (user == null)
+            {
+                // Don't reveal that the user does not exist
+                return RedirectToAction("ResetPasswordConfirmation", "UserManage");
+            }
+            var result = await UserManager.ResetPasswordAsync(user.Id, model.Code, model.Password);
+            if (result.Succeeded)
+            {
+                return RedirectToAction("ResetPasswordConfirmation", "UserManage");
+            }
+            AddErrors(result);
+            return View();
+        }
 
         //
         // GET: /Account/ResetPasswordConfirmation
-        //[AllowAnonymous]
-        //public ActionResult ResetPasswordConfirmation()
-        //{
-        //    return View();
-        //}
+        [AllowAnonymous]
+        public ActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
 
         //
         // POST: /Account/ExternalLogin

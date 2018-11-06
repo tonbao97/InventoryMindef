@@ -12,7 +12,7 @@ using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    public class DeliveryPackagesController : Controller
+    public class DeliveryPackagesController : BaseController
     {
         private IDeliveryPackageService deliveryPackageService;
         private ISupplierService supplierService;

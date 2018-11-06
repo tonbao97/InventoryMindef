@@ -43,11 +43,11 @@
 <script type="text/javascript" src="~/Content/js/QR/qrcode.js"></script>
 <script type="text/javascript" src="~/Content/js/QR/html5-qrcode.js"></script>
 
-<h2>Index</h2>
+@*<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>*@
 <div class="popup">
     <div id="qrcode"></div>
 
@@ -59,7 +59,7 @@
 <div class="row gutters">
     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
         <div class="card custom-bdr">
-            <div class="card-header">Brands</div>
+            <div class="card-header">Items</div>
             <div class="card-body">
                 <table id="fixedHeader" class="table table-bordered">
                     <thead>
@@ -120,9 +120,9 @@
                                     @Html.DisplayFor(modelItem => item.CreatedDate)
                                 </td>
                                 <td>
-                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                                    @Html.ActionLink("Edit Item", "Edit", new { id = item.Id }) |
                                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }) |
+                                    @Html.ActionLink("Return", "Return", new { id = item.Id }) |
                                     <button onmouseup="updateQRCode(@item.Id)">Get QRcode</button>
                                 </td>
                             </tr>

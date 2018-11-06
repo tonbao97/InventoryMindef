@@ -246,6 +246,7 @@
     <Compile Include="App_Start\UnityMvcActivator.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ApplicationUsersController.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandsController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
@@ -557,7 +558,7 @@
     <Content Include="Areas\Admin\Views\EquipmentTypes\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\EquipmentTypes\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Items\Create.cshtml" />
-    <Content Include="Areas\Admin\Views\Items\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Items\Return.cshtml" />
     <Content Include="Areas\Admin\Views\Items\Details.cshtml" />
     <Content Include="Areas\Admin\Views\Items\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Items\Index.cshtml" />
@@ -636,6 +637,11 @@
     <Content Include="Areas\Admin\Views\DeliveryPackages\Details.cshtml" />
     <Content Include="Areas\Admin\Views\DeliveryPackages\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\DeliveryPackages\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Users\Index.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -680,6 +686,7 @@
     <Content Include="Views\UserManage\SendCode.cshtml" />
     <Content Include="Views\UserManage\VerifyCode.cshtml" />
     <Content Include="Views\UserManage\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\UserManage\WaitForConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

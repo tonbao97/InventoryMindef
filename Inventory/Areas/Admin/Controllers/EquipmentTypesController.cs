@@ -13,8 +13,6 @@ using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    [Authorize]
-
     public class EquipmentTypesController : BaseController
     {
         private IEquipmentTypeService equipmentTypeService;

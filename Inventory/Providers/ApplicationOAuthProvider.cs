@@ -39,6 +39,12 @@ namespace Inventory.Providers
                 return;
             }
 
+            if (!user.IsActive || !user.IsConfirmed)
+            {
+                context.SetError("inactive_user", "This user is not active at the moment.");
+                return;
+            }
+
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager,
                OAuthDefaults.AuthenticationType);
             ClaimsIdentity cookiesIdentity = await user.GenerateUserIdentityAsync(userManager,

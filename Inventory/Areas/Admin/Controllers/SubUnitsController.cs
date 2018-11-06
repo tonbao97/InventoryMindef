@@ -13,8 +13,7 @@ using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class SubUnitsController : Controller
+    public class SubUnitsController : BaseController
     {
         private ISubUnitService SubUnitService;
 

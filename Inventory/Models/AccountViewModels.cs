@@ -106,7 +106,6 @@ namespace Inventory.Models
     {
         [Required]
         [Display(Name = "Email")]
-        [EmailAddress]
         public string Email { get; set; }
 
         [Required]
@@ -151,6 +150,11 @@ namespace Inventory.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Identity Number")]
+        public string IdentityNo { get; set; }
+
         public override string ToString()
         {
             PropertyInfo[] _PropertyInfos = null;

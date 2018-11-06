@@ -15,6 +15,9 @@ namespace Data.Models
     {
         public DateTime DateCreated { get; set; }
         public int? StaffID { get; set; }
+        public bool IsConfirmed { get; set; }
+        public bool IsActive { get; set; }
+        public string IdentityNo { get; set; }
         public ApplicationUser()
         {
             DateCreated = DateTime.Now;

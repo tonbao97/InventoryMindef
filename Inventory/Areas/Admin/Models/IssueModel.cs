@@ -9,10 +9,11 @@ namespace Inventory.Areas.Admin.Models
 {
     public class IssueModel
     {
+        public int ItemID { get; set; }
         public int EquipmentID { get; set; }
         public int StatusID { get; set; }
         public string SerialNo { get; set; }
-        public int StaffID { get; set; }
+        public int? StaffID { get; set; }
         public string Note { get; set; }
         public override string ToString()
         {

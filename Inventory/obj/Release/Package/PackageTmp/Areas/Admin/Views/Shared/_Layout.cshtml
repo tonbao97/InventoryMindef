@@ -8,6 +8,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@ViewBag.Title</title>
+
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!--
         **********************
@@ -59,6 +61,11 @@
     <!-- Bootstrap Select CSS -->
     <link rel="stylesheet" href="vendor/bs-select/bs-select.css" />
 
+
+    <!-- Select 2-->
+    <link href="~/Content/css/select2.min.css" rel="stylesheet" />
+
+
     <script src="~/Content/js/jquery.js"></script>
     @*<script>
 
@@ -66,6 +73,8 @@
                   $("#includedContent").load("aside_nav.html");
                 });
         </script>*@
+
+    
 
 </head>
 <body>
@@ -232,35 +241,17 @@
                                             <span class="has-icon">
                                                 <i class="icon-beaker"></i>
                                             </span>
-                                            <span class="nav-title">Equipment Types</span>
+                                            <span class="nav-title">Delivery Packages</span>
                                         </a>
                                         <ul aria-expanded="false">
                                             <li>
-                                                <a href='/Admin/EquipmentTypes'>View</a>
+                                                <a href='/Admin/DeliveryPackages'>View</a>
                                             </li>
                                             <li>
-                                                <a href='/Admin/EquipmentTypes/Create'>Add</a>
+                                                <a href='/Admin/DeliveryPackages/Create'>Add</a>
                                             </li>
                                         </ul>
                                     </li>
-
-                                    <li>
-                                        <a href="#" class="has-arrow" aria-expanded="false">
-                                            <span class="has-icon">
-                                                <i class="icon-beaker"></i>
-                                            </span>
-                                            <span class="nav-title">Categories</span>
-                                        </a>
-                                        <ul aria-expanded="false">
-                                            <li>
-                                                <a href='/Admin/Categories'>View</a>
-                                            </li>
-                                            <li>
-                                                <a href='/Admin/Categories/Create'>Add</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
                                     <li>
                                         <a href="#" class="has-arrow" aria-expanded="false">
                                             <span class="has-icon">
@@ -277,33 +268,78 @@
                                     <li>
                                         <a href="#" class="has-arrow" aria-expanded="false">
                                             <span class="has-icon">
-                                                <i class="icon-assignment"></i>
+                                                <i class="icon-beaker"></i>
                                             </span>
-                                            <span class="nav-title">Manage Issued Assets</span>
+                                            <span class="nav-title">Issued Items</span>
                                         </a>
                                         <ul aria-expanded="false">
                                             <li>
-                                                <a href='#' class="has-arrow" aria-expanded="false">
-                                                    <span class="nav-title">Issued Asset</span>
-                                                </a>
-                                                <ul aria-expanded="false">
-                                                    <li>
-                                                        <a href='users.html'>View</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href='new_user.html'>Add</a>
-                                                    </li>
-                                                </ul>
+                                                <a href='/Admin/Items'>View</a>
                                             </li>
                                             <li>
-                                                <a href='#'>
-                                                    <span class="nav-title">Available Asset</span>
-                                                </a>
+                                                <a href='/Admin/Equipments'>Add</a>
                                             </li>
                                         </ul>
                                     </li>
-                                    
-                                    
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-beaker"></i>
+                                            </span>
+                                            <span class="nav-title">Staffs</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href='/Admin/Staffs'>View</a>
+                                            </li>
+                                            <li>
+                                                <a href='/Admin/Staffs/Create'>Add</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="has-arrow" aria-expanded="false">
+                                            <span class="has-icon">
+                                                <i class="icon-beaker"></i>
+                                            </span>
+                                            <span class="nav-title">Users</span>
+                                        </a>
+                                        <ul aria-expanded="false">
+                                            <li>
+                                                <a href='/Admin/Users'>View</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    @*<li>
+            <a href="#" class="has-arrow" aria-expanded="false">
+                <span class="has-icon">
+                    <i class="icon-assignment"></i>
+                </span>
+                <span class="nav-title">Issued Items</span>
+            </a>
+            <ul aria-expanded="false">
+                <li>
+                    <a href='#' class="has-arrow" aria-expanded="false">
+                        <span class="nav-title">Issued Asset</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li>
+                            <a href='users.html'>View</a>
+                        </li>
+                        <li>
+                            <a href='new_user.html'>Add</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href='#'>
+                        <span class="nav-title">Available Asset</span>
+                    </a>
+                </li>
+            </ul>
+        </li>*@
+
+
                                     <li>
                                         <a href="#" class="has-arrow" aria-expanded="false">
                                             <span class="has-icon">
@@ -379,6 +415,39 @@
                                                     <span class="has-icon">
                                                         <i class="icon-beaker"></i>
                                                     </span>
+                                                    <span class="nav-title">Equipment Types</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='/Admin/EquipmentTypes'>View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='/Admin/EquipmentTypes/Create'>Add</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+
+                                            <li>
+                                                <a href="#" class="has-arrow" aria-expanded="false">
+                                                    <span class="has-icon">
+                                                        <i class="icon-beaker"></i>
+                                                    </span>
+                                                    <span class="nav-title">Categories</span>
+                                                </a>
+                                                <ul aria-expanded="false">
+                                                    <li>
+                                                        <a href='/Admin/Categories'>View</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href='/Admin/Categories/Create'>Add</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="has-arrow" aria-expanded="false">
+                                                    <span class="has-icon">
+                                                        <i class="icon-beaker"></i>
+                                                    </span>
                                                     <span class="nav-title">Suppliers</span>
                                                 </a>
                                                 <ul aria-expanded="false">
@@ -423,44 +492,44 @@
                                                 </ul>
                                             </li>
                                             @*<li>
-            <a href='#' class="has-arrow" aria-expanded="false">
-                <span class="nav-title">Users</span>
-            </a>
-            <ul aria-expanded="false">
-                <li>
-                    <a href='users.html'>View</a>
+                    <a href='#' class="has-arrow" aria-expanded="false">
+                        <span class="nav-title">Users</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li>
+                            <a href='users.html'>View</a>
+                        </li>
+                        <li>
+                            <a href='new_user.html'>Add</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href='new_user.html'>Add</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href='#' class="has-arrow" aria-expanded="false">
-                <span class="nav-title">Locations</span>
-            </a>
-            <ul aria-expanded="false">
-                <li>
-                    <a href='#'>View</a>
-                </li>
-                <li>
-                    <a href='new_location.html'>Add</a>
-                </li>
-            </ul>
-        </li>
-        <li>
-            <a href='#' class="has-arrow" aria-expanded="false">
-                <span class="nav-title">Suppliers</span>
-            </a>
-            <ul aria-expanded="false">
-                <li>
-                    <a href='#'>View</a>
+                    <a href='#' class="has-arrow" aria-expanded="false">
+                        <span class="nav-title">Locations</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li>
+                            <a href='#'>View</a>
+                        </li>
+                        <li>
+                            <a href='new_location.html'>Add</a>
+                        </li>
+                    </ul>
                 </li>
                 <li>
-                    <a href='new_supplier.html'>Add</a>
-                </li>
-            </ul>
-        </li>*@
+                    <a href='#' class="has-arrow" aria-expanded="false">
+                        <span class="nav-title">Suppliers</span>
+                    </a>
+                    <ul aria-expanded="false">
+                        <li>
+                            <a href='#'>View</a>
+                        </li>
+                        <li>
+                            <a href='new_supplier.html'>Add</a>
+                        </li>
+                    </ul>
+                </li>*@
                                         </ul>
                                     </li>
                                 </ul>
@@ -608,6 +677,13 @@
 
     <!-- Common JS -->
     <script src="~/Content/js/common.js"></script>
+
+    <script src="~/Content/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2();
+        });
+    </script>
 
 
     @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>*@

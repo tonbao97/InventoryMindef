@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Administrator")]
     public class BaseController : Controller
     {
         protected override IAsyncResult BeginExecuteCore(AsyncCallback callback, object state)

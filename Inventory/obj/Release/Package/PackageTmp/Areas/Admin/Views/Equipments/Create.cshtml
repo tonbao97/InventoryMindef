@@ -21,12 +21,13 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <input type="hidden" name="EquipmentTypeId" value="@ViewBag.EquipmentType.Id"/>
-        <div class="form-group">
-            @Html.LabelFor(model => model.DeliveryPackageID, "DeliveryPackageID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("DeliveryPackageID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.DeliveryPackageID, "", new { @class = "text-danger" })
-            </div>
+        <div class="form-group" id="DeliveryPackage">
+            @*@Html.LabelFor(model => model.DeliveryPackageID, "DeliveryPackageID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("DeliveryPackageID", null, htmlAttributes: new { @class = "select2 form-control" })
+            @Html.ValidationMessageFor(model => model.DeliveryPackageID, "", new { @class = "text-danger" })
+        </div>*@
+            @Html.Action("DeliveryPackage", "Equipments")
         </div>
 
         <div class="form-group">
@@ -247,5 +248,22 @@
             });
 
         });
+    });
+    $('#AddNewDeliveryPackage').click(function (e) {
+        debugger;
+        e.preventDefault();
+        $.ajax({
+            url: '/Admin/Equipments/AddDeliveryPackage',
+            type: 'POST',
+            dataType: 'html',
+            data: {
+                SupplierID: $('#SupplierID').val(),
+                DeliveryOrderNo: $('#DeliveryOrderNo').val(),
+                DODate: $('#DODate').val()
+            }
+        }).done(function (ketqua) {
+            $('#DeliveryPackage').html(ketqua);
+        });
+
     });
 </script>

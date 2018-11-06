@@ -16,8 +16,7 @@ using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class EquipmentsController : Controller
+    public class EquipmentsController : BaseController
     {
         private InventoryEntities db = new InventoryEntities();
         private IEquipmentTypeService equipmentTypeService;
@@ -114,7 +113,7 @@ namespace Inventory.Areas.Admin.Controllers
                 var ownership = new Ownership();
                 ownership.IsActive = true;
                 ownership.ItemID = item.Id;
-                ownership.StaffID = model.StaffID;
+                ownership.StaffID = model.StaffID.Value;
                 ownership.Note = model.Note;
                 ownershipService.CreateOwnership(ownership);
                 equip.Quantity -= 1;

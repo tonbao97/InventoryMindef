@@ -13,8 +13,7 @@ using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class SuppliersController : Controller
+    public class SuppliersController : BaseController
     {
         private InventoryEntities db = new InventoryEntities();
         //private IBrandService BrandService;

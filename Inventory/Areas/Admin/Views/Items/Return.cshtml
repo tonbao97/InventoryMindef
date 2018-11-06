@@ -1,0 +1,174 @@
+﻿@model Inventory.Areas.Admin.Models.ItemsModel
+
+@{
+    ViewBag.Title = "Return";
+}
+
+<h2>Return</h2>
+
+<h3>Are you sure you want to return this?</h3>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Picture
+        </dt>
+
+        <dd>
+            <img src="@Model.Picture" height="300" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EquipmentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EquipmentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SerialNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SerialNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+        @if (Model.EquipmentType.Equals("Computer"))
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.OS)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.OS)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Processor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Processor)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.RAM)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RAM)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.HDD)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.HDD)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.VGA)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.VGA)
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuedTo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssuedTo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentityNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentityNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContactNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MainUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MainUnit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Unit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Unit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubUnit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubUnit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Department)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Department)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Return" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

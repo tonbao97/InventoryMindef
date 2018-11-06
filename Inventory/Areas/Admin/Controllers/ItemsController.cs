@@ -14,8 +14,7 @@ using Service;
 
 namespace Inventory.Areas.Admin.Controllers
 {
-    [Authorize]
-    public class ItemsController : Controller
+    public class ItemsController : BaseController
     {
         private IItemService itemService;
         private IOwnershipService ownershipService;
@@ -52,7 +51,19 @@ namespace Inventory.Areas.Admin.Controllers
                 IssuedTo = p.Staff.Name,
                 Unit = p.Staff.Unit == null ? null : p.Staff.Unit.Name,
                 CreatedDate = p.CreatedDate
-            });
+            }).Concat(itemService.GetItems().Where(p => ownershipService.GetOwnerships()
+            .Where(h => h.ItemID == p.Id && h.IsActive).FirstOrDefault() == null)
+            .Select(j => new ItemsModel() {
+                Id = j.Id,
+                Category = j.Equipment.Category.Name,
+                Brand = j.Equipment.Brand.Name,
+                Model = j.Equipment.Name,
+                SerialNo = j.SerialNo,
+                Status = j.Status.Name
+            })
+            );
+            //var tesst = itemService.GetItems().Where(p => ownershipService.GetOwnerships()
+            //.Where(h => h.ItemID == p.Id && h.IsActive).FirstOrDefault() == null).ToList();
             return View(items.ToList());
         }
 
@@ -73,14 +84,13 @@ namespace Inventory.Areas.Admin.Controllers
                 Id = item.Id,
                 Brand = item.Equipment.Brand.Name,
                 Category = item.Equipment.Category.Name,
-                CreatedDate = ownerships.CreatedDate,
                 EquipmentType = item.Equipment.Category.EquipmentTypes.Name,
                 Model = item.Equipment.Name,
                 Picture = item.Equipment.Picture.Url,
                 SerialNo = item.SerialNo,
                 Status = item.Status.Name,
             };
-            var comDetails = computerDetailsService.GetComputerDetailss().Where(p => p.ComputerID == ownerships.Item.EquipmentID).FirstOrDefault();
+            var comDetails = computerDetailsService.GetComputerDetailss().Where(p => p.ComputerID == item.EquipmentID).FirstOrDefault();
             if (comDetails != null)
             {
                 itemRe.HDD = comDetails.HDD == null ? null : comDetails.HDD.Name;
@@ -101,6 +111,9 @@ namespace Inventory.Areas.Admin.Controllers
                     itemRe.MainUnit = staff.MainUnit == null ? null : staff.MainUnit.Name;
                     itemRe.SubUnit = staff.SubUnit == null ? null : staff.SubUnit.Name;
                     itemRe.Unit = staff.Unit == null ? null : staff.Unit.Name;
+                    itemRe.IdentityNo = staff.IdentityNo;
+                    itemRe.CreatedDate = ownerships.CreatedDate;
+
                 }
             }
             
@@ -147,9 +160,21 @@ namespace Inventory.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.EquipmentID = new SelectList(equipmentService.GetEquipments(), "Id", "Name", item.EquipmentID);
-            ViewBag.StatusID = new SelectList(statusService.GetStatuss(), "Id", "Name", item.StatusID);
-            return View(item);
+            Ownership ownership = ownershipService.GetOwnerships().Where(p => p.IsActive && p.ItemID == item.Id).FirstOrDefault();
+            IssueModel model = new IssueModel()
+            {
+                ItemID = item.Id,
+                SerialNo = item.SerialNo,
+                StatusID = item.StatusID
+            };
+            if (ownership != null)
+            {
+                model.StaffID = ownership.StaffID;
+                model.Note = ownership.Note;
+            }
+            ViewBag.StaffID = new SelectList(staffService.GetStaffs(), "Id", "Name", model.StaffID);
+            ViewBag.StatusID = new SelectList(statusService.GetStatuss(), "Id", "Name", model.StatusID);
+            return View(model);
         }
 
         // POST: Admin/Items/Edit/5
@@ -157,45 +182,118 @@ namespace Inventory.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,EquipmentID,StatusID,SerialNo")] Item item)
+        public ActionResult Edit(IssueModel model)
         {
             if (ModelState.IsValid)
             {
+                var item = itemService.GetItemById(model.ItemID);
+                if (item == null)
+                {
+                    return HttpNotFound();
+                }
+                item.StatusID = model.StatusID;
+                item.SerialNo = model.SerialNo;
                 itemService.EditItem(item);
+                Ownership ownership = ownershipService.GetOwnerships().Where(p => p.IsActive && p.ItemID == item.Id).FirstOrDefault();
+                if (ownership == null)
+                {
+                    if (model.StaffID != null)
+                    {
+                        Ownership newOwnership = new Ownership()
+                        {
+                            StaffID = model.StaffID.Value,
+                            IsActive = true,
+                            ItemID = item.Id,
+                            Note = model.Note,
+                        };
+                        ownershipService.CreateOwnership(newOwnership);
+                    }
+                }
+                else
+                {
+                    if (model.StaffID == null)
+                    {
+                        ownership.IsActive = false;
+                    }
+                    else
+                    {
+                        ownership.Note = model.Note;
+                        ownership.StaffID = model.StaffID.Value;
+                    }
+                    ownershipService.EditOwnership(ownership);
+                }
                 return RedirectToAction("Index");
             }
-            ViewBag.EquipmentID = new SelectList(equipmentService.GetEquipments(), "Id", "Name", item.EquipmentID);
-            ViewBag.StatusID = new SelectList(statusService.GetStatuss(), "Id", "Name", item.StatusID);
-            return View(item);
+            ViewBag.StaffID = new SelectList(staffService.GetStaffs(), "Id", "Name", model.StaffID);
+            ViewBag.StatusID = new SelectList(statusService.GetStatuss(), "Id", "Name", model.StatusID);
+            return View(model);
         }
 
 
 
         // GET: Admin/Items/Delete/5
-        //public ActionResult Delete(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Item item = db.Items.Find(id);
-        //    if (item == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(item);
-        //}
+        public ActionResult Return(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            var ownerships = ownershipService.GetOwnerships().Where(p => p.IsActive && p.ItemID == id).FirstOrDefault();
+            var item = itemService.GetItemById(id.Value);
+            if (item == null)
+            {
+                return HttpNotFound();
+            }
+            var itemRe = new ItemsModel()
+            {
+                Id = item.Id,
+                Brand = item.Equipment.Brand.Name,
+                Category = item.Equipment.Category.Name,
+                CreatedDate = ownerships.CreatedDate,
+                EquipmentType = item.Equipment.Category.EquipmentTypes.Name,
+                Model = item.Equipment.Name,
+                Picture = item.Equipment.Picture.Url,
+                SerialNo = item.SerialNo,
+                Status = item.Status.Name,
+            };
+            var comDetails = computerDetailsService.GetComputerDetailss().Where(p => p.ComputerID == ownerships.Item.EquipmentID).FirstOrDefault();
+            if (comDetails != null)
+            {
+                itemRe.HDD = comDetails.HDD == null ? null : comDetails.HDD.Name;
+                itemRe.OS = comDetails.OS == null ? null : comDetails.OS.Name;
+                itemRe.RAM = comDetails.Ram == null ? null : comDetails.Ram.Name;
+                itemRe.VGA = comDetails.VGA == null ? null : comDetails.VGA.Name;
+                itemRe.Processor = comDetails.CPU == null ? null : comDetails.CPU.Name;
+
+            }
+            if (ownerships != null)
+            {
+                var staff = ownerships.Staff;
+                if (staff != null)
+                {
+                    itemRe.ContactNo = staff.MobileNumber;
+                    itemRe.Department = staff.Department == null ? null : staff.Department.Name;
+                    itemRe.IssuedTo = staff.Name;
+                    itemRe.MainUnit = staff.MainUnit == null ? null : staff.MainUnit.Name;
+                    itemRe.SubUnit = staff.SubUnit == null ? null : staff.SubUnit.Name;
+                    itemRe.Unit = staff.Unit == null ? null : staff.Unit.Name;
+                }
+            }
+
+
+            return View(itemRe);
+        }
 
         // POST: Admin/Items/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Item item = db.Items.Find(id);
-        //    db.Items.Remove(item);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
+        [HttpPost, ActionName("Return")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ReturnConfirmed(int id)
+        {
+            Ownership ownership = ownershipService.GetOwnerships().Where(p => p.ItemID == id && p.IsActive).FirstOrDefault();
+            ownership.IsActive = false;
+            ownershipService.EditOwnership(ownership);
+            return RedirectToAction("Index");
+        }
 
         //protected override void Dispose(bool disposing)
         //{
