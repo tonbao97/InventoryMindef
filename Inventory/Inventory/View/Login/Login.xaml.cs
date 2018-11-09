@@ -15,7 +15,7 @@ namespace Inventory.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Login : ContentPage
     {
-        private const string Url = "http://202.160.1.102:8083/Token";     
+        private const string Url = "https://ubd-fpt-inventory.azurewebsites.net/Token";     
         private HttpClient client = new HttpClient();
 
         public Login()

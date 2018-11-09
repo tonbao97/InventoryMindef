@@ -28,7 +28,7 @@ namespace Inventory.View.AddNew
         ObservableCollection<Category> Category { get; set; } = new ObservableCollection<Category>();
         private MediaFile file;
 
-        private const string Url = "http://202.160.1.102:8083";
+        private const string Url = "https://ubd-fpt-inventory.azurewebsites.net";
         private const string UrlCategories = Url + "/api/Equipments/GetCategories";
         private const string UrlSuppliers = Url + "/api/GetSuppliers";
         private const string UrlAdd = Url + "/api/Equipments/AddEquipment";

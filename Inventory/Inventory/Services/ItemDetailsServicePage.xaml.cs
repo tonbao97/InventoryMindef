@@ -16,7 +16,7 @@ namespace Inventory.Services
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItemDetailsServicePage : ContentPage
 	{
-        private string Url = "http://202.160.1.102:8083/api/getiteminfo/";
+        private string Url = "https://ubd-fpt-inventory.azurewebsites.net/api/getiteminfo/";
         public ItemDetailsServicePage(string id)
 		{
 			InitializeComponent();

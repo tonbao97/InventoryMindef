@@ -18,7 +18,7 @@ namespace Inventory.View.SearchItem
 	public partial class SearchLocation : ContentPage
 	{
         private HttpClient client = new HttpClient();
-        private const string Url = "http://202.160.1.102:8083";
+        private const string Url = "https://ubd-fpt-inventory.azurewebsites.net";
         private const string UrlUnits = Url + "/api/GetUnits";
         private const string UrlMainUnits = Url + "/api/GetMainUnits";
         private const string UrlSubUnit = Url + "/api/GetsubUnits";
