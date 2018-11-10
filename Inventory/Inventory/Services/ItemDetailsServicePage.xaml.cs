@@ -15,8 +15,10 @@ namespace Inventory.Services
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ItemDetailsServicePage : ContentPage
-	{
+    {
         private string Url = "https://ubd-fpt-inventory.azurewebsites.net/api/getiteminfo/";
+        private string OwnerUrl = "https://ubd-fpt-inventory.azurewebsites.net/api/getlistowner/";
+        List<IssuedDetail> listissued = new List<IssuedDetail>();
         public ItemDetailsServicePage(string id)
 		{
 			InitializeComponent();
@@ -28,12 +30,18 @@ namespace Inventory.Services
             try
             {
                 Url = Url + id;
+                OwnerUrl = OwnerUrl + id;
                 Loading.IsVisible = true;
                 HttpClient client = new HttpClient();
                 string token = Application.Current.Properties["Token"].ToString();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("bearer", token);
                 var GetItem = await client.GetStringAsync(Url);
                 var Item = JsonConvert.DeserializeObject<ItemDetail>(GetItem);
+
+                var GetissuedList = await client.GetStringAsync(OwnerUrl);
+                listissued = JsonConvert.DeserializeObject<List<IssuedDetail>>(GetissuedList);
+
+
 
                 ItemPic.Source = ImageSource.FromUri(new Uri(Item.Picture));
                 EquipID.Text = id;
@@ -52,6 +60,21 @@ namespace Inventory.Services
                 issuedUserContactNo.Text = Item.ContactNo;
                 Location.Text = Item.MainUnit + "-" + Item.Unit + "-" + Item.SubUnit + "-" + Item.Department;
                 Loading.IsVisible = false;
+
+                int i = 1;
+                foreach (IssuedDetail item in listissued)
+                {
+                
+                    Label Name = new Label { Text = item.Name};
+                    Label IndentityNo = new Label { Text = item.IdentityNo };
+                    Label RecivedDate = new Label { Text = item.ReceivedDate.Replace('T',' ') };
+                    GridOwner.Children.Add(Name, 0, i);
+                    GridOwner.Children.Add(IndentityNo, 1, i);
+                    GridOwner.Children.Add(RecivedDate, 2, i);
+                    i++;
+                }
+                GridOwner.IsVisible = true;
+
             }
             catch (Exception Err)
             {
