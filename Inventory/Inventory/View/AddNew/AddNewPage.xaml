@@ -90,7 +90,7 @@
                             <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="5,0,5,0">
                                 <Label Text="Equipment Type :" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
                                 <!--This picker needs to bind with itemCategoryPicker above-->
-                                <Picker x:Name="EquipmentTypePicker" Title="Choose Equipment Type" FontSize="Small" VerticalOptions="Center">
+                                <Picker x:Name="EquipmentTypePicker" Title="Choose Equipment Type" FontSize="Small" VerticalOptions="Center" SelectedIndexChanged="EquipmentTypePicker_SelectedIndexChanged">
                                 </Picker>
 
                             </StackLayout>

@@ -29,7 +29,7 @@ namespace Inventory.View.AddNew
         private MediaFile file;
 
         private const string Url = "https://ubd-fpt-inventory.azurewebsites.net";
-        private const string UrlCategories = Url + "/api/Equipments/GetCategories";
+        private const string UrlCategories = Url + "/api/GetCategories";
         private const string UrlSuppliers = Url + "/api/GetSuppliers";
         private const string UrlAdd = Url + "/api/Equipments/AddEquipment";
         private const string UrlBrands = Url + "/api/Equipments/GetBrands";
@@ -198,19 +198,8 @@ namespace Inventory.View.AddNew
                 EquipmentTypePicker.ItemsSource = Equipmenttypes;
                 EquipmentTypePicker.ItemDisplayBinding = new Binding("Name");
 
-
-                var Categories = await client.GetStringAsync(UrlCategories);
-                var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
-                Category = new ObservableCollection<Category>(listCategory);
-
-
-                CategoryPicker.ItemsSource = Category;
-                CategoryPicker.ItemDisplayBinding = new Binding("Name");
-
-
                 SupplierPicker.SelectedIndex = 0;
-                itemBrand.SelectedIndex = 0;
-                CategoryPicker.SelectedIndex = 0;
+                itemBrand.SelectedIndex = 0;           
                 EquipmentTypePicker.SelectedIndex = 0;
                 Loading.IsVisible = false;
             }
@@ -222,5 +211,15 @@ namespace Inventory.View.AddNew
             }
         }
 
+        private async void EquipmentTypePicker_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selected = EquipmentTypePicker.SelectedIndex + 1;
+            var Categories = await client.GetStringAsync(UrlCategories + "/" + selected);
+            var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
+            Category = new ObservableCollection<Category>(listCategory);
+            CategoryPicker.ItemsSource = Category;
+            CategoryPicker.ItemDisplayBinding = new Binding("Name");
+            CategoryPicker.SelectedIndex = 0;
+        }
     }
 }

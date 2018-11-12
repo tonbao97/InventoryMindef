@@ -50,34 +50,32 @@
                 AbsoluteLayout.LayoutFlags="All">
                     <ActivityIndicator IsRunning="True"/>
                 </Frame>
-                <ListView x:Name="TypeListView" 
-                      HasUnevenRows="True" 
-                      VerticalOptions="FillAndExpand"
-                      AbsoluteLayout.LayoutBounds=".5,.5,1,1"
-                      AbsoluteLayout.LayoutFlags="All">
+                <ListView x:Name="TypeListView"
+                 HasUnevenRows="True"
+                 VerticalOptions="FillAndExpand"
+                AbsoluteLayout.LayoutBounds=".5,.5,1,1"       
+                AbsoluteLayout.LayoutFlags="All" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Vertical">
-                                    <Label Text="{Binding EquipmentType}" TextColor="Red" FontSize="Medium"/>
-                                    <ListView ItemsSource="{Binding List}" ItemTapped="ListView_ItemTapped">
-                                        <ListView.ItemTemplate>
-                                            <DataTemplate>
-                                                <ViewCell>
-                                                    <StackLayout>
-                                                        <Label Text="{Binding Detail}"/>
-                                                    </StackLayout>
-                                                </ViewCell>
-                                            </DataTemplate>
-                                        </ListView.ItemTemplate>
-                                    </ListView>
-                                </StackLayout>
+                            <ViewCell Height="200">
+                                <ScrollView>
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding EquipmentType}" TextColor="Red" FontSize="Medium"/>
+                                        <ListView ItemsSource="{Binding List}" ItemTapped="ListView_ItemTapped">
+                                            <ListView.ItemTemplate>
+                                                <DataTemplate>
+                                                    <TextCell Text="{Binding Detail}" TextColor="Black"/>
+                                                </DataTemplate>
+                                            </ListView.ItemTemplate>
+                                        </ListView>
+                                    </StackLayout>
+                                </ScrollView>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </AbsoluteLayout>
 
+            </AbsoluteLayout>
             <!--Button element does not want to be entered in a ViewCell if its in a list; consider alternative UI other than ListView if issue-->
         </StackLayout>
     </ContentPage.Content>
