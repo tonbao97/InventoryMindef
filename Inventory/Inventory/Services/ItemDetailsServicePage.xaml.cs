@@ -66,8 +66,17 @@ namespace Inventory.Services
                 {
                 
                     Label Name = new Label { Text = item.Name};
+                    Name.HorizontalTextAlignment = TextAlignment.Center;
+                    Name.VerticalTextAlignment = TextAlignment.Center;
+
                     Label IndentityNo = new Label { Text = item.IdentityNo };
+                    IndentityNo.HorizontalTextAlignment = TextAlignment.Center;
+                    IndentityNo.VerticalTextAlignment = TextAlignment.Center;
+
                     Label RecivedDate = new Label { Text = item.ReceivedDate.Replace('T',' ') };
+                    RecivedDate.HorizontalTextAlignment = TextAlignment.Center;
+                    RecivedDate.VerticalTextAlignment = TextAlignment.Center;
+
                     GridOwner.Children.Add(Name, 0, i);
                     GridOwner.Children.Add(IndentityNo, 1, i);
                     GridOwner.Children.Add(RecivedDate, 2, i);

@@ -34,7 +34,8 @@ namespace Inventory.View.AddNew
         private const string UrlAdd = Url + "/api/Equipments/AddEquipment";
         private const string UrlBrands = Url + "/api/Equipments/GetBrands";
         private const string UrlEquipmenttypes = Url + "/api/GetEquipmenttypes";
-       
+
+        int countIndex;
         int SupIndex;
         int EquipmentTypeIndex;
         int CategoryIndex;
@@ -149,7 +150,14 @@ namespace Inventory.View.AddNew
                 .PutAsync(file.GetStream());
             string imgurl = stroageImage;
 
-            Item newItem = new Item(DeliveryOrderNo.Text, DayChoose, SupplierPicker.Items[SupplierPicker.SelectedIndex].ToString(), CategoryPicker.SelectedIndex, itemBrand.Items[itemBrand.SelectedIndex].ToString(), Model.Text, int.Parse(Quantity.Text), imgurl);
+            Item newItem = new Item(DeliveryOrderNo.Text, 
+                DayChoose, 
+                SupplierPicker.Items[SupplierPicker.SelectedIndex].ToString(), 
+                CategoryPicker.SelectedIndex + countIndex, 
+                itemBrand.Items[itemBrand.SelectedIndex].ToString(), 
+                Model.Text, 
+                int.Parse(Quantity.Text), 
+                imgurl);
 
 
             var content = JsonConvert.SerializeObject(newItem);
@@ -213,13 +221,33 @@ namespace Inventory.View.AddNew
 
         private async void EquipmentTypePicker_SelectedIndexChanged(object sender, EventArgs e)
         {
+            countIndex = 0;
             int selected = EquipmentTypePicker.SelectedIndex + 1;
-            var Categories = await client.GetStringAsync(UrlCategories + "/" + selected);
-            var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
-            Category = new ObservableCollection<Category>(listCategory);
-            CategoryPicker.ItemsSource = Category;
-            CategoryPicker.ItemDisplayBinding = new Binding("Name");
-            CategoryPicker.SelectedIndex = 0;
+            if (selected==1)
+            {
+                var Categories = await client.GetStringAsync(UrlCategories + "/" + selected);
+                var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
+                Category = new ObservableCollection<Category>(listCategory);
+                CategoryPicker.ItemsSource = Category;
+                CategoryPicker.ItemDisplayBinding = new Binding("Name");
+                CategoryPicker.SelectedIndex = 0;
+            }
+            else
+            {
+                for (int i = 1; i < selected; i++)
+                {
+                    var CategoriesGetIndex = await client.GetStringAsync(UrlCategories + "/" + i);
+                    var ListcategoryGetIndex = JsonConvert.DeserializeObject<ObservableCollection<Category>>(CategoriesGetIndex);
+                    Category = new ObservableCollection<Category>(ListcategoryGetIndex);
+                    countIndex += Category.Count;
+                }
+                var Categories = await client.GetStringAsync(UrlCategories + "/" + selected);
+                var listCategory = JsonConvert.DeserializeObject<ObservableCollection<Category>>(Categories);
+                Category = new ObservableCollection<Category>(listCategory);
+                CategoryPicker.ItemsSource = Category;
+                CategoryPicker.ItemDisplayBinding = new Binding("Name");
+                CategoryPicker.SelectedIndex = 0;
+            }
         }
     }
 }

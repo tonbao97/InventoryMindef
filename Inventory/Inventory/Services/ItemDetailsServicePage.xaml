@@ -143,12 +143,12 @@
 
                         </TableRoot>
                     </TableView>
-                    <Grid IsVisible="False" x:Name="GridOwner">
-                        <Label Text="Name" Grid.Column="0" Grid.Row="0"/>
-                        <Label Text="Indentity Number" Grid.Column="1" Grid.Row="0"/>
-                        <Label Text="Received Date" Grid.Column="2" Grid.Row="0"/>
+                    <Label Text="Issued history list" FontSize="Large" TextColor="Red"/>
+                    <Grid IsVisible="False" x:Name="GridOwner" BackgroundColor="SkyBlue" HorizontalOptions="FillAndExpand" Padding="0">
+                        <Label Text="Name" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue" />
+                        <Label Text="Indentity Number" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue"/>
+                        <Label Text="Received Date" Grid.Column="2" Grid.Row="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" BackgroundColor="AliceBlue"/>
                     </Grid>
-
                 </StackLayout>
 
                 <Frame
