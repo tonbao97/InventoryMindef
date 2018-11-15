@@ -1,4 +1,5 @@
 ﻿using Inventory.Models;
+using Inventory.Models.LoginPageModel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -60,8 +61,17 @@ namespace Inventory.View
                     else
                     {
                         Loading.IsVisible = false;
-                        Error.Text = "Wrong username or password";
-                        await DisplayAlert("Error", "Wrong username or password", "Noticed");
+                        var text = response.Content.ReadAsStringAsync();
+                        var Err = JsonConvert.DeserializeObject<Error>(text.Result);
+                        if (Err.error.Contains("invalid"))
+                        {
+                            Error.Text = "Username or password is incorrect";
+                        }
+                        else
+                        {
+                            Error.Text = "Your account hasn't been confirmed";
+                        }                     
+                        await DisplayAlert("Error", Err.error_description, "Noticed");
                     }
                 }
                 catch (System.Net.WebException Err)
