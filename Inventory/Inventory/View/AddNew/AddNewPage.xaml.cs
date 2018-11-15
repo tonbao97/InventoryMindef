@@ -146,7 +146,7 @@ namespace Inventory.View.AddNew
 
             var stroageImage = await new FirebaseStorage("fir-7f783.appspot.com")
                 .Child("Pic")
-                .Child(Model.Text)
+                .Child(DeliveryOrderNo.Text + " " + Model.Text)
                 .PutAsync(file.GetStream());
             string imgurl = stroageImage;
 
