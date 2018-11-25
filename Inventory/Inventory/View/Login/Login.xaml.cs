@@ -67,6 +67,10 @@ namespace Inventory.View
                         {
                             Error.Text = "Username or password is incorrect";
                         }
+                        else if (Err.error.Contains("inactive"))
+                        {
+                            Error.Text = "Your account has been deactived";
+                        }
                         else
                         {
                             Error.Text = "Your account hasn't been confirmed";
@@ -74,7 +78,7 @@ namespace Inventory.View
                         await DisplayAlert("Error", Err.error_description, "Noticed");
                     }
                 }
-                catch (System.Net.WebException Err)
+                catch (Exception Err)
                 {
                     Loading.IsVisible = false;
                     Error.Text = "No connection to server";

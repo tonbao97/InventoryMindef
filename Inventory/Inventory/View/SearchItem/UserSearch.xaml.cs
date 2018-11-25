@@ -33,12 +33,21 @@ namespace Inventory.View.SearchItem
         }
 
         public async void loadInfo() {
-            var Units = await client.GetStringAsync(UrlUnits);
-            var listUnit = JsonConvert.DeserializeObject<List<Unit>>(Units);
-            UnitList = new List<Unit>(listUnit);
-            UnitPicker.ItemsSource = UnitList;
-            UnitPicker.ItemDisplayBinding = new Binding("Name");
-            UnitPicker.SelectedIndex = 0;
+            try
+            {
+                var Units = await client.GetStringAsync(UrlUnits);
+                var listUnit = JsonConvert.DeserializeObject<List<Unit>>(Units);
+                UnitList = new List<Unit>(listUnit);
+                UnitPicker.ItemsSource = UnitList;
+                UnitPicker.ItemDisplayBinding = new Binding("Name");
+                UnitPicker.SelectedIndex = 0;
+            }
+             catch (Exception Err)
+            {
+                //Loading.IsVisible = false;
+                await DisplayAlert("Error", "No connection to server", "Noticed");
+                await Navigation.PopAsync();
+            }
         }
 
         protected override void OnAppearing()

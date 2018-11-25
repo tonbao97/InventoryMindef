@@ -211,7 +211,7 @@ namespace Inventory.View.AddNew
                 EquipmentTypePicker.SelectedIndex = 0;
                 Loading.IsVisible = false;
             }
-            catch (System.Net.WebException Err)
+            catch (Exception Err)
             {
                 Loading.IsVisible = false;
                 await DisplayAlert("Error", "No connection to server", "Noticed");
